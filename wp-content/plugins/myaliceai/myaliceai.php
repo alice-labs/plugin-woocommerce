@@ -16,6 +16,38 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
+if ( ! defined( 'ALICE_BASE_PATH' ) ) {
+	define( 'ALICE_BASE_PATH', __FILE__ );
+}
+
+if ( ! defined( 'ALICE_URL' ) ) {
+	define( 'ALICE_URL', untrailingslashit( plugins_url( '', ALICE_BASE_PATH ) ) );
+}
+
+if ( ! defined( 'ALICE_JS_PATH' ) ) {
+	define( 'ALICE_JS_PATH', ALICE_URL . '/js/' );
+}
+
+// Redirect after activation the plugin
+if ( get_option( 'myaliceai_plugin_status' ) === 'active' ) {
+	update_option( 'myaliceai_plugin_status', 'activated', false );
+
+	add_action( 'admin_init', function () {
+		wp_safe_redirect( admin_url( 'admin.php?page=myalice_dashboard' ) );
+		exit;
+	} );
+}
+
+// Register activation hook
+register_activation_hook( ALICE_BASE_PATH, function () {
+	update_option( 'myaliceai_plugin_status', 'active', false );
+} );
+
+// Register deactivation hook
+register_deactivation_hook( ALICE_BASE_PATH, function () {
+	update_option( 'myaliceai_plugin_status', 'deactivated', false );
+} );
+
 add_action( 'admin_head', function () { ?>
     <style>
         #adminmenu li.current a.menu-top.toplevel_page_myalice {
