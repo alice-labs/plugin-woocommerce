@@ -48,13 +48,14 @@ register_deactivation_hook( ALICE_BASE_PATH, function () {
 	update_option( 'myaliceai_plugin_status', 'deactivated', false );
 } );
 
+// Admin Internal Style
 add_action( 'admin_head', function () { ?>
     <style>
-        #adminmenu li.current a.menu-top.toplevel_page_myalice {
+        #adminmenu li.current a.menu-top.toplevel_page_myalice_dashboard {
             background: linear-gradient(to left, #2271b1 50%, transparent 90%);
         }
 
-        #adminmenu .toplevel_page_myalice > .wp-menu-image > img {
+        #adminmenu .toplevel_page_myalice_dashboard > .wp-menu-image > img {
             padding: 0;
             opacity: 1;
         }
@@ -62,6 +63,7 @@ add_action( 'admin_head', function () { ?>
 	<?php
 } );
 
+// Add Alice Dashboard Menu
 add_action( 'admin_menu', function () {
 	add_menu_page(
 		'Alice',
@@ -74,6 +76,7 @@ add_action( 'admin_menu', function () {
 	);
 } );
 
+// Alice Dashboard Menu Callback
 function myalice_dashboard_callback () { ?>
     <div class="wrap alice-dashboard-wrap">
 
