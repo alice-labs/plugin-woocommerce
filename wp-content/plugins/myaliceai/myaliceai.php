@@ -84,6 +84,24 @@ function myalice_dashboard_callback () { ?>
 <?php
 }
 
+// Left side links in plugin list page
+add_filter( "plugin_action_links_myaliceai/myaliceai.php", function ( $actions ) {
+	$actions['alice_settings'] = '<a href="admin.php?page=myalice_dashboard" aria-label="MyAlice Settings">' . esc_html__( 'Settings', 'myaliceai' ) . '</a>';
+	$actions['alice_upgrade'] = '<a href="#" aria-label="MyAlice Settings">' . esc_html__( 'Upgrade', 'myaliceai' ) . '</a>';
+
+	return $actions;
+}, 10 );
+
+// Right side links in plugin list page
+add_filter( "plugin_row_meta", function ( $links, $file ) {
+	if ( 'myaliceai/myaliceai.php' === $file ) {
+		$links['alice_docs']    = '<a href="#" aria-label="MyAlice Documents">' . esc_html__( 'Docs', 'myaliceai' ) . '</a>';
+		$links['alice_support'] = '<a href="#" aria-label="MyAlice Support">' . esc_html__( 'Support', 'myaliceai' ) . '</a>';
+	}
+
+	return $links;
+}, 10, 2 );
+
 /**
  * Check if WooCommerce is active
  **/
