@@ -3,7 +3,7 @@
  * Plugin Name:       MyAlice
  * Plugin URI:        https://app.getalice.ai/
  * Description:       Alice is a Multi-Channel customer service platform for your e-commerce store or online business that centralises all customer interactions and helps to manage and automate customer support.
- * Version:           1.1.2
+ * Version:           1.2
  * Author:            Alice Labs
  * Author URI:        https://myalice.ai/
  * License:           GPL-2.0+
@@ -87,6 +87,22 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                     'desc' => __( 'Please enter the plugin key to verify the plugin and your website.', 'myaliceai' ),
                     'id'   => 'xl_settings_tab_alice_plugin_key'
                 ),
+                'platform_id' => array(
+                    'name' => __( 'Plugin Platform ID', 'myaliceai' ),
+                    'type' => 'text',
+                    'id'   => 'xl_settings_tab_alice_plugin_platform_id',
+//                    'default' => 'ss',
+//                    'value' => 'ss00',
+                    'value' => 'aatt',
+                    'custom_attributes' => array('readonly' => 'readonly'),
+                ),
+                'primary_id' => array(
+                    'name' => __( 'Plugin Primary ID', 'myaliceai' ),
+                    'type' => 'text',
+//                    'desc' => __( 'Please enter the plugin key to verify the plugin and your website.', 'myaliceai' ),
+                    'id'   => 'xl_settings_tab_alice_plugin_primary_id',
+                    'custom_attributes' => array('readonly' => 'readonly'),
+                ),
                 'section_end' => array(
                     'type' => 'sectionend',
                     'id' => 'xl_settings_tab_alice_section_end'
@@ -101,13 +117,16 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     WC_Settings_Tab_Alice::init();
 
 
-    function alice_script() {
-        wp_enqueue_script('alice-script', plugins_url('/js/script.js', __FILE__), 'jquery', time(), false);
-    }
-    add_action( 'wp_footer', 'alice_script' );
 
-    //    Insert JS code in Footer
-    function xl_alice_javascript_footer() {
+    /**
+     * Hook into options page after save.
+     */
+    function xl_hook_into_options_page_after_save( $old_value, $new_value ) {
+
+        $platform_id = get_option( 'xl_settings_tab_alice_plugin_platform_id' );
+        $primary_id = get_option( 'xl_settings_tab_alice_plugin_primary_id' );
+
+//        var_dump($platform_id);die();
 
         $xl_settings_tab_alice_plugin_key = get_option( 'xl_settings_tab_alice_plugin_key' );
         $xl_api_url = 'https://live-v3.getalice.ai/api/ecommerce/plugins/connect-ecommerce-plugin?api_token='.$xl_settings_tab_alice_plugin_key.'';
@@ -125,7 +144,62 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         } else {
             $alice_admin_data = json_decode($response['body'], true);
 
+            //var_dump($alice_admin_data);
+            //var_dump($alice_admin_data['platform_id']);
+//            var_dump($alice_admin_data['primary_id']);
+//            var_dump($alice_admin_data['api_token']);
+
+            //update_option( 'xl_settings_tab_alice_plugin_platform_id', $alice_admin_data['platform_id'] );
+
+
+            var_dump(get_option( 'xl_settings_tab_alice_plugin_key' ));
+
+            $settings['xl_settings_tab_alice_plugin_platform_id'] = $alice_admin_data['platform_id'];
+
+
+//            die;
         }
+
+
+
+
+    }
+    add_action( 'update_option', 'xl_hook_into_options_page_after_save', 10, 2 );
+
+
+
+
+    function alice_script() {
+        wp_enqueue_script('alice-script', plugins_url('/js/script.js', __FILE__), 'jquery', time(), false);
+    }
+    add_action( 'wp_footer', 'alice_script' );
+
+
+
+
+
+
+
+    //    Insert JS code in Footer
+    function xl_alice_javascript_footer() {
+
+//        $xl_settings_tab_alice_plugin_key = get_option( 'xl_settings_tab_alice_plugin_key' );
+//        $xl_api_url = 'https://live-v3.getalice.ai/api/ecommerce/plugins/connect-ecommerce-plugin?api_token='.$xl_settings_tab_alice_plugin_key.'';
+//
+//        $response = wp_remote_post( $xl_api_url, array(
+//                'method'      => 'POST',
+//                'timeout'     => 45,
+//                'cookies'     => array()
+//            )
+//        );
+//
+//        if ( is_wp_error( $response ) ) {
+//            $error_message = $response->get_error_message();
+//            echo "Something went wrong: $error_message";
+//        } else {
+//            $alice_admin_data = json_decode($response['body'], true);
+//
+//        }
 
         ?>
         <script type="text/javascript">
@@ -156,13 +230,34 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     add_action('wp_footer', 'xl_alice_javascript_footer');
 
 
+
 // Link Logged In Customer API to the alice customer ID
     function xl_alice_send_user_data_to_alice() {
 
+        //$customer_id = $_COOKIE["aliceCustomerId"];
+        //var_dump($customer_id);
+
         //User Data
         $alice_customer_id = $_COOKIE["aliceCustomerId"];
+
         $current_user = wp_get_current_user();
         $current_user_id = $current_user->ID;
+
+//        var_dump($current_user);
+
+
+//        $ecommerce_type = 'woocommerce';
+//        $first_name = 'Test Fname';
+//        $last_name = 'L name';
+//        $avatar = '';
+//        $email = 'test@tt.com';
+//        $phone = '000';
+//        $shipping_address = '';
+//        $billing_address = '';
+
+
+//        var_dump($current_user);
+//        var_dump($current_user_id);
 
         // API Calling
         $xl_settings_tab_alice_plugin_key = get_option( 'xl_settings_tab_alice_plugin_key' );
@@ -171,6 +266,14 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         $body = array(
             'alice_customer_id' => $alice_customer_id,
             'ecommerce_account_id' => $current_user_id,
+//            'ecommerce_type' => $ecommerce_type,
+//            'first_name' => $first_name,
+//            'last_name' => $last_name,
+//            'avatar' => $avatar,
+//            'email' => $email,
+//            'phone' => $phone,
+//            'shipping_address' => $shipping_address,
+//            'billing_address' => $billing_address,
         );
 
         $response = wp_remote_post( $xl_api_url, array(
@@ -181,14 +284,27 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
             )
         );
 
+        //var_dump($response);
+
         if ( is_wp_error( $response ) ) {
             $error_message = $response->get_error_message();
             echo "Something went wrong: $error_message";
         } else {
             $alice_admin_data = json_decode($response['body'], true);
+
+//            var_dump($alice_admin_data);
+//            var_dump($alice_admin_data['platform_id']);
+//            var_dump($alice_admin_data['primary_id']);
+//            var_dump($alice_admin_data['api_token']);
+
         }
+
+
     }
     add_action('wp_footer', 'xl_alice_send_user_data_to_alice');
+
+
+
 
 
 // Store Customer Product API
@@ -198,8 +314,13 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
             global $product;
 
+//            echo 4; die;
+
             //User Data
             $alice_customer_id = $_COOKIE["aliceCustomerId"];
+
+//            $current_user = wp_get_current_user();
+//            $current_user_id = $current_user->ID;
 
             // API Calling
             $xl_settings_tab_alice_plugin_key = get_option('xl_settings_tab_alice_plugin_key');
@@ -214,7 +335,11 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                     'product_images' => array(get_the_post_thumbnail_url()),
                     'unit_price' => $product->get_price(),
                 ),
+
+
             ));
+
+            //var_dump($body);
 
             $response = wp_remote_post($xl_api_url, array(
                     'method' => 'POST',
@@ -224,15 +349,29 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                 )
             );
 
+            //var_dump($response);
+
             if (is_wp_error($response)) {
                 $error_message = $response->get_error_message();
                 echo "Something went wrong: $error_message";
             } else {
                 $alice_admin_data = json_decode($response['body'], true);
+
+                //var_dump($alice_admin_data);
+
             }
+
+
         }
+
+
     }
     add_action('wp_footer', 'xl_store_customer_product_api');
+
+
+
+
+
 
 // Store Customer Cart API (Done)
     function xl_store_customer_cart_api() {
@@ -241,12 +380,17 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
         //User Data
         $alice_customer_id = $_COOKIE["aliceCustomerId"];
+//        $current_user = wp_get_current_user();
+//        $current_user_id = $current_user->ID;
+
 
         // initializing the array:
         $items = array();
 
-        foreach(WC()->cart->get_cart() as $cart_item) {
+        //var_dump(WC()->cart->get_cart());
 
+        foreach(WC()->cart->get_cart() as $cart_item) {
+//            $items_names[] = $cart_item['data']->product_id;
             $imgs = $cart_item['data']->downloads;
             $productImages = [];
 
@@ -265,15 +409,23 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                 'total_cost' => (($cart_item['quantity']) * ($cart_item['data']->price)),
             );
         }
+//        var_dump($cart_items);
+//        var_dump($items);
+
+//        die();
 
         // API Calling
         $xl_settings_tab_alice_plugin_key = get_option( 'xl_settings_tab_alice_plugin_key' );
         $xl_api_url = 'https://live-v3.getalice.ai/api/ecommerce/plugins/update-cart?api_token='.$xl_settings_tab_alice_plugin_key.'';
 
+
         $body = json_encode(array(
             'alice_customer_id' => $alice_customer_id,
             'cart_products' => $items,
+//            'cart_products' => WC()->cart->get_cart()
         ));
+
+        //var_dump($body);
 
         $response = wp_remote_post( $xl_api_url, array(
                 'method'      => 'POST',
@@ -283,14 +435,23 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
             )
         );
 
+//        var_dump($response);
+
         if ( is_wp_error( $response ) ) {
             $error_message = $response->get_error_message();
             echo "Something went wrong: $error_message";
         } else {
             $alice_admin_data = json_decode($response['body'], true);
+
+            //var_dump($alice_admin_data);
+
         }
+
+
     }
     add_action('wp_footer', 'xl_store_customer_cart_api');
+
+
 
 } else {
     echo '<div id="message" class="error woocommerce-message"><p>To active Alice Chatbot, Please install and active Woocommerce.</p></div>';

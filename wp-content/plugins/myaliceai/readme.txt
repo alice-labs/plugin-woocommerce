@@ -4,7 +4,7 @@ Contributors: shuvorahmanalice, limon213
 Tags: Customer Service, Chatbot, Live Chat, Conversational AI, Alice, MyAlice
 Requires at least: 5.0
 Tested up to: 5.7.1
-Stable tag: 1.1.2
+Stable tag: 1.2
 License: GPLv2 or later
 
 
@@ -70,15 +70,6 @@ Go to https://app.getalice.ai/register and complete the profile. After adding Wo
 
 = 1.0 =
 * Initial release
-
-= 1.1 =
-* WooCommerce connection added
-
-= 1.1.1 =
-* JS issue fix
-
-= 1.1.2 =
-* Update new js to fix home redirect
 
 
 == CONTACT ==
