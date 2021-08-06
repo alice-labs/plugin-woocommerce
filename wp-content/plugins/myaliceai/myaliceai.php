@@ -59,7 +59,210 @@ add_action( 'admin_head', function () { ?>
             padding: 5px 0 0 0;
             opacity: 1;
         }
+
+        #alice-feedback-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99999;
+        }
+
+        #alice-feedback-modal * {
+            box-sizing: border-box;
+        }
+
+        #alice-feedback-modal .alice-modal-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .7);
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        #alice-feedback-modal .alice-modal-body {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20%;
+            z-index: 2;
+            width: 500px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+            border-radius: 5px;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-header {
+            background: linear-gradient(45deg, #04B35F 50%, #FFD82F);
+            padding: 20px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-header .alice-modal-close {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #f5d631;
+            position: absolute;
+            right: -12px;
+            top: -12px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-header .alice-modal-close:hover {
+            transform: scale(1.3);
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-header .alice-modal-close svg {
+            width: 15px;
+            margin: 4px;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-header .alice-modal-close svg path {
+            stroke: red;
+            stroke-width: 2;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-header h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-content {
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-content .single-field {
+            padding: 5px 0;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-content .single-field label {
+            font-size: 16px;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-content .single-field label input[type="text"] {
+            width: 60%;
+            margin-left: 10px;
+            display: none;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-content .single-field label input[type="radio"]:checked ~ input[type="text"] {
+            display: inline-block;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-content .submission-button-field {
+            padding-top: 20px;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-content .submission-button-field button {
+            background: #04B35F;
+            border: 0;
+            padding: 0 15px;
+            border-radius: 5px;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            line-height: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-content .submission-button-field button:hover {
+            background: #028948;
+        }
+
+        #alice-feedback-modal .alice-modal-body .alice-modal-content .submission-button-field button svg {
+            margin-right: 5px;
+        }
     </style>
+	<?php
+} );
+
+// Admin Internal Script & Template
+add_action( 'admin_footer', function () { ?>
+    <div id="alice-feedback-modal" style="display: none;">
+        <div class="alice-modal-bg"></div>
+        <div class="alice-modal-body">
+            <div class="alice-modal-header">
+                <h3><?php esc_html_e( "We're sorry to see you go. If you have a moment, please let us know why you’re deactivating the plugin.", 'myaliceai' ); ?></h3>
+                <div class="alice-modal-close">
+                    <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5,1.5l-13,13m0-13,13,13" transform="translate(0 0)"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="alice-modal-content">
+                <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
+                    <div class="single-field">
+                        <label>
+                            <input type="radio" name="feedback" value=""> <?php esc_html_e( "I'm unable to get the plugin to work", 'myaliceai' ); ?>
+                        </label>
+                    </div>
+                    <div class="single-field">
+                        <label>
+                            <input type="radio" name="feedback" value=""> <?php esc_html_e( 'I no longer need the plugin', 'myaliceai' ); ?>
+                        </label>
+                    </div>
+                    <div class="single-field">
+                        <label>
+                            <input type="radio" name="feedback" value=""> <?php esc_html_e( 'I found a better solution', 'myaliceai' ); ?>
+                        </label>
+                    </div>
+                    <div class="single-field">
+                        <label>
+                            <input type="radio" name="feedback" value=""> <?php esc_html_e( 'The plugin is impacting website performance', 'myaliceai' ); ?>
+                        </label>
+                    </div>
+                    <div class="single-field">
+                        <label>
+                            <input type="radio" name="feedback" value=""> <?php esc_html_e( 'This is a temporary deactivation. I’ll be back!', 'myaliceai' ); ?>
+                        </label>
+                    </div>
+                    <div class="single-field">
+                        <label>
+                            <input type="radio" name="feedback" value=""> <?php esc_html_e( 'Other', 'myaliceai' ); ?> <input type="text" name="" value="">
+                        </label>
+                    </div>
+                    <div class="submission-button-field">
+                        <button type="submit">
+                            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.540335 0.384995L11.7433 6.72599C11.7912 6.75489 11.8307 6.79517 11.8582 6.84303C11.8856 6.89089 11.9 6.94474 11.9 6.99949C11.9 7.05425 11.8856 7.1081 11.8582 7.15595C11.8307 7.20381 11.7912 7.24409 11.7433 7.27299L0.540335 13.615C0.49504 13.6419 0.442987 13.6561 0.389904 13.6561C0.336822 13.6561 0.284769 13.6419 0.239474 13.615C0.192756 13.5856 0.154586 13.5451 0.12861 13.4973C0.102635 13.4495 0.0897211 13.396 0.0911039 13.342V0.657995C0.0905368 0.604554 0.103944 0.551846 0.130072 0.504802C0.156201 0.457757 0.194196 0.417913 0.240504 0.388995C0.285303 0.361721 0.336964 0.346923 0.389842 0.346218C0.44272 0.345512 0.494781 0.358927 0.540335 0.384995ZM1.30382 7.62499V11.758L9.70939 6.99999L1.30485 2.24299V6.37499H4.33922V7.62499H1.30382Z" fill="#ffffff"/>
+                            </svg>
+	                        <?php esc_html_e( 'Submit & Deactivate', 'myaliceai' ); ?></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function ($) {
+            var alice_feedback_modal = $('#alice-feedback-modal');
+
+            $(document).on('click', '#deactivate-myaliceai', function (e) {
+                e.preventDefault();
+                alice_feedback_modal.fadeIn();
+                $('.submission-button-field button').attr('href', deactivate_url);
+            }).on('click', '.alice-modal-close, .alice-modal-bg', function (e) {
+                e.preventDefault();
+                alice_feedback_modal.fadeOut();
+            }).on('submit', '#alice-feedback-modal form', function (e) {
+                e.preventDefault();
+                var deactivate_url = $('#deactivate-myaliceai').attr('href');
+                location.href = '<?php echo admin_url(); ?>' + deactivate_url;
+            });
+        })(jQuery);
+    </script>
 	<?php
 } );
 
