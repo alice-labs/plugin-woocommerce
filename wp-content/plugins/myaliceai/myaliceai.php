@@ -290,7 +290,6 @@ function myalice_dashboard_callback () { ?>
 // Left side links in plugin list page
 add_filter( "plugin_action_links_myaliceai/myaliceai.php", function ( $actions ) {
 	$actions['alice_settings'] = '<a href="admin.php?page=myalice_dashboard" aria-label="MyAlice Settings">' . esc_html__( 'Settings', 'myaliceai' ) . '</a>';
-	$actions['alice_upgrade'] = '<a href="#" aria-label="MyAlice Settings">' . esc_html__( 'Upgrade', 'myaliceai' ) . '</a>';
 
 	return $actions;
 }, 10 );
@@ -298,8 +297,8 @@ add_filter( "plugin_action_links_myaliceai/myaliceai.php", function ( $actions )
 // Right side links in plugin list page
 add_filter( "plugin_row_meta", function ( $links, $file ) {
 	if ( 'myaliceai/myaliceai.php' === $file ) {
-		$links['alice_docs']    = '<a href="#" aria-label="MyAlice Documents">' . esc_html__( 'Docs', 'myaliceai' ) . '</a>';
-		$links['alice_support'] = '<a href="#" aria-label="MyAlice Support">' . esc_html__( 'Support', 'myaliceai' ) . '</a>';
+		$links['alice_docs']    = '<a href="https://docs.myalice.ai" target="_blank" aria-label="MyAlice Documents">' . esc_html__( 'Docs', 'myaliceai' ) . '</a>';
+		$links['alice_support'] = '<a href="https://airtable.com/shrvMCwEUGQU7TvRR" target="_blank" aria-label="MyAlice Support">' . esc_html__( 'Support', 'myaliceai' ) . '</a>';
 	}
 
 	return $links;
