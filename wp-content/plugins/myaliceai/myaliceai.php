@@ -51,13 +51,22 @@ register_deactivation_hook( ALICE_BASE_PATH, function () {
 // Admin Internal Style
 add_action( 'admin_head', function () { ?>
     <style>
+        #adminmenu .toplevel_page_myalice_dashboard > .wp-menu-image > img {
+            padding: 5px 0 0 0;
+            opacity: 1;
+            filter: grayscale(1);
+        }
+
+        #adminmenu .toplevel_page_myalice_dashboard:hover > .wp-menu-image > img {
+            filter: grayscale(0);
+        }
+
         #adminmenu li.current a.menu-top.toplevel_page_myalice_dashboard {
             background: linear-gradient(to left, #2271b1 50%, transparent 90%);
         }
 
-        #adminmenu .toplevel_page_myalice_dashboard > .wp-menu-image > img {
-            padding: 5px 0 0 0;
-            opacity: 1;
+        #adminmenu li.current a.menu-top.toplevel_page_myalice_dashboard > .wp-menu-image > img {
+            filter: grayscale(0);
         }
 
         #alice-feedback-modal {
@@ -185,6 +194,10 @@ add_action( 'admin_head', function () { ?>
         #alice-feedback-modal .alice-modal-body .alice-modal-content .submission-button-field button svg {
             margin-right: 5px;
         }
+
+        .alice-dashboard-tab-content th.disabled {
+            opacity: .6;
+        }
     </style>
 	<?php
 } );
@@ -260,6 +273,32 @@ add_action( 'admin_footer', function () { ?>
                 e.preventDefault();
                 var deactivate_url = $('#deactivate-myaliceai').attr('href');
                 location.href = '<?php echo admin_url(); ?>' + deactivate_url;
+            }).on('submit', '.alice-api-connect-tab form', function (e) {
+                e.preventDefault();
+                var $form = $(this),
+                    url = $form.attr('action'),
+                    data = $form.serialize(),
+                    spinner = $form.find('.spinner');
+
+                spinner.addClass('is-active');
+                $.post(url, data, function (response) {
+                    spinner.removeClass('is-active');
+                    var notice_area = $('.myalice-notice-area'),
+                        platform_id = $('#alice-platform-id'),
+                        primary_id = $('#alice-primary-id');
+                    if (response.success) {
+                        notice_area.prepend(`<div class="updated"><p>${response.data.message}</p></div>`);
+                        platform_id.val(response.data.platform_id);
+                        primary_id.val(response.data.primary_id);
+                    } else {
+                        notice_area.prepend(`<div class="error"><p>${response.data.message}</p></div>`);
+                        platform_id.val('');
+                        primary_id.val('');
+                    }
+                    setTimeout(function () {
+                        notice_area.html('');
+                    }, 5000);
+                });
             });
         })(jQuery);
     </script>
@@ -279,10 +318,105 @@ add_action( 'admin_menu', function () {
 	);
 } );
 
+add_action( 'wp_ajax_alice_api_form', 'alice_api_form_process' );
+
+function alice_api_form_process() {
+	if ( check_ajax_referer( 'alice-api-form', 'alice-api-form' ) ) {
+		$api_key = empty( $_POST['alice_plugin_key'] ) ? '' : $_POST['alice_plugin_key'];
+		if ( empty( $api_key ) ) {
+			delete_option( 'myaliceai_api_data' );
+
+			wp_send_json_error( [ 'message' => 'Your API data was removed because of provided empty field.' ] );
+		}
+
+		$alice_api_url = 'https://live-v3.getalice.ai/api/ecommerce/plugins/connect-ecommerce-plugin?api_token=' . $api_key;
+		$response      = wp_remote_post( $alice_api_url, array(
+				'method'  => 'POST',
+				'timeout' => 45,
+				'cookies' => array()
+			)
+		);
+
+		if ( is_wp_error( $response ) ) {
+			$error_message = $response->get_error_message();
+
+			wp_send_json_error( [ 'message' => "Something went wrong: {$error_message}" ] );
+		} else {
+			$alice_api_data = json_decode( $response['body'], true );
+
+			if ( $alice_api_data['success'] === true ) {
+				update_option( 'myaliceai_api_data', [
+					'api_token'   => $alice_api_data['api_token'],
+					'platform_id' => $alice_api_data['platform_id'],
+					'primary_id'  => $alice_api_data['primary_id']
+				] );
+
+				wp_send_json_success( [
+					'message'     => __( 'Your API token is valid and successfully updated.', 'myaliceai' ),
+					'platform_id' => $alice_api_data['platform_id'],
+					'primary_id'  => $alice_api_data['primary_id']
+				] );
+			} else {
+				wp_send_json_error( [ 'message' => $alice_api_data['error'] ] );
+			}
+
+		}
+	}
+}
+
 // Alice Dashboard Menu Callback
 function myalice_dashboard_callback () { ?>
     <div class="wrap alice-dashboard-wrap">
-
+        <div id="alice-dashboard">
+            <div class="alice-dashboard-tab-nav">
+                <nav class="nav-tab-wrapper alice-nav-tab-wrapper">
+                    <a href="#" class="nav-tab"><?php esc_html_e( 'User Guide', 'myaliceai' ); ?></a>
+                    <a href="<?php echo admin_url( 'admin.php?page=myalice_dashboard' ); ?>" class="nav-tab nav-tab-active"><?php esc_html_e( 'API Connect', 'myaliceai' ); ?></a>
+                </nav>
+            </div>
+            <div class="alice-dashboard-tab-content alice-api-connect-tab">
+                <div class="myalice-notice-area"></div>
+                <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
+	                <?php
+	                wp_nonce_field( 'alice-api-form', 'alice-api-form' );
+	                $api_data = get_option( 'myaliceai_api_data' );
+	                $api_data = wp_parse_args( $api_data, [
+		                'api_token'   => '',
+		                'platform_id' => '',
+		                'primary_id'  => ''
+	                ] );
+	                ?>
+                    <input type="hidden" name="action" value="alice_api_form">
+                    <table class="form-table">
+                        <tbody>
+                        <tr>
+                            <th><label for="alice-plugin-key"><?php esc_html_e( 'Plugin Key', 'myaliceai' ); ?></label></th>
+                            <td>
+                                <input name="alice_plugin_key" type="text" id="alice-plugin-key" value="<?php echo esc_attr( $api_data['api_token'] ); ?>" class="regular-text">
+                                <p class="description"><?php esc_html_e( 'Please enter the plugin key to verify the plugin and your website.', 'myaliceai' ); ?></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="disabled"><label><?php esc_html_e( 'Plugin Platform ID', 'myaliceai' ); ?></label></th>
+                            <td>
+                                <input type="text" value="<?php echo esc_attr( $api_data['platform_id'] ); ?>" id="alice-platform-id" class="regular-text" disabled>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="disabled"><label><?php esc_html_e( 'Plugin Primary ID', 'myaliceai' ); ?></label></th>
+                            <td>
+                                <input type="text" value="<?php echo esc_attr( $api_data['primary_id'] ); ?>" id="alice-primary-id" class="regular-text" disabled>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p class="submit" style="display: inline-block;">
+                        <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php esc_html_e( 'Save Changes', 'myaliceai' ); ?>">
+                        <span class="spinner"></span>
+                    </p>
+                </form>
+            </div>
+        </div>
     </div>
 <?php
 }
@@ -452,7 +586,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 
     }
-    add_action( 'update_option', 'xl_hook_into_options_page_after_save', 10, 2 );
+    //add_action( 'update_option', 'xl_hook_into_options_page_after_save', 10, 2 );
 
 
 
