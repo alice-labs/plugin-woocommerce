@@ -308,8 +308,8 @@ add_action( 'admin_footer', function () { ?>
 // Add Alice Dashboard Menu
 add_action( 'admin_menu', function () {
 	add_menu_page(
-		'Alice',
-		'Alice Dashboard',
+		__('MyAlice Dashboard', 'myaliceai'),
+		__('MyAlice', 'myaliceai'),
 		'edit_plugins',
 		'myalice_dashboard',
 		'myalice_dashboard_callback',
