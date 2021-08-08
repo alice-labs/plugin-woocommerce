@@ -1,9 +1,9 @@
 ﻿=== MyAlice ===
 
-Contributors: shuvorahmanalice, limon213
+Contributors: shuvorahmanalice, limon213, rudlinkon
 Tags: Customer Service, Chatbot, Live Chat, Conversational AI, Alice, MyAlice
 Requires at least: 5.0
-Tested up to: 5.7.1
+Tested up to: 5.8
 Stable tag: 1.2
 License: GPLv2 or later
 
@@ -54,7 +54,7 @@ Install MyAlice as a regular WordPress plugin. Here is different ways to install
 = Where do I get the auth key? =
 
 
-Go to https://app.getalice.ai/register and complete the profile. After adding WooCommerce chanel, you will get the key.
+Go to https://app.getalice.ai/register and complete the profile. After adding WooCommerce channel, you will get the key.
 
 
 
@@ -67,6 +67,27 @@ Go to https://app.getalice.ai/register and complete the profile. After adding Wo
 
 == Changelog ==
 
+
+
+= 1.2 =
+* Added Branded Panel in Dashboard
+* Added Goodbye Feedback Form
+* Auto redirect to our panel after activate the plugin
+* Improved API connect functionality
+* Improved API calling functionality
+* Reduce unnecessary API calling
+* Proper Data Collection
+* Fix product image missing on cart data
+* Fix product url on view products and cart
+
+= 1.1.2 =
+* Update new js to fix home redirect
+
+= 1.1.1 =
+* JS issue fix
+
+= 1.1 =
+* WooCommerce connection added
 
 = 1.0 =
 * Initial release
