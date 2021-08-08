@@ -69,7 +69,6 @@ function alice_customer_link_handler() {
 	);
 }
 
-
 // Store Customer Product API
 function alice_user_product_view_handler() {
 	global $product;
@@ -138,5 +137,6 @@ function alice_user_cart_api_handler( $updated ) {
 		)
 	);
 
+	//we use this callback for a filter (woocommerce_update_cart_action_cart_updated) so we have to return
 	return $updated;
 }

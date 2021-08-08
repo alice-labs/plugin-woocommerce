@@ -65,7 +65,9 @@ if ( ! defined( 'MYALICE_API_OK' ) ) {
 	}
 }
 
+//Include required files
 require ALICE_INC_PATH . '/myalice-activation-deactivation-register.php';
+
 add_action( 'init', function () {
 	if ( ! defined( 'ALICE_WC_OK' ) ) {
 		if ( class_exists( 'WooCommerce' ) ) {
@@ -75,6 +77,7 @@ add_action( 'init', function () {
 		}
 	}
 
+	//Include required files
 	require ALICE_INC_PATH . '/myalice-dashboard-inline-styles.php';
 	require ALICE_INC_PATH . '/myaliceai-dashboard.php';
 	require ALICE_INC_PATH . '/myalice-dashboard-templates-and-scripts.php';
