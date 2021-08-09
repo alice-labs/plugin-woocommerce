@@ -86,7 +86,7 @@ function alice_user_product_view_handler() {
 			'product_name'   => $product->get_name(),
 			'product_link'   => get_permalink( $product->get_id() ),
 			'product_images' => array( get_the_post_thumbnail_url() ),
-			'unit_price'     => $product->get_price(),
+			'unit_price'     => floatval( $product->get_price() ),
 		),
 	) );
 
