@@ -68,7 +68,7 @@ if ( ! defined( 'MYALICE_API_OK' ) ) {
 //Include required files
 require ALICE_INC_PATH . '/myalice-activation-deactivation-register.php';
 
-add_action( 'init', function () {
+add_action( 'plugins_loaded', function () {
 	if ( ! defined( 'ALICE_WC_OK' ) ) {
 		if ( class_exists( 'WooCommerce' ) ) {
 			define( 'ALICE_WC_OK', true );
