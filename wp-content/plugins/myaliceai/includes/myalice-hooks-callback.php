@@ -115,9 +115,10 @@ function alice_user_cart_api_handler( $updated ) {
 			'product_name'   => $cart_item['data']->name,
 			'product_link'   => get_permalink( $cart_item['product_id'] ),
 			'product_images' => [ $productImage ],
-			'quantity'       => $cart_item['quantity'],
-			'unit_price'     => $cart_item['data']->price,
-			'total_cost'     => ( ( $cart_item['quantity'] ) * ( $cart_item['data']->price ) ),
+			'quantity'       => absint( $cart_item['quantity'] ),
+			'unit_price'     => floatval( $cart_item['data']->price ),
+			'total_cost'     => floatval( ( $cart_item['quantity'] ) * ( $cart_item['data']->price ) ),
+			'timestamp'      => current_time( 'U' ),
 		);
 	}
 
