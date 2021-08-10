@@ -2,11 +2,23 @@
 // Direct file access is disallowed
 defined( 'ABSPATH' ) || die;
 
+// WooCommerce's installation notice
 if ( ! ALICE_WC_OK ) {
 	add_action( 'admin_notices', function () {
 		_e( '<div class="notice notice-error"><p><strong>WooCommerce</strong> is not installed/activated on your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> first to use MyAlice Chatbot.</p></div>', 'myaliceai' );
 	} );
 }
+
+// WordPress review notice
+if ( $notice_time = get_option( 'myaliceai_review_notice_time' ) ) {
+	$current_time = current_time( 'U' );
+	if ( $notice_time < $current_time ) {
+		add_action( 'admin_notices', 'alice_review_admin_notice' );
+	}
+}
+
+// Review notice dismiss action
+add_action( 'wp_ajax_myalice_notice_dismiss', 'myalice_review_notice_dismiss' );
 
 // Left side links in plugin list page
 add_filter( "plugin_action_links_myaliceai/myaliceai.php", function ( $actions ) {

@@ -109,6 +109,15 @@ add_action( 'admin_footer', function () { ?>
                         notice_area.html('');
                     }, 5000);
                 });
+            }).on('click', '.myalice-notice-dismiss', function(e) {
+                e.preventDefault();
+                var notice_wrap = $(this).closest('.notice.notice-info');
+
+                $.post(ajaxurl, {action: 'myalice_notice_dismiss'}, function (response) {
+                    if (response.success) {
+                        notice_wrap.remove();
+                    }
+                });
             });
         })(jQuery);
     </script>

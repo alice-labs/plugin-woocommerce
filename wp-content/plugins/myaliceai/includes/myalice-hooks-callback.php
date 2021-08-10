@@ -141,3 +141,22 @@ function alice_user_cart_api_handler( $updated ) {
 	//we use this callback for a filter (woocommerce_update_cart_action_cart_updated) so we have to return
 	return $updated;
 }
+
+function alice_review_admin_notice () { ?>
+    <div class="notice notice-info">
+        <p><?php esc_html_e("We hope you're enjoying MyAlice! Could you please do us a BIG favor and give it a 5-star rating on WordPress to help us spread the word and boost our motivation?", 'myaliceai'); ?></p>
+        <p>
+            <a href="https://wordpress.org/support/plugin/myaliceai/reviews/?filter=5#new-post" target="_blank"><?php esc_html_e( 'Ok, you deserve it', 'myaliceai' ); ?></a>
+            <br>
+            <a href="#" class="myalice-notice-dismiss"><?php esc_html_e( 'Nope, maybe later', 'myaliceai' ); ?></a>
+            <br>
+            <a href="#" class="myalice-notice-dismiss"><?php esc_html_e( 'I already did', 'myaliceai' ); ?></a>
+        </p>
+    </div>
+	<?php
+}
+
+function myalice_review_notice_dismiss() {
+	update_option( 'myaliceai_review_notice_time', current_time( 'U' ) + YEAR_IN_SECONDS * 100 );
+	wp_send_json_success();
+}
