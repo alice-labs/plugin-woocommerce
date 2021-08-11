@@ -41,11 +41,11 @@ add_filter( "plugin_row_meta", function ( $links, $file ) {
 add_action( 'wp_ajax_alice_api_form', 'alice_api_form_process' );
 
 if ( ALICE_WC_OK ) {
-	if ( is_user_logged_in() ) {
-		add_action( 'wp_footer', 'alice_customer_link_handler' );
-	}
-
 	add_action( 'wp_footer', function () {
+		if ( is_user_logged_in() ) {
+			alice_customer_link_handler();
+		}
+
 		if ( is_product() ) {
 			alice_user_product_view_handler();
 		}
