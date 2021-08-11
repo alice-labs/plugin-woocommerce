@@ -17,7 +17,7 @@ register_activation_hook( ALICE_BASE_PATH, function () {
 	update_option( 'myaliceai_plugin_status', 'active', false );
 
 	if ( ! get_option( 'myaliceai_review_notice_time' ) ) {
-		update_option( 'myaliceai_review_notice_time', current_time( 'U' ) + MINUTE_IN_SECONDS * 5 );
+		update_option( 'myaliceai_review_notice_time', current_time( 'U' ) + WEEK_IN_SECONDS );
 	}
 
 	do_action( 'myalice_plugin_activate' );
