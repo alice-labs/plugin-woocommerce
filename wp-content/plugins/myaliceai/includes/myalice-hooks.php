@@ -44,7 +44,13 @@ if ( ALICE_WC_OK ) {
 	if ( is_user_logged_in() ) {
 		add_action( 'wp_footer', 'alice_customer_link_handler' );
 	}
-	add_action( 'woocommerce_single_product_summary', 'alice_user_product_view_handler' );
+
+	add_action( 'wp_footer', function () {
+		if ( is_product() ) {
+			alice_user_product_view_handler();
+		}
+	} );
+
 	add_action( 'woocommerce_add_to_cart', 'alice_user_cart_api_handler' );
 	add_action( 'woocommerce_cart_item_removed', 'alice_user_cart_api_handler' );
 	add_action( 'woocommerce_cart_item_restored', 'alice_user_cart_api_handler' );
