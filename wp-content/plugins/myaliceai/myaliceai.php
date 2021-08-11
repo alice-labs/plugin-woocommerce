@@ -57,6 +57,10 @@ if ( ! defined( 'MYALICE_PRIMARY_ID' ) ) {
 	define( 'MYALICE_PRIMARY_ID', $api_data['primary_id'] );
 }
 
+if ( ! defined( 'MYALICE_API_URL' ) ) {
+	define( 'MYALICE_API_URL', 'https://live-v3.getalice.ai/api/ecommerce/plugins/' );
+}
+
 if ( ! defined( 'MYALICE_API_OK' ) ) {
 	if ( ! empty( MYALICE_API_TOKEN ) && ! empty( MYALICE_PLATFORM_ID ) && ! empty( MYALICE_PRIMARY_ID ) ) {
 		define( 'MYALICE_API_OK', true );

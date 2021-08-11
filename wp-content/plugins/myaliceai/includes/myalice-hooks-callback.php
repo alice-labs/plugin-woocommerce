@@ -12,7 +12,7 @@ function alice_api_form_process() {
 			wp_send_json_error( [ 'message' => 'Your API data was removed because of provided empty field.' ] );
 		}
 
-		$alice_api_url = 'https://live-v3.getalice.ai/api/ecommerce/plugins/connect-ecommerce-plugin?api_token=' . $api_key;
+		$alice_api_url = MYALICE_API_URL . 'connect-ecommerce-plugin?api_token=' . MYALICE_API_TOKEN;
 		$response      = wp_remote_post( $alice_api_url, array(
 				'method'  => 'POST',
 				'timeout' => 45,
@@ -53,7 +53,7 @@ function alice_customer_link_handler() {
 	$current_user_id   = get_current_user_id();
 
 	// API Calling
-	$alice_api_url = 'https://live-v3.getalice.ai/api/ecommerce/plugins/link-customer?api_token=' . MYALICE_API_TOKEN;
+	$alice_api_url = MYALICE_API_URL . 'link-customer?api_token=' . MYALICE_API_TOKEN;
 
 	$body = array(
 		'alice_customer_id'    => (int) $alice_customer_id,
@@ -77,7 +77,7 @@ function alice_user_product_view_handler() {
 	$alice_customer_id = $_COOKIE["aliceCustomerId"];
 
 	// API URL
-	$alice_api_url = 'https://live-v3.getalice.ai/api/ecommerce/plugins/store-product-view?api_token=' . MYALICE_API_TOKEN;
+	$alice_api_url = MYALICE_API_URL . 'store-product-view?api_token=' . MYALICE_API_TOKEN;
 
 	$body = wp_json_encode( array(
 		'alice_customer_id' => $alice_customer_id,
@@ -123,7 +123,7 @@ function alice_user_cart_api_handler( $updated ) {
 	}
 
 	// API URL
-	$alice_api_url = 'https://live-v3.getalice.ai/api/ecommerce/plugins/update-cart?api_token=' . MYALICE_API_TOKEN;
+	$alice_api_url = MYALICE_API_URL . 'update-cart?api_token=' . MYALICE_API_TOKEN;
 	$body       = wp_json_encode( array(
 		'alice_customer_id' => $alice_customer_id,
 		'cart_products'     => $items,
