@@ -6,13 +6,14 @@ defined( 'ABSPATH' ) || die;
 function alice_api_form_process() {
 	if ( check_ajax_referer( 'alice-api-form', 'alice-api-form' ) ) {
 		$api_key = empty( $_POST['alice_plugin_key'] ) ? '' : $_POST['alice_plugin_key'];
+
 		if ( empty( $api_key ) ) {
 			delete_option( 'myaliceai_api_data' );
 
 			wp_send_json_error( [ 'message' => 'Your API data was removed because of provided empty field.' ] );
 		}
 
-		$alice_api_url = MYALICE_API_URL . 'connect-ecommerce-plugin?api_token=' . MYALICE_API_TOKEN;
+		$alice_api_url = MYALICE_API_URL . 'connect-ecommerce-plugin?api_token=' . $api_key;
 		$response      = wp_remote_post( $alice_api_url, array(
 				'method'  => 'POST',
 				'timeout' => 45,
