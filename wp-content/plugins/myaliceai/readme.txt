@@ -79,6 +79,9 @@ Go to https://app.getalice.ai/register and complete the profile. After adding Wo
 * Proper Data Collection
 * Fix product image missing on cart data
 * Fix product url on view products and cart
+* Delete MyAlice all data from database once you remove the plugin
+* Your website will be disconnect once you remove the plugin
+* Fix minor bugs
 
 = 1.1.2 =
 * Update new js to fix home redirect
