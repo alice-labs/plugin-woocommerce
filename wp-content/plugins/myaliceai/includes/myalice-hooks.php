@@ -40,6 +40,9 @@ add_filter( "plugin_row_meta", function ( $links, $file ) {
 //Alice API form ajax handler
 add_action( 'wp_ajax_alice_api_form', 'alice_api_form_process' );
 
+//Alice's deactivation feedback form handler
+add_action( 'wp_ajax_alice_deactivation_feedback', 'alice_feedback_form_process' );
+
 if ( ALICE_WC_OK ) {
 	add_action( 'wp_footer', function () {
 		if ( is_user_logged_in() ) {

@@ -47,6 +47,30 @@ function alice_api_form_process() {
 	}
 }
 
+//Alice's deactivation feedback form ajax callback
+function alice_feedback_form_process() {
+	if ( check_ajax_referer( 'alice_deactivation_feedback', 'alice_deactivation_feedback' ) ) {
+		$feedback = empty( $_POST['feedback'] ) ? '' : $_POST['feedback'];
+
+		if ( $feedback === 'Other' ) {
+			$feedback = empty( $_POST['feedback_other'] ) ? $feedback : $_POST['feedback_other'];
+		}
+
+		if ( ! empty( $feedback ) ) {
+			$alice_api_url = MYALICE_API_URL . 'deactivate-ecommerce-plugin?api_token=' . MYALICE_API_TOKEN;
+			wp_remote_post( $alice_api_url, array(
+					'method'   => 'POST',
+					'timeout'  => 45,
+					'feedback' => $feedback,
+					'cookies'  => array()
+				)
+			);
+		}
+
+		wp_send_json_success();
+	}
+}
+
 // Link Logged In Customer API to the alice customer ID
 function alice_customer_link_handler() {
 	$alice_customer_id = $_COOKIE["aliceCustomerId"];
