@@ -60,10 +60,12 @@ function alice_feedback_form_process() {
 		if ( ! empty( $feedback ) ) {
 			$alice_api_url = MYALICE_API_URL . 'deactivate-ecommerce-plugin?api_token=' . MYALICE_API_TOKEN;
 			wp_remote_post( $alice_api_url, array(
-					'method'   => 'POST',
-					'timeout'  => 45,
-					'feedback' => $feedback,
-					'cookies'  => array()
+					'method'  => 'POST',
+					'timeout' => 45,
+					'body'    => [
+						'feedback' => $feedback,
+					],
+					'cookies' => array()
 				)
 			);
 		}
