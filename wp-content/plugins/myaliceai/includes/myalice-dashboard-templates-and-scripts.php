@@ -101,19 +101,22 @@ add_action( 'admin_footer', function () { ?>
 
                     var notice_area = $('.myalice-notice-area'),
                         input_group = $('.alice-input-group'),
-                        input_field = $('#alice-plugin-key');
+                        input_field = $('#alice-plugin-key'),
+                        alice_dashboard = $('#alice-dashboard');
 
                     if (response.success) {
                         notice_area.prepend(`<div class="updated"><p>${response.data.message}</p></div>`);
                         input_group.removeClass('alice-active-editing');
                         input_field.attr('readonly', 'readonly');
+                        alice_dashboard.addClass('myalice-api-activated');
                     } else {
                         notice_area.prepend(`<div class="error"><p>${response.data.message}</p></div>`);
+                        alice_dashboard.removeClass('myalice-api-activated');
                     }
 
                     setTimeout(function () {
                         notice_area.html('');
-                    }, 5000);
+                    }, 3000);
                 });
             }).on('click', '.myalice-notice-dismiss', function(e) {
                 e.preventDefault();

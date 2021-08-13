@@ -18,7 +18,7 @@ add_action( 'admin_menu', function () {
 // Alice Dashboard Menu Callback
 function myalice_dashboard_callback () { ?>
 	<div class="wrap alice-dashboard-wrap">
-		<div id="alice-dashboard">
+		<div id="alice-dashboard" class="<?php echo MYALICE_API_OK ? 'myalice-api-activated' : ''; ?>">
 
             <section class="alice-dashboard-header">
                 <div class="alice-container">

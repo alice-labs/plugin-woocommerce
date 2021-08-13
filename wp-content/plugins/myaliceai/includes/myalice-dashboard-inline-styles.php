@@ -346,6 +346,11 @@ add_action( 'admin_head', function () { ?>
         #alice-dashboard .alice-plugin-key .alice-active-editing .alice-cancel-btn {
             display: inline-block;
         }
+
+        #alice-dashboard.myalice-api-activated .alice-registration-guide,
+        #alice-dashboard.myalice-api-activated .alice-marketplace-connect-section {
+            display: none;
+        }
     </style>
 	<?php
 } );
