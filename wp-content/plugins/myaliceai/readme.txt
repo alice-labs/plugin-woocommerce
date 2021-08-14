@@ -22,7 +22,7 @@ ALL YOUR CONVERSATIONS CENTRALIZED ON MYALICE
 
 **Facebook Feed:** Respond to comments automatically in your Facebook Feed with this WordPress plugin for Facebook Feed. Hide or remove spam or necessary comments from your Feed posts using MyAlice.
 
-**Messenger:** Connect your WordPress site to Facebook Messenger and respond within your MyAlice inbox. Build the WordPress chatbot yourself to initiate various responses as per your customer queries.
+**Messenger:** Connect your WordPress site to Facebook Messenger and respond within your MyAlice inbox. Build the WordPress chatbot yourself to initiate various responses as per your customer queries.
 
 **Whatsapp:** Integrate WhatsApp to your WordPress website with 1 click to automatically respond and manage WhatsApp chats from your MyAlice inbox.
 
@@ -104,25 +104,25 @@ Test all the Pro features available in the startup plan by default, including a 
 == Installation ==
 
 
-Install MyAlice as a regular WordPress plugin. Here is different ways to install Alice Chatbot plugin :
+Install MyAlice as a regular WordPress plugin. Here are 2 different ways to install MyAlice plugin :
 
-= Install by Search Plugin =
-- In your Admin, go to menu Plugins > Add New
-- Search MyAlice
-- Click to install
-- Activate the plugin
-- For the settings page go to WooCommerce > Settings > Alice Chatbot
-- Insert the plugin auth key from Alice website
+### **INSTALL BY SEARCHING PLUGIN**
 
-= Install by Upload Plugin =
-- Download the latest version of MyAlice (.zip file)
-- In your Admin, go to menu Plugins > Add New
-- Select  "Upload Plugin"
-- Click on “Choose File”
-- Select downloaded alice.zip & click on ‘Install Now’ button
-- Activate the plugin
-- For the settings page go to WooCommerce > Settings > Alice Chatbot
-- Insert the plugin auth key from Alice website
+- In your Admin, go to menu Plugins > Add New.
+- Search with MyAlice.
+- Click to install.
+- Activate the plugin.
+- You will see a MyAlice tab in your right side navigation bar in Wordpress. The next steps are described there.
+
+### **INSTALL BY UPLOADING PLUGIN**
+
+- Download the latest version of MyAlice Plugin (.zip file).
+- In your Admin, go to menu > Plugins > Add New.
+- Select “Upload Plugin”.
+- Click on “Choose File”.
+- Select downloaded myalice.zip & click on "Install Now" button.
+- Activate the plugin.
+- You will see a MyAlice tab in your left side navigation bar in Wordpress. The next steps are described there.
 
 
 == Frequently Asked Questions ==
@@ -198,26 +198,36 @@ For a detailed guideline on how to use MyAlice, refer to our [user documentation
 == Screenshots ==
 
 
-1. Alice Chatbot Setting page
-2. Chat Window
+1. One inbox to manage conversation and orders
+2. Get all channels connected in a window
+3. Widget in all the platforms
+4. How your customers are interacting
+5. How your chatbots are performing
+6. How your agents are performing
+7. How your customers are rating
+8. Drag and drop chatbot builder
+9. Create order directly form inbox
+10. See customer interactions with the products
+11. See customer summary while talking
+12. Check and update orders directly
+13. See order details
+14. Marketplace to connect your e-commerce
 
 
 == Changelog ==
 
 
 = 1.2.0 =
-* Added Branded Panel in Dashboard
-* Added Goodbye Feedback Form
-* Auto redirect to our panel after activate the plugin
-* Improved API connect functionality
-* Improved API calling functionality
-* Reduce unnecessary API calling
-* Proper Data Collection
-* Fix product image missing on cart data
-* Fix product url on view products and cart
-* Delete MyAlice all data from database once you remove the plugin
-* Your website will be disconnect once you remove the plugin
-* Fix minor bugs
+* Added MyAlice Branded Panel in Wordpress Dashboard.
+* Auto redirection added after activating the plugin.
+* Improved and optimised API connections.
+* Improved and optimised API calling.
+* Improved data collection to understand customer behaviour better.
+* Fix Product image missing on Cart data.
+* Fix Product url on View products and Cart.
+* Remove MyAlice cached data from database once you remove the plugin.
+* Added Goodbye Feedback Form.
+* Fix minor bugs.
 
 = 1.1.2 =
 * Update new js to fix home redirect
