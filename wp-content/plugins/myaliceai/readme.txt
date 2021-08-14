@@ -199,19 +199,13 @@ For a detailed guideline on how to use MyAlice, refer to our [user documentation
 
 
 1. One inbox to manage conversation and orders
-2. Get all channels connected in a window
-3. Widget in all the platforms
-4. How your customers are interacting
-5. How your chatbots are performing
-6. How your agents are performing
-7. How your customers are rating
-8. Drag and drop chatbot builder
-9. Create order directly form inbox
-10. See customer interactions with the products
-11. See customer summary while talking
-12. Check and update orders directly
-13. See order details
-14. Marketplace to connect your e-commerce
+2. Widget in all the platforms
+3. How your customers are interacting
+4. Check and update orders details directly
+5. Create order directly form inbox
+6. See customer summary and interactions with the products
+7. How your agents are performing
+8. How your customers are rating
 
 
 == Changelog ==
