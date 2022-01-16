@@ -43,12 +43,14 @@ add_action( 'wp_ajax_alice_api_form', 'alice_api_form_process' );
 //Alice's deactivation feedback form handler
 add_action( 'wp_ajax_alice_deactivation_feedback', 'alice_feedback_form_process' );
 
-if ( ALICE_WC_OK ) {
-	add_action( 'wp_footer', function () {
+if ( ALICE_WC_OK && MYALICE_API_OK ) {
+	add_action( 'init', function () {
 		if ( is_user_logged_in() ) {
 			alice_customer_link_handler();
 		}
+	} );
 
+	add_action( 'wp_footer', function () {
 		if ( is_product() ) {
 			alice_user_product_view_handler();
 		}

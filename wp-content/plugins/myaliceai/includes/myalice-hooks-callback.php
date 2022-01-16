@@ -76,8 +76,13 @@ function alice_feedback_form_process() {
 
 // Link Logged In Customer API to the alice customer ID
 function alice_customer_link_handler() {
-	$alice_customer_id = $_COOKIE["aliceCustomerId"];
-	$current_user_id   = get_current_user_id();
+	$alice_customer_id   = $_COOKIE["aliceCustomerId"];
+	$current_user_id     = get_current_user_id();
+	$customer_api_cookie = "C{$alice_customer_id}U{$current_user_id}";
+
+	if ( isset( $_COOKIE[ $customer_api_cookie ] ) && $_COOKIE[ $customer_api_cookie ] == 1 ) {
+		return;
+	}
 
 	// API Calling
 	$alice_api_url = MYALICE_API_URL . 'link-customer?api_token=' . MYALICE_API_TOKEN;
@@ -87,13 +92,17 @@ function alice_customer_link_handler() {
 		'ecommerce_account_id' => (string) $current_user_id,
 	);
 
-	wp_remote_post( $alice_api_url, array(
+	$response = wp_remote_post( $alice_api_url, array(
 			'method'  => 'POST',
 			'timeout' => 45,
 			'body'    => $body,
 			'cookies' => array()
 		)
 	);
+
+	if ( $response['response']['code'] == 200 ) {
+		setcookie( $customer_api_cookie, true, time() + HOUR_IN_SECONDS, '/' );
+	}
 }
 
 // Store Customer Product API
