@@ -100,7 +100,7 @@ function alice_customer_link_handler() {
 		)
 	);
 
-	if ( $response['response']['code'] == 200 ) {
+	if ( ! is_wp_error( $response ) && isset( $response['response']['code'] ) && $response['response']['code'] == 200 ) {
 		setcookie( $customer_api_cookie, true, time() + HOUR_IN_SECONDS, '/' );
 	}
 }
