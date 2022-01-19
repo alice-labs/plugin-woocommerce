@@ -3,7 +3,7 @@
  * Plugin Name:       MyAlice
  * Plugin URI:        https://app.getalice.ai/
  * Description:       Alice is a Multi-Channel customer service platform for your e-commerce store or online business that centralises all customer interactions and helps to manage and automate customer support.
- * Version:           1.2.2
+ * Version:           1.2.3
  * WC tested up to:   6.1
  * Author:            Alice Labs
  * Author URI:        https://myalice.ai/
