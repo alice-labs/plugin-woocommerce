@@ -76,6 +76,10 @@ function alice_feedback_form_process() {
 
 // Link Logged In Customer API to the alice customer ID
 function alice_customer_link_handler() {
+	if ( empty( $_COOKIE["aliceCustomerId"] ) ) {
+		return;
+	}
+
 	$alice_customer_id   = $_COOKIE["aliceCustomerId"];
 	$current_user_id     = get_current_user_id();
 	$customer_api_cookie = "C{$alice_customer_id}U{$current_user_id}";
@@ -109,6 +113,10 @@ function alice_customer_link_handler() {
 function alice_user_product_view_handler() {
 	global $product;
 
+	if ( empty( $_COOKIE["aliceCustomerId"] ) ) {
+		return;
+	}
+
 	//User Data
 	$alice_customer_id = $_COOKIE["aliceCustomerId"];
 
@@ -138,6 +146,10 @@ function alice_user_product_view_handler() {
 
 // Store Customer Cart API (Done)
 function alice_user_cart_api_handler( $updated ) {
+	if ( empty( $_COOKIE["aliceCustomerId"] ) ) {
+		return;
+	}
+
 	//User Data
 	$alice_customer_id = $_COOKIE["aliceCustomerId"];
 
@@ -160,7 +172,7 @@ function alice_user_cart_api_handler( $updated ) {
 
 	// API URL
 	$alice_api_url = MYALICE_API_URL . 'update-cart?api_token=' . MYALICE_API_TOKEN;
-	$body       = wp_json_encode( array(
+	$body          = wp_json_encode( array(
 		'alice_customer_id' => $alice_customer_id,
 		'cart_products'     => $items,
 	) );
@@ -178,9 +190,9 @@ function alice_user_cart_api_handler( $updated ) {
 	return $updated;
 }
 
-function alice_review_admin_notice () { ?>
+function alice_review_admin_notice() { ?>
     <div class="notice notice-info">
-        <p><?php esc_html_e("We hope you're enjoying MyAlice! Could you please do us a BIG favor and give it a 5-star rating on WordPress to help us spread the word and boost our motivation?", 'myaliceai'); ?></p>
+        <p><?php esc_html_e( "We hope you're enjoying MyAlice! Could you please do us a BIG favor and give it a 5-star rating on WordPress to help us spread the word and boost our motivation?", 'myaliceai' ); ?></p>
         <p>
             <a href="https://wordpress.org/support/plugin/myaliceai/reviews/?filter=5#new-post" target="_blank"><?php esc_html_e( 'Ok, you deserve it', 'myaliceai' ); ?></a>
             <br>
