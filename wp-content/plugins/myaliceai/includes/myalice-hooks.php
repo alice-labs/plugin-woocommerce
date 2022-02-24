@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || die;
 // WooCommerce's installation notice
 if ( ! ALICE_WC_OK ) {
 	add_action( 'admin_notices', function () {
-		_e( '<div class="notice notice-error"><p><strong>WooCommerce</strong> is not installed/activated on your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> first to use MyAlice Chatbot.</p></div>', 'myaliceai' );
+		_e( '<div class="notice notice-error"><p><strong>WooCommerce</strong> is not installed/activated in your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> to use MyAlice Plugin. If you want to use MyAlice without WooCommerce, <a href="https://docs.myalice.ai/connect-social-channels/connect-web-app/connect-live-chat" target="_blank">follow this</a>.</p></div>', 'myaliceai' );
 	} );
 }
 
