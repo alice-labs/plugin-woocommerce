@@ -275,7 +275,8 @@ add_action( 'admin_head', function () { ?>
         }
 
         #alice-dashboard .alice-marketplace-connect-section > .alice-container,
-        #alice-dashboard .alice-plugin-key-section > .alice-container {
+        #alice-dashboard .alice-plugin-key-section > .alice-container,
+        #alice-dashboard .alice-settings-section > .alice-container {
             background: #fff;
             border-radius: 8px;
             padding: 24px;
@@ -287,7 +288,8 @@ add_action( 'admin_head', function () { ?>
         }
 
         #alice-dashboard .alice-marketplace-connect-section .alice-text-content,
-        #alice-dashboard .alice-plugin-key-section .alice-text-content {
+        #alice-dashboard .alice-plugin-key-section .alice-text-content,
+        #alice-dashboard .alice-settings-section .alice-text-content {
             border: none;
             padding: 0
         }

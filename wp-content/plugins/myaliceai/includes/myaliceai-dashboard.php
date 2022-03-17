@@ -135,6 +135,27 @@ function myalice_dashboard_callback () { ?>
                 </div>
             </section>
 
+            <section class="alice-settings-section">
+                <div class="alice-container">
+                    <div style="width: 100%;">
+                        <div class="alice-text-content">
+                            <h4><?php esc_html_e( 'MyAlice Settings', 'myaliceai' ); ?></h4>
+                        </div>
+                        <div class="alice-plugin-key">
+                            <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
+								<?php wp_nonce_field( 'alice-settings-form', 'alice-settings-form' ); ?>
+                                <input type="hidden" name="action" value="alice_settings_form">
+                                <label>
+                                    <input type="checkbox" name="allow_chat" value="1">
+                                    <span class="checkbox-title"><?php esc_html_e( 'Allow Chat for Logged-in User Only', 'myaliceai' ); ?></span>
+                                </label>
+                            </form>
+                            <div class="myalice-notice-area"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 		</div>
 	</div>
 	<?php
