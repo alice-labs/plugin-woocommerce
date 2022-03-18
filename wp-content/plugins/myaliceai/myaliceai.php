@@ -15,6 +15,8 @@
 // Direct file access is disallowed
 defined( 'ABSPATH' ) || die;
 
+global $myalice_settings;
+
 if ( ! defined( 'ALICE_BASE_PATH' ) ) {
 	define( 'ALICE_BASE_PATH', __FILE__ );
 }
@@ -44,6 +46,11 @@ $api_data = wp_parse_args( $api_data, [
 	'api_token'   => '',
 	'platform_id' => '',
 	'primary_id'  => ''
+] );
+
+$myalice_settings = get_option( 'myaliceai_settings', [] );
+$myalice_settings = wp_parse_args( $myalice_settings, [
+	'allow_chat_user_only' => 0
 ] );
 
 if ( ! defined( 'MYALICE_API_TOKEN' ) ) {

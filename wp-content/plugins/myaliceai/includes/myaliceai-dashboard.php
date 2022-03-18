@@ -16,7 +16,9 @@ add_action( 'admin_menu', function () {
 } );
 
 // Alice Dashboard Menu Callback
-function myalice_dashboard_callback () { ?>
+function myalice_dashboard_callback() {
+	global $myalice_settings;
+	?>
 	<div class="wrap alice-dashboard-wrap">
 		<div id="alice-dashboard" class="<?php echo MYALICE_API_OK ? 'myalice-api-activated' : ''; ?>">
 
@@ -144,15 +146,10 @@ function myalice_dashboard_callback () { ?>
                         </div>
                         <div class="alice-settings">
                             <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
-								<?php
-								wp_nonce_field( 'alice-settings-form', 'alice-settings-form' );
-								$settings = wp_parse_args( get_option( 'myaliceai_settings', [] ), [
-									'allow_chat_user_only' => 0
-								] );
-								?>
+								<?php wp_nonce_field( 'alice-settings-form', 'alice-settings-form' ); ?>
                                 <input type="hidden" name="action" value="alice_settings_form">
                                 <label>
-                                    <input type="checkbox" name="allow_chat_user_only" value="true" <?php checked( '1', $settings['allow_chat_user_only'] ); ?>>
+                                    <input type="checkbox" name="allow_chat_user_only" value="true" <?php checked( 1, $myalice_settings['allow_chat_user_only'] ); ?>>
                                     <span class="checkbox-title"><?php esc_html_e( 'Allow Chat for Logged-in User Only', 'myaliceai' ); ?></span>
                                 </label>
                                 <br class="clear">
