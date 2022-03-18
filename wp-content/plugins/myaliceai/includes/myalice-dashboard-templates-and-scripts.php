@@ -99,7 +99,7 @@ add_action( 'admin_footer', function () { ?>
                 $.post(url, data, function (response) {
                     spinner.removeClass('is-active');
 
-                    var notice_area = $('.myalice-notice-area'),
+                    var notice_area = $form.siblings('.myalice-notice-area'),
                         input_group = $('.alice-input-group'),
                         input_field = $('#alice-plugin-key'),
                         alice_dashboard = $('#alice-dashboard');
