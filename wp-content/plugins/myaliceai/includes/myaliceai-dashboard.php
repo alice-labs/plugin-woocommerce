@@ -124,6 +124,7 @@ function myalice_dashboard_callback () { ?>
                                 <div class="alice-input-group <?php echo MYALICE_API_OK ? '' : 'alice-active-editing'; ?>">
                                     <input name="alice_plugin_key" type="text" id="alice-plugin-key" value="<?php echo esc_attr( MYALICE_API_TOKEN ); ?>"
                                            placeholder="<?php esc_html_e( 'Plugin Key', 'myaliceai' ); ?>" class="alice-input-field" <?php echo MYALICE_API_OK ? 'readonly' : ''; ?>>
+                                    <span class="spinner"></span>
                                     <button type="submit" class="alice-btn"><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
                                     <button type="button" class="alice-btn white-btn alice-edit-btn"><?php esc_html_e( 'Edit', 'myaliceai' ); ?></button>
                                     <button type="button" class="alice-btn white-btn alice-cancel-btn"><?php esc_html_e( 'Cancel', 'myaliceai' ); ?></button>
@@ -141,7 +142,7 @@ function myalice_dashboard_callback () { ?>
                         <div class="alice-text-content">
                             <h4><?php esc_html_e( 'MyAlice Settings', 'myaliceai' ); ?></h4>
                         </div>
-                        <div class="alice-plugin-key">
+                        <div class="alice-settings">
                             <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
 								<?php wp_nonce_field( 'alice-settings-form', 'alice-settings-form' ); ?>
                                 <input type="hidden" name="action" value="alice_settings_form">
@@ -149,6 +150,9 @@ function myalice_dashboard_callback () { ?>
                                     <input type="checkbox" name="allow_chat" value="1">
                                     <span class="checkbox-title"><?php esc_html_e( 'Allow Chat for Logged-in User Only', 'myaliceai' ); ?></span>
                                 </label>
+                                <br class="clear">
+                                <span class="spinner"></span>
+                                <button type="submit" class="alice-btn" style="margin-top: 20px;"><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
                             </form>
                             <div class="myalice-notice-area"></div>
                         </div>

@@ -353,6 +353,16 @@ add_action( 'admin_head', function () { ?>
         #alice-dashboard.myalice-api-activated .alice-marketplace-connect-section {
             display: none;
         }
+
+        #alice-dashboard .spinner {
+            display: none;
+            margin: 0;
+        }
+
+        #alice-dashboard .spinner.is-active {
+            display: inline-block;
+            float: none;
+        }
     </style>
 	<?php
 } );
