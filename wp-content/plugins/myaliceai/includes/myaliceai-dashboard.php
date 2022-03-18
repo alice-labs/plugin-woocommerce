@@ -144,10 +144,15 @@ function myalice_dashboard_callback () { ?>
                         </div>
                         <div class="alice-settings">
                             <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
-								<?php wp_nonce_field( 'alice-settings-form', 'alice-settings-form' ); ?>
+								<?php
+								wp_nonce_field( 'alice-settings-form', 'alice-settings-form' );
+								$settings = wp_parse_args( get_option( 'myaliceai_settings', [] ), [
+									'allow_chat_user_only' => 0
+								] );
+								?>
                                 <input type="hidden" name="action" value="alice_settings_form">
                                 <label>
-                                    <input type="checkbox" name="allow_chat" value="1">
+                                    <input type="checkbox" name="allow_chat_user_only" value="true" <?php checked( '1', $settings['allow_chat_user_only'] ); ?>>
                                     <span class="checkbox-title"><?php esc_html_e( 'Allow Chat for Logged-in User Only', 'myaliceai' ); ?></span>
                                 </label>
                                 <br class="clear">

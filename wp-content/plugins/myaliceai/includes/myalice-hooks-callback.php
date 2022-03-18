@@ -48,6 +48,25 @@ function alice_api_form_process() {
 	}
 }
 
+//Alice Settings form ajax callback
+function alice_settings_form_process() {
+	if ( check_ajax_referer( 'alice-settings-form', 'alice-settings-form' ) ) {
+		$args = wp_parse_args( $_POST, [
+			'allow_chat_user_only' => false
+		] );
+
+		$settings = [
+			'allow_chat_user_only' => $args['allow_chat_user_only'] === false ? 0 : 1
+		];
+
+		if ( update_option( 'myaliceai_settings', $settings, false ) ) {
+			wp_send_json_success( [ 'message' => __( 'Settings successfully updated.', 'myaliceai' ) ] );
+		} else {
+			wp_send_json_error( [ 'message' => __( 'Settings update failed.', 'myaliceai' ) ] );
+		}
+	}
+}
+
 //Alice's deactivation feedback form ajax callback
 function alice_feedback_form_process() {
 	if ( check_ajax_referer( 'alice_deactivation_feedback', 'alice_deactivation_feedback' ) ) {
