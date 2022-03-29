@@ -1,7 +1,4 @@
 .idea
-/*.php
-wp-admin
-wp-includes
 *.zip
 .htaccess
 .DS_Store
