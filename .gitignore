@@ -17,11 +17,3 @@ bs-config.js
 *.source.map
 
 #Exclude everything except a specific directory
-/*
-!.gitignore
-!.github
-!/wp-content
-/wp-content/*
-!/wp-content/plugins
-/wp-content/plugins/*
-!/wp-content/plugins/myaliceai/
