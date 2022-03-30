@@ -7,6 +7,7 @@ Tested up to: 5.9
 Stable tag: 1.2.5
 Requires PHP: 5.6
 License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
 
 Add MyAlice to your WooCommerce store to connect all your social channels, automate through chatbot and manage your orders from a single place.
