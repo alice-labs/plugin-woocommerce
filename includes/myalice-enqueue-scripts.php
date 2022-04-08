@@ -37,7 +37,7 @@ if ( MYALICE_API_OK ) {
 		wp_enqueue_script( 'alice-script', ALICE_JS_PATH . 'script.js', [ 'jquery' ], ALICE_VERSION, false );
 	} );
 
-	if ( $myalice_settings['allow_chat_user_only'] === 0 || ( $myalice_settings['allow_chat_user_only'] === 1 && is_user_logged_in() ) ) {
+	if ( $myalice_settings['hide_chatbox'] === 0 && ( $myalice_settings['allow_chat_user_only'] === 0 || ( $myalice_settings['allow_chat_user_only'] === 1 && is_user_logged_in() ) ) ) {
 		add_action( 'wp_footer', 'alice_chatbot_script_callback' );
 	}
 }
