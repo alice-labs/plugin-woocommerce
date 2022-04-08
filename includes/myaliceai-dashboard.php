@@ -154,7 +154,7 @@ function myalice_dashboard_callback() {
                                 </label>
                                 <br class="clear">
                                 <label>
-                                    <input type="checkbox" name="allow_product_api" value="true" <?php checked( 1, $myalice_settings['allow_product_api'] ); ?>>
+                                    <input type="checkbox" name="allow_product_view_api" value="true" <?php checked( 1, $myalice_settings['allow_product_view_api'] ); ?>>
                                     <span class="checkbox-title"><?php esc_html_e( 'Send product view data', 'myaliceai' ); ?></span>
                                 </label>
                                 <br class="clear">

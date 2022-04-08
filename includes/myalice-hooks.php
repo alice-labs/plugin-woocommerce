@@ -54,7 +54,9 @@ if ( ALICE_WC_OK && MYALICE_API_OK ) {
 	} );
 
 	add_action( 'wp_footer', function () {
-		if ( is_product() ) {
+		global $myalice_settings;
+
+		if ( $myalice_settings['allow_product_view_api'] === 1 && is_product() ) {
 			alice_user_product_view_handler();
 		}
 	} );
