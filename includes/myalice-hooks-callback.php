@@ -52,11 +52,19 @@ function alice_api_form_process() {
 function alice_settings_form_process() {
 	if ( check_ajax_referer( 'alice-settings-form', 'alice-settings-form' ) ) {
 		$args = wp_parse_args( $_POST, [
-			'allow_chat_user_only' => false
+			'allow_chat_user_only' => false,
+			'allow_product_api'    => false,
+			'allow_cart_api'       => false,
+			'allow_order_api'      => false,
+			'hide_chatbox'         => false
 		] );
 
 		$settings = [
-			'allow_chat_user_only' => $args['allow_chat_user_only'] === false ? 0 : 1
+			'allow_chat_user_only' => $args['allow_chat_user_only'] === false ? 0 : 1,
+			'allow_product_api'    => $args['allow_product_api'] === false ? 0 : 1,
+			'allow_cart_api'       => $args['allow_cart_api'] === false ? 0 : 1,
+			'allow_order_api'      => $args['allow_order_api'] === false ? 0 : 1,
+			'hide_chatbox'         => $args['hide_chatbox'] === false ? 0 : 1
 		];
 
 		if ( update_option( 'myaliceai_settings', $settings, false ) ) {
