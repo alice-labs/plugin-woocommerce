@@ -153,6 +153,26 @@ function myalice_dashboard_callback() {
                                     <span class="checkbox-title"><?php esc_html_e( 'Allow Chat for Logged-in User Only', 'myaliceai' ); ?></span>
                                 </label>
                                 <br class="clear">
+                                <label>
+                                    <input type="checkbox" name="allow_product_api" value="true" <?php checked( 1, $myalice_settings['allow_product_api'] ); ?>>
+                                    <span class="checkbox-title"><?php esc_html_e( 'Send product view data', 'myaliceai' ); ?></span>
+                                </label>
+                                <br class="clear">
+                                <label>
+                                    <input type="checkbox" name="allow_cart_api" value="true" <?php checked( 1, $myalice_settings['allow_cart_api'] ); ?>>
+                                    <span class="checkbox-title"><?php esc_html_e( 'Send cart data', 'myaliceai' ); ?></span>
+                                </label>
+                                <br class="clear">
+                                <label>
+                                    <input type="checkbox" name="allow_order_api" value="true" <?php checked( 1, $myalice_settings['allow_order_api'] ); ?>>
+                                    <span class="checkbox-title"><?php esc_html_e( 'Send order data', 'myaliceai' ); ?></span>
+                                </label>
+                                <br class="clear">
+                                <label>
+                                    <input type="checkbox" name="hide_chatbox" value="true" <?php checked( 1, $myalice_settings['hide_chatbox'] ); ?>>
+                                    <span class="checkbox-title"><?php esc_html_e( 'Hide chat widget', 'myaliceai' ); ?></span>
+                                </label>
+                                <br class="clear">
                                 <span class="spinner"></span>
                                 <button type="submit" class="alice-btn" style="margin-top: 20px;"><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
                             </form>
