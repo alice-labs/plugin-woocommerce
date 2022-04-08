@@ -2,6 +2,8 @@
 // Direct file access is disallowed
 defined( 'ABSPATH' ) || die;
 
+global $myalice_settings;
+
 // WooCommerce's installation notice
 if ( ! ALICE_WC_OK ) {
 	add_action( 'admin_notices', function () {
@@ -61,8 +63,10 @@ if ( ALICE_WC_OK && MYALICE_API_OK ) {
 		}
 	} );
 
-	add_action( 'woocommerce_add_to_cart', 'alice_user_cart_api_handler' );
-	add_action( 'woocommerce_cart_item_removed', 'alice_user_cart_api_handler' );
-	add_action( 'woocommerce_cart_item_restored', 'alice_user_cart_api_handler' );
-	add_filter( 'woocommerce_update_cart_action_cart_updated', 'alice_user_cart_api_handler' );
+	if ( $myalice_settings['allow_cart_api'] === 1 ) {
+		add_action( 'woocommerce_add_to_cart', 'alice_user_cart_api_handler' );
+		add_action( 'woocommerce_cart_item_removed', 'alice_user_cart_api_handler' );
+		add_action( 'woocommerce_cart_item_restored', 'alice_user_cart_api_handler' );
+		add_filter( 'woocommerce_update_cart_action_cart_updated', 'alice_user_cart_api_handler' );
+	}
 }
