@@ -4,7 +4,7 @@ Contributors: shuvorahmanalice, rudlinkon, limon213
 Tags: Live Chat, Chatbot, WhatsApp, Facebook Messenger, Instagram, ecommerce customer support, live chat plugin, facebook messenger plugin, whatsapp plugin, chatbot plugin, best live chat plugin, free live chat, woocommerce chatbot, best live chat plugin, facebook chat plugin, woocommerce live chat, omnichannel
 Requires at least: 5.0
 Tested up to: 5.9
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -212,6 +212,9 @@ For a detailed guideline on how to use MyAlice, refer to our [user documentation
 
 == Changelog ==
 
+
+= 1.2.6 – 09/04/2022 =
+* Added new settings in the dashboard to control sending product and cart data
 
 = 1.2.5 – 18/03/2022 =
 * Added language template (POT) file
