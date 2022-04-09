@@ -55,7 +55,6 @@ function alice_settings_form_process() {
 			'allow_chat_user_only'   => false,
 			'allow_product_view_api' => false,
 			'allow_cart_api'         => false,
-			'allow_order_api'        => false,
 			'hide_chatbox'           => false
 		] );
 
@@ -63,7 +62,6 @@ function alice_settings_form_process() {
 			'allow_chat_user_only'   => $args['allow_chat_user_only'] === false ? 0 : 1,
 			'allow_product_view_api' => $args['allow_product_view_api'] === false ? 0 : 1,
 			'allow_cart_api'         => $args['allow_cart_api'] === false ? 0 : 1,
-			'allow_order_api'        => $args['allow_order_api'] === false ? 0 : 1,
 			'hide_chatbox'           => $args['hide_chatbox'] === false ? 0 : 1
 		];
 
