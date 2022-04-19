@@ -8,9 +8,7 @@ function alice_api_form_process() {
 		$api_key = empty( $_POST['alice_plugin_key'] ) ? '' : $_POST['alice_plugin_key'];
 
 		if ( empty( $api_key ) ) {
-			delete_option( 'myaliceai_api_data' );
-
-			wp_send_json_error( [ 'message' => 'Your API data was removed because of provided empty field.' ] );
+			wp_send_json_error( [ 'message' => 'You provided an empty field, please provide the correct token.' ] );
 		}
 
 		$alice_api_url = MYALICE_API_URL . 'connect-ecommerce-plugin?api_token=' . $api_key;
