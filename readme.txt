@@ -132,14 +132,14 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 == Screenshots ==
 
 
-1. One inbox to manage conversation and orders
-2. Widget in all the platforms
-3. How your customers are interacting
-4. Check and update orders details directly
-5. Create order directly form inbox
-6. See customer summary and interactions with the products
-7. How your agents are performing
-8. How your customers are rating
+1. Dashboard
+2. Livechat
+3. Multichannel
+4. eCommerce
+5. Chatbot
+6. Analytics
+7. Embed
+8. Apps
 
 
 == Changelog ==
