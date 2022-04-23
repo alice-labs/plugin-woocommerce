@@ -10,7 +10,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
 
-Add MyAlice to your WooCommerce store to connect all your social channels, automate through chatbot and manage your orders from a single place.
+More than a live chat or a chatbot platform. One tool, all the features you need for sales and support through live conversations.
 
 == Description ==
 
