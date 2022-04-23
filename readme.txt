@@ -1,4 +1,4 @@
-﻿=== MyAlice - Live Chat, WhatsApp, Facebook Messenger, Instagram, & Chatbot for WooCommerce ===
+﻿=== MyAlice – Multichannel Helpdesk, Live Chat, and Chatbot for WooCommerce ===
 
 Contributors: shuvorahmanalice, rudlinkon, limon213
 Tags: Live Chat, Chatbot, WhatsApp, Facebook Messenger, Instagram, ecommerce customer support, live chat plugin, facebook messenger plugin, whatsapp plugin, chatbot plugin, best live chat plugin, free live chat, woocommerce chatbot, best live chat plugin, facebook chat plugin, woocommerce live chat, omnichannel
