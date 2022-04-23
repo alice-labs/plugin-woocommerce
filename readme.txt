@@ -14,97 +14,59 @@ More than a live chat or a chatbot platform. One tool, all the features you need
 
 == Description ==
 
-MOST ADVANCED ECOMMERCE CUSTOMER SERVICE PLUGIN WITH OMNICHANNEL DASHBOARD, NO-CODE CHATBOT BUILDER & AUTOMATED INVENTORY TRACKING
+So your online store’s poppin’ off. Success is great, but it’s getting overwhelming. Buyers and potential customers have questions about products, deliveries, refunds, and exchanges… You want to answer them, but trying to manage CX across all your channels is a fool’s errand. However, if you leave messages unanswered, you’ll damage your brand, and your reputation, and kill your growth. So what do you do? Clone your customer service team? Ask them to work 25 hours a day? Or make it easy on everyone with MyAlice.
 
-We know the pain of switching between inbox, inventory, and website just to create an order and communicate with your customer. With [MyAlice](https://myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration), you can let your customers chat with their favorite channels like Facebook Messenger, WhatsApp, Instagram, Viber, Telegram, and more. And you can reply to those conversations from a single place. That's not all, you can have all the customer details, product inventory, and order history from WooCommerce right in your inbox. Now you can reply to conversations and manage your e-commerce orders from one place. Bring you and your customers together for every step of the purchase flow — from helping out to checking out.
+MyAlice is modern customer support and social selling platform which helps hundreds of growing ECommerce and DTC brands every day.
 
-ALL YOUR CONVERSATIONS CENTRALIZED ON MYALICE
+https://www.youtube.com/watch?v=1qcXErrkEfo
 
-**Live Chat:** With the live chat plugin for WooCommerce by [MyAlice](https://myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration), you allow customers to talk to you directly from your WooCommerce website. Address any questions instantly, and send prompt replies.
+HERE’S THE OLD WAY VS THE NEW WAY OF DELIVERING STELLAR CUSTOMER SERVICE
 
-**Facebook Feed:** Respond to comments automatically in your Facebook Feed with this WordPress plugin for Facebook Feed. Hide or remove spam or necessary comments from your Feed posts using MyAlice.
+**Old way:** You need to hover on multiple tabs simultaneously to interact with your customers.
+**New way:** As your socials and website inventory are connected in one single platform, you can do all the customer interactions like order process, order canceling, and order update in one single browser tab.
 
-**Messenger:** Connect your WordPress site to Facebook Messenger and respond within your MyAlice inbox. Build the WordPress chatbot yourself to initiate various responses as per your customer queries.
+**Old way:** Your human agents cannot address all of your customers in an efficient manner 24/7.
+**New way:** Our powerful self-service chatbots will help your customers to make a purchase even during the holidays and odd hours. Technically, your online store will be open 24/7 throughout the year for your customers.
 
-**Whatsapp:** Integrate WhatsApp to your WordPress website with 1 click to automatically respond and manage WhatsApp chats from your MyAlice inbox.
+**Old way:** There’s no way to track and improve your customer support quality and agent performance in the socials.
+**New way:** You can always track and monitor your agents’ conversation quality with the customers, their conversion rates, and response time to improve your customer support every day.
 
-**Instagram:** Connect your WordPress site to reply Instagram messages and feeds. And the chatbot can respond to designated queries.
+Want to learn how you can power up your sales and support the modern way? [Book a demo](https://www.myalice.ai/demo) here or [Sign-up](https://app.myalice.ai/register/) here to see it in action.
 
-**Viber:** Manage customer queries, display products and offers with your customers using automated chatbot replies.
+ONE TOOL, ALL THE FEATURES YOU NEED TO SELL AND SUPPORT WITH EASE
 
-**Line:** Receive and respond to your Line customer within MyAlice inbox. Build your own chatbot without code.
+### Live Chat and Messaging
 
-**Telegram:** Engage with customers on Telegram using MyAlice inbox. Provides automated customer service with the help of chatbots.
+No more switching tabs to respond to Live Chat, Facebook, Instagram, WhatsApp, Line, Telegram, and Viber. Manage all channels from one simple Inbox. Chat with website visitors, help answer their questions, make recommendations, share coupon codes and make sales.
 
-**Mobile App:** Add live chat to your mobile app by embedding [MyAlice](https://myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) to keep all your app users active and coming back.
+### Sales and Commerce
 
-**Chatbot Builder:** A no-code click and add WordPress chatbot builder that you can build any day. Create your desired conversational flow with our wide variety of available triggers.
+See order and customer information next to each conversation. Take actions like cancel, refund, duplicate and edit orders without leaving the inbox.
 
-SO, WHAT YOU CAN DO WHEN YOU CONNECT MYALICE WITH WOOCOMMERCE?
+### Agent Collaboration
 
-**Show your products in conversation**
-Wherever your orders are coming from — search products in your inventory right from your inbox and share them with your customers instantly.
+Assign or reassign conversation, create notes, and use saved responses to deliver faster support. Get more done together.
 
-**Personalized Recommendation**
-Guide your customers through a custom buying experience. With just a few questions, they'll find their perfect product based on their responses.
+### Automation
 
-**Manage orders from MyAlice inbox**
-Find necessary customers information and order history to solve a support issue, and create, update, cancel or refund orders directly from the dashboard.
+Focus on what matters. Auto-resolve 60% of your customer conversations on any channels in your language. Let customers track packages, request returns, exchanges, and get product recommendations - before they reach agents. No code is required.
 
-**Automate responses with AI-powered chatbot**
-Have 24/7 conversations with your customers. Save time on support with our [WooCommerce chatbot](https://myalice.ai/woocommerce/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) to automate repetitive queries across every customer channel.
+### Reporting and Analytics
 
-**Upsell and Cross-sell**
-Leverage your existing customer data to recommend the latest products, build data-driven customer profiles, run personalized ads, and sell more.
+From sales to customer data to monitoring agent performance. Measure response times, resolution times, and revenues brought in by customer service teams. Send surveys after conversations and measure customer satisfaction scores.
 
-**Get a full picture of your customer**
-Track your customer’s lifetime value, order frequency, average basket size, and even the tiniest product interactions to prioritize and run personalized marketing campaigns.
+### Marketing
 
-**Track your agents' performance**
-Get sales conversion data, customer satisfaction reports, agent performance, busy hour heatmap, etc. to optimize your support team performance, get better ROI, and stay on top of your game.
+Manage customer contact list, find target customers, and have conversations directly from MyAlice. Say no to excel sheets.
 
-So why just use live chat? – There’s a big benefit in giving your visitors the option to use the all social channels they already use. When you use the regular live chat, your visitors must stay on your website and wait for your response. When you let your visitors chat not just from your website, but also using chat apps like Facebook Messenger, WhatsApp, Instagram, Viber, Line, Telegram, etc, you give them the freedom of chatting with you whenever they go.
+### Official WhatsApp Business API
 
-**SET UP MYALICE IN A FEW SIMPLE STEPS**
+Get an official WhatsApp Business API phone number, which can be used for support and marketing. Free Green Tick application to WhatsApp.
 
-- Log into your WordPress admin dashboard, then go to Plugins on the left sidebar.
-- Click “Add New” and search “MyAlice” with the search bar at the top right.
-- Install and activate the plugin. Then find MyAlice in the left sidebar.
-- Complete your profile in MyAlice by creating a new account or sign in if you already have one
-- Install WooCommerce from MyAlice marketplace in settings.
-    - Enter your WooCommerce store's URL
-    - Create or select a channel for your WooCommerce store
-    - Receive a plugin key for your MyAlice App in your WooCommerce dashboard
-- Enable your MyAlice plugin from your WordPress Dashboard by entering the Plugin Authentication Key.
-
-That's it! Once you set up and customize the plugin, it will allow you to centralize your multi-channel customer conversations into one platform, automate most of your customer interactions with AI-driven conversations.
-
-[DOCUMENTATION](https://docs.myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) | [SUPPORT](https://airtable.com/shrvMCwEUGQU7TvRR)
-
-**WHAT PEOPLE ARE TALKING**
-
-"[MyAlice](https://myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) is really a supportive function in leveraging our social commerce platform, especially due to its user-friendliness, which is convenient for our customers to make a purchase journey via messenger platform, as well as for our operation team to handle the purchase orders more systematically." - **Dr. Hsu Nwe Zaw, Marketing Manager, Maybelline New York**
-
-"A conversation starts with a “Hello” and ends with a “Good-Bye,” but [MyAlice](https://myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) has given us a way to add continuity to our conversations. Our conversations don't just end with “Good Bye" anymore; [MyAlice](https://myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) enables us to do so much more than converse with clients, leads, and candidates. - **Patrick Cuartero, CEO, Skyrocket Studios PH, Inc**
-
-**ABOUT US**
-
-The mission is to make eCommerce more conversational. Connect all your channels, Sell more, and Grow better with MyAlice's Conversational Commerce.
-
-**NOTES**
-
-Yes, [MyAlice](https://myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) has the best omnichannel platform that connects all your customer support channels like Facebook, Messenger, WhatsApp, Instagram, Line, Telegram, and more. It has the live chat and takes care of your e-commerce platforms too! No other WordPress plugin compares to [MyAlice](https://myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) and the features it offers. Hundreds of businesses just like you added [MyAlice](https://myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) to reduce the complexity of managing customer conversations in multiple channels.
-
-**REQUIREMENTS**
-
-The WordPress chat plugin for ECommerce customer service is free, but you need to be a MyAlice customer. It also comes with a free trial, allowing you to [test the service for 14 days](https://myalice.ai/pricing/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration).
-Test all the Pro features available in the startup plan by default, including a ticketing system, automated support, agent tracking, and more. Take a look at the [plans and features](https://myalice.ai/pricing/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) on our website. Provide on-site support and sell more with the WordPress chat plugin by [MyAlice](https://myalice.ai/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration).
-
-[Sign up today for seamless customer support](https://myalice.ai/woocommerce/?utm_source=wordpress&utm_medium=repository&utm_campaign=integration) 🥂
+Easily migrate from Zendesk, Freshdesk, Drift, Intercom, Richpanel, Reamaze, [Tawk.To](http://Tawk.To), Tidio, HubSpot, Crisp, Live Chat. We'll assist you with migration. [Sign up](https://app.myalice.ai/register/) for a free trial now or [Book a demo](https://www.myalice.ai/demo) here.
 
 
 == Installation ==
-
 
 Install MyAlice as a regular WordPress plugin. Here are 2 different ways to install MyAlice plugin :
 
