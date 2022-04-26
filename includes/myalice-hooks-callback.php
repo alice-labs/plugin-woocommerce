@@ -49,7 +49,8 @@ function alice_api_form_process() {
 //Alice Settings form ajax callback
 function alice_settings_form_process() {
 	if ( check_ajax_referer( 'alice-settings-form', 'alice-settings-form' ) ) {
-		$args = wp_parse_args( $_POST, [
+		$POST = array_map( 'sanitize_text_field', $_POST );
+		$args = wp_parse_args( $POST, [
 			'allow_chat_user_only'   => false,
 			'allow_product_view_api' => false,
 			'allow_cart_api'         => false,
