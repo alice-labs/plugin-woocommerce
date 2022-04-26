@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || die;
 //Alice API form ajax callback
 function alice_api_form_process() {
 	if ( check_ajax_referer( 'alice-api-form', 'alice-api-form' ) ) {
-		$api_key = empty( $_POST['alice_plugin_key'] ) ? '' : $_POST['alice_plugin_key'];
+		$api_key = empty( $_POST['alice_plugin_key'] ) ? '' : sanitize_text_field( $_POST['alice_plugin_key'] );
 
 		if ( empty( $api_key ) ) {
 			wp_send_json_error( [ 'message' => 'You provided an empty field, please provide the correct token.' ] );
