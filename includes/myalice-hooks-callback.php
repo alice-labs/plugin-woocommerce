@@ -29,7 +29,7 @@ function alice_api_form_process() {
 			if ( $alice_api_data['success'] === true ) {
 				update_option( 'myaliceai_api_data', [
 					'api_token'   => $alice_api_data['api_token'],
-					'platform_id' => $alice_api_data['platform_id'],
+					'platform_id' => absint( $alice_api_data['platform_id'] ),
 					'primary_id'  => $alice_api_data['primary_id']
 				] );
 
