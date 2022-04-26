@@ -74,10 +74,10 @@ function alice_settings_form_process() {
 //Alice's deactivation feedback form ajax callback
 function alice_feedback_form_process() {
 	if ( check_ajax_referer( 'alice_deactivation_feedback', 'alice_deactivation_feedback' ) ) {
-		$feedback = empty( $_POST['feedback'] ) ? '' : $_POST['feedback'];
+		$feedback = empty( $_POST['feedback'] ) ? '' : sanitize_text_field( $_POST['feedback'] );
 
 		if ( $feedback === 'Other' ) {
-			$feedback = empty( $_POST['feedback_other'] ) ? $feedback : $_POST['feedback_other'];
+			$feedback = empty( $_POST['feedback_other'] ) ? $feedback : sanitize_text_field( $_POST['feedback_other'] );
 		}
 
 		if ( ! empty( $feedback ) ) {
