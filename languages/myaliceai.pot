@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: MyAlice 1.2.7\n"
+"Project-Id-Version: MyAlice 1.2.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/myaliceai\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-04-23T09:04:41+00:00\n"
+"POT-Creation-Date: 2022-04-26T14:52:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: myaliceai\n"
@@ -71,27 +71,27 @@ msgstr ""
 msgid "Your API token is valid and successfully updated."
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:67
+#: includes/myalice-hooks-callback.php:68
 msgid "Settings successfully updated."
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:69
+#: includes/myalice-hooks-callback.php:70
 msgid "Settings update failed."
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:218
+#: includes/myalice-hooks-callback.php:219
 msgid "We hope you're enjoying MyAlice! Could you please do us a BIG favor and give it a 5-star rating on WordPress to help us spread the word and boost our motivation?"
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:220
+#: includes/myalice-hooks-callback.php:221
 msgid "Ok, you deserve it"
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:222
+#: includes/myalice-hooks-callback.php:223
 msgid "Nope, maybe later"
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:224
+#: includes/myalice-hooks-callback.php:225
 msgid "I already did"
 msgstr ""
 
