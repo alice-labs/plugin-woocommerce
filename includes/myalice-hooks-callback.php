@@ -103,7 +103,7 @@ function alice_customer_link_handler() {
 		return;
 	}
 
-	$alice_customer_id   = $_COOKIE["aliceCustomerId"];
+	$alice_customer_id   = sanitize_text_field( $_COOKIE["aliceCustomerId"] );
 	$current_user_id     = get_current_user_id();
 	$customer_api_cookie = "C{$alice_customer_id}U{$current_user_id}";
 
@@ -141,7 +141,7 @@ function alice_user_product_view_handler() {
 	}
 
 	//User Data
-	$alice_customer_id = $_COOKIE["aliceCustomerId"];
+	$alice_customer_id = sanitize_text_field( $_COOKIE["aliceCustomerId"] );
 
 	// API URL
 	$alice_api_url = MYALICE_API_URL . 'store-product-view?api_token=' . MYALICE_API_TOKEN;
@@ -174,7 +174,7 @@ function alice_user_cart_api_handler( $updated ) {
 	}
 
 	//User Data
-	$alice_customer_id = $_COOKIE["aliceCustomerId"];
+	$alice_customer_id = sanitize_text_field( $_COOKIE["aliceCustomerId"] );
 
 	// initializing the array:
 	$items = array();
