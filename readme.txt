@@ -18,8 +18,6 @@ So your online store’s poppin’ off. Success is great, but it’s getting ove
 
 MyAlice is modern customer support and social selling platform which helps hundreds of growing ECommerce and DTC brands every day.
 
-https://www.youtube.com/watch?v=1qcXErrkEfo
-
 HERE’S THE OLD WAY VS THE NEW WAY OF DELIVERING STELLAR CUSTOMER SERVICE
 
 **Old way:** You need to hover on multiple tabs simultaneously to interact with your customers.
