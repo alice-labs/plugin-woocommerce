@@ -228,16 +228,19 @@ add_action( 'admin_head', function () { ?>
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul {
             display: flex;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li {
             display: flex;
             align-content: center;
             align-items: center;
             margin: 0 12px;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.alice-has-sub-menu {
             position: relative;
             perspective: 390px;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.alice-has-sub-menu::after {
             position: relative;
             content: "";
@@ -246,6 +249,7 @@ add_action( 'admin_head', function () { ?>
             border-right: 5px solid transparent;
             margin-left: 12px;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li a {
             display: block;
             font-size: 14px;
@@ -254,14 +258,17 @@ add_action( 'admin_head', function () { ?>
             color: #202223;
             transition: .3s;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.alice-active > a,
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li:hover > a {
             color: #039952;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.alice-has-sub-menu.alice-active::after,
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.alice-has-sub-menu:hover::after {
             border-top-color: #039952;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li ul.alice-sub-menu {
             display: block;
             position: absolute;
@@ -277,28 +284,32 @@ add_action( 'admin_head', function () { ?>
             transition: .3s;
             opacity: 0;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li ul.alice-sub-menu li {
             display: block;
             margin: 0;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li ul.alice-sub-menu li + li {
             border-top: 1px solid #eee;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li ul.alice-sub-menu li a {
             margin: 0;
             padding: 8px 16px 8px 0;
         }
+
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul li:hover .alice-sub-menu {
             transform: rotateX(0deg);
             opacity: 1;
         }
 
-        #alice-dashboard  .alice-welcome-section {
+        #alice-dashboard .alice-welcome-section {
             margin-top: 24px;
             padding: 12px 0;
         }
 
-        #alice-dashboard  .alice-welcome-section h3 {
+        #alice-dashboard .alice-welcome-section h3 {
             font-size: 24px;
             line-height: 32px;
             color: #111827;
