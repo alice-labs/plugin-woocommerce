@@ -47,8 +47,8 @@ function myalice_dashboard_callback() {
             <section class="alice-connect-with-myalice">
                 <div class="alice-container">
                     <div class="alice-title">
-                        <h2>Connect with MyAlice</h2>
-                        <p>Already have an account? <a href="#">login here</a></p>
+                        <h2><?php esc_html_e( 'Connect with MyAlice', 'myaliceai' ); ?></h2>
+                        <p><?php esc_html_e( 'Already have an account?', 'myaliceai' ); ?> <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'login here', 'myaliceai' ); ?></a></p>
                     </div>
                 </div>
                 <div class="alice-container">
@@ -56,20 +56,20 @@ function myalice_dashboard_callback() {
 		                <?php wp_nonce_field( '', 'alice-api-form' ); ?>
                         <input type="hidden" name="action" value="">
                         <label>
-                            Email Address
+	                        <?php esc_html_e( 'Email Address', 'myaliceai' ); ?>
                             <input type="email" name="user_name">
                         </label>
                         <label>
-                            Password
+	                        <?php esc_html_e( 'Password', 'myaliceai' ); ?>
                             <input type="password" name="password">
                         </label>
                         <button type="submit" class="alice-btn"><?php esc_html_e( 'Signup & Connect', 'myaliceai' ); ?></button>
-                        <p>By proceeding, you agree to the <a href="#">Terms & Conditions</a></p>
+                        <p><?php esc_html_e( 'By proceeding, you agree to the', 'myaliceai' ); ?> <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Terms & Conditions', 'myaliceai' ); ?></a></p>
                     </form>
                 </div>
             </section>
 
-            <section class="alice-welcome-section">
+            <section style="display: none" class="alice-welcome-section">
                 <div class="alice-container">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0)">
@@ -105,7 +105,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-registration-guide">
+            <section style="display: none" class="alice-registration-guide">
                 <div class="alice-container">
                     <div class="alice-text-content">
                         <h4><?php esc_html_e( 'Complete Your Registration', 'myaliceai' ); ?></h4>
@@ -118,7 +118,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-marketplace-connect-section">
+            <section style="display: none" class="alice-marketplace-connect-section">
                 <div class="alice-container">
                     <div style="width: 100%;">
                         <div class="alice-container">
@@ -144,7 +144,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-plugin-key-section">
+            <section style="display: none" class="alice-plugin-key-section">
                 <div class="alice-container">
                     <div style="width: 100%;">
                         <div class="alice-text-content">
@@ -170,7 +170,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-settings-section">
+            <section style="display: none" class="alice-settings-section">
                 <div class="alice-container">
                     <div style="width: 100%;">
                         <div class="alice-text-content">
@@ -209,7 +209,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-		</div>
+        </div>
 	</div>
 	<?php
 }
