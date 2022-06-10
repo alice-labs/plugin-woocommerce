@@ -44,6 +44,31 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
+            <section class="alice-connect-with-myalice">
+                <div class="alice-container">
+                    <div class="alice-title">
+                        <h2>Connect with MyAlice</h2>
+                        <p>Already have an account? <a href="#">login here</a></p>
+                    </div>
+                </div>
+                <div class="alice-container">
+                    <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
+		                <?php wp_nonce_field( '', 'alice-api-form' ); ?>
+                        <input type="hidden" name="action" value="">
+                        <label>
+                            Email Address
+                            <input type="email" name="user_name">
+                        </label>
+                        <label>
+                            Password
+                            <input type="password" name="password">
+                        </label>
+                        <button type="submit" class="alice-btn"><?php esc_html_e( 'Signup & Connect', 'myaliceai' ); ?></button>
+                        <p>By proceeding, you agree to the <a href="#">Terms & Conditions</a></p>
+                    </form>
+                </div>
+            </section>
+
             <section class="alice-welcome-section">
                 <div class="alice-container">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
