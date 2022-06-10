@@ -37,6 +37,10 @@ if ( ! defined( 'ALICE_JS_PATH' ) ) {
 	define( 'ALICE_JS_PATH', ALICE_URL . '/js/' );
 }
 
+if ( ! defined( 'ALICE_SVG_PATH' ) ) {
+	define( 'ALICE_SVG_PATH', ALICE_URL . '/svg/' );
+}
+
 if ( ! defined( 'ALICE_VERSION' ) ) {
 	define( 'ALICE_VERSION', '1.2.9' );
 }

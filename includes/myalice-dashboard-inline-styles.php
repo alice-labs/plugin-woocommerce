@@ -6,21 +6,12 @@ defined( 'ABSPATH' ) || die;
 add_action( 'admin_head', function () { ?>
     <style>
         /* Alice Admin Menu */
-        #adminmenu #toplevel_page_myalice_dashboard div.wp-menu-image.svg {
-            background-size: 16px auto;
-            filter: grayscale(1);
+        #adminmenu #toplevel_page_myalice_dashboard div.wp-menu-image > img {
+            padding-top: 8px;
         }
 
-        #adminmenu #toplevel_page_myalice_dashboard:hover div.wp-menu-image.svg {
-            filter: grayscale(0);
-        }
-
-        #adminmenu li.current a.menu-top.toplevel_page_myalice_dashboard {
-            background: linear-gradient(to left, #2271b1 50%, transparent 90%);
-        }
-
-        #adminmenu li#toplevel_page_myalice_dashboard.current a.menu-top.toplevel_page_myalice_dashboard div.wp-menu-image.svg {
-            filter: grayscale(0);
+        #adminmenu li#toplevel_page_myalice_dashboard.current a.menu-top.toplevel_page_myalice_dashboard div.wp-menu-image > img {
+            opacity: 1;
         }
 
         /* Alice Deactivation Feedback Modal */
