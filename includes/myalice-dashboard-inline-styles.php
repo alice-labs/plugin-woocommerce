@@ -171,11 +171,20 @@ add_action( 'admin_head', function () { ?>
             text-decoration: none;
         }
 
+        #alice-dashboard,
+        #alice-dashboard span,
+        #alice-dashboard label,
+        #alice-dashboard p {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+        }
+
         #alice-dashboard .alice-container {
             max-width: 956px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
@@ -220,10 +229,29 @@ add_action( 'admin_head', function () { ?>
             color: #6B7280;
         }
 
+        #alice-dashboard .alice-title {
+            text-align: center;
+        }
+
+        #alice-dashboard .alice-title h2 {
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 800;
+            color: #111827;
+        }
+
+        #alice-dashboard .alice-title p {
+            color: #4B5563;
+        }
+
         /* dashboard header section */
         #alice-dashboard .alice-dashboard-header {
             background: #fff;
             padding: 20px 0;
+        }
+
+        #alice-dashboard .alice-dashboard-header .alice-container {
+            justify-content: space-between;
         }
 
         #alice-dashboard .alice-dashboard-header .alice-main-menu ul {
