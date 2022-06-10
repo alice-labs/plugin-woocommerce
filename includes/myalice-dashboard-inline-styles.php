@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || die;
 // Admin Internal Style
 add_action( 'admin_head', function () { ?>
     <style>
-        /* Alice Admin Menu */
+        /* === Alice Admin Menu === */
         #adminmenu #toplevel_page_myalice_dashboard div.wp-menu-image > img {
             padding-top: 8px;
         }
@@ -14,7 +14,7 @@ add_action( 'admin_head', function () { ?>
             opacity: 1;
         }
 
-        /* Alice Deactivation Feedback Modal */
+        /* === Alice Deactivation Feedback Modal === */
         #alice-feedback-modal {
             position: fixed;
             top: 0;
@@ -141,7 +141,7 @@ add_action( 'admin_head', function () { ?>
             margin-right: 5px;
         }
 
-        /* Alice Dashboard */
+        /* === Alice Dashboard === */
         #alice-dashboard {
             background: #FFFFFF;
             border: 1px solid #CCCCCC;
@@ -220,6 +220,7 @@ add_action( 'admin_head', function () { ?>
             color: #6B7280;
         }
 
+        /* dashboard header section */
         #alice-dashboard .alice-dashboard-header {
             background: #fff;
             padding: 20px 0;
@@ -304,6 +305,7 @@ add_action( 'admin_head', function () { ?>
             opacity: 1;
         }
 
+        /* dashboard welcome section */
         #alice-dashboard .alice-welcome-section {
             margin-top: 24px;
             padding: 12px 0;
@@ -321,6 +323,7 @@ add_action( 'admin_head', function () { ?>
             justify-content: initial;
         }
 
+        /* dashboard registration guide section */
         #alice-dashboard .alice-registration-guide {
             margin-top: 12px;
         }
@@ -352,6 +355,7 @@ add_action( 'admin_head', function () { ?>
             margin-left: 12px;
         }
 
+        /* dashboard marketplace, plugin key, settings section */
         #alice-dashboard .alice-marketplace-connect-section > .alice-container,
         #alice-dashboard .alice-plugin-key-section > .alice-container,
         #alice-dashboard .alice-settings-section > .alice-container {
