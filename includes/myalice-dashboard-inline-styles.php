@@ -206,13 +206,21 @@ add_action( 'admin_head', function () { ?>
             color: #fff;
             border-radius: 6px;
             font-size: 16px;
-            line-height: 40px;
+            font-weight: 500;
+            line-height: 42px;
             border: 1px solid transparent;
             padding: 0 17px;
             text-decoration: none;
             transition: .3s;
             display: inline-block;
             cursor: pointer;
+        }
+
+        #alice-dashboard .alice-btn > span {
+            display: block;
+            line-height: inherit;
+            font-size: inherit;
+            font-weight: inherit;
         }
 
         #alice-dashboard .alice-btn:hover {
@@ -262,6 +270,10 @@ add_action( 'admin_head', function () { ?>
             line-height: 32px;
             font-weight: 800;
             color: #111827;
+        }
+
+        #alice-dashboard .alice-title h2 ~ p {
+            margin-top: 4px;
         }
 
         /* dashboard header section */
@@ -371,6 +383,16 @@ add_action( 'admin_head', function () { ?>
 
         #alice-dashboard .alice-connect-with-myalice form button.alice-btn ~ p {
             margin-top: 16px;
+        }
+
+        #alice-dashboard .alice-connect-with-myalice.alice-login-active .--signup-component,
+        #alice-dashboard .alice-connect-with-myalice .--login-component {
+            display: none;
+        }
+
+        #alice-dashboard .alice-connect-with-myalice .--signup-component,
+        #alice-dashboard .alice-connect-with-myalice.alice-login-active .--login-component {
+            display: block;
         }
 
         /* dashboard welcome section */

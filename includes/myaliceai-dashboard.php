@@ -44,11 +44,12 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-connect-with-myalice">
+            <section class="alice-connect-with-myalice alice-login-active">
                 <div class="alice-container">
                     <div class="alice-title">
                         <h2><?php esc_html_e( 'Connect with MyAlice', 'myaliceai' ); ?></h2>
-                        <p><?php esc_html_e( 'Already have an account?', 'myaliceai' ); ?> <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'login here', 'myaliceai' ); ?></a></p>
+                        <p class="--signup-component"><?php esc_html_e( 'Already have an account?', 'myaliceai' ); ?> <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'login here', 'myaliceai' ); ?></a></p>
+                        <p class="--login-component"><?php esc_html_e( 'Don’t have an account?', 'myaliceai' ); ?> <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'signup here', 'myaliceai' ); ?></a></p>
                     </div>
                 </div>
                 <div class="alice-container">
@@ -63,8 +64,9 @@ function myalice_dashboard_callback() {
 	                        <?php esc_html_e( 'Password', 'myaliceai' ); ?>
                             <input type="password" name="password">
                         </label>
-                        <button type="submit" class="alice-btn"><?php esc_html_e( 'Signup & Connect', 'myaliceai' ); ?></button>
-                        <p><?php esc_html_e( 'By proceeding, you agree to the', 'myaliceai' ); ?> <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Terms & Conditions', 'myaliceai' ); ?></a></p>
+                        <button type="submit" class="alice-btn"><span class="--signup-component"><?php esc_html_e( 'Signup & Connect', 'myaliceai' ); ?></span><span class="--login-component"><?php esc_html_e( 'Login & Connect', 'myaliceai' ); ?></span></button>
+                        <p class="--signup-component"><?php esc_html_e( 'By proceeding, you agree to the', 'myaliceai' ); ?> <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Terms & Conditions', 'myaliceai' ); ?></a></p>
+                        <p class="--login-component"><?php esc_html_e( 'Forgot your credentials?', 'myaliceai' ); ?> <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Reset Password', 'myaliceai' ); ?></a></p>
                     </form>
                 </div>
             </section>
