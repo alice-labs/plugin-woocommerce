@@ -78,7 +78,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-select-the-team">
+            <section style="display: none" class="alice-select-the-team">
                 <div class="alice-container">
                     <div class="alice-title">
                         <h2><?php esc_html_e( 'Select the team to connect your store with', 'myaliceai' ); ?></h2>
@@ -109,6 +109,22 @@ function myalice_dashboard_callback() {
                         <p><?php esc_html_e( "If you don't see any team, that might be already connected to a store. If that isn't the case,", 'myaliceai' ); ?>
                             <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Contact Support', 'myaliceai' ); ?></a></p>
                     </form>
+                </div>
+            </section>
+
+            <section class="alice-explore-myalice">
+                <div class="alice-container">
+                    <img src="<?php echo esc_url( ALICE_SVG_PATH . 'Explore-MyAlice.svg' ); ?>" alt="<?php esc_attr_e( 'MyAlice Explore Map', 'myaliceai' ); ?>">
+                </div>
+                <div class="alice-container">
+                    <div class="alice-title">
+                        <h2><?php esc_html_e( 'Explore MyAlice', 'myaliceai' ); ?></h2>
+                        <p><?php esc_html_e( 'Check your inbox for pending conversations, customise the livechat to update brand or automate responses with chatbot.', 'myaliceai' ); ?></p>
+                    </div>
+                </div>
+                <div class="alice-container">
+                    <a class="alice-btn alice-btn-lite" href="#"><?php esc_html_e( 'Open MyAlice', 'myaliceai' ); ?></a>
+                    <a class="alice-btn alice-btn-lite" href="#"><?php esc_html_e( 'Open Inbox', 'myaliceai' ); ?></a>
                 </div>
             </section>
 

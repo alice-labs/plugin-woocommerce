@@ -216,6 +216,12 @@ add_action( 'admin_head', function () { ?>
             cursor: pointer;
         }
 
+        #alice-dashboard .alice-btn.alice-btn-lite {
+            background: transparent;
+            color: #374151;
+            border-color: #D1D5DB;
+        }
+
         #alice-dashboard .alice-btn > span {
             display: block;
             line-height: inherit;
@@ -226,6 +232,12 @@ add_action( 'admin_head', function () { ?>
         #alice-dashboard .alice-btn:hover {
             background: #039952;
             color: #fff;
+        }
+
+        #alice-dashboard a.alice-btn.alice-btn-lite:hover {
+            background: #CDF0DF;
+            color: #038E4C;
+            border-color: transparent;
         }
 
         #alice-dashboard .alice-btn.white-btn {
@@ -461,6 +473,24 @@ add_action( 'admin_head', function () { ?>
         #alice-dashboard .alice-select-the-team form button + p {
             margin-top: 72px;
             text-align: center;
+        }
+
+        /* dashboard explore-myalice section */
+        #alice-dashboard .alice-explore-myalice {
+            padding: 80px 0 150px;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-title {
+            max-width: 350px;
+            margin: 12px 0 32px;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-title p {
+            padding: 0 20px;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-btn + .alice-btn {
+            margin-left: 12px;
         }
 
         /* dashboard welcome section */
