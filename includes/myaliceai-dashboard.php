@@ -44,7 +44,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-connect-with-myalice alice-login-active">
+            <section style="display: none" class="alice-connect-with-myalice alice-login-active">
                 <div class="alice-container">
                     <div class="alice-title">
                         <h2><?php esc_html_e( 'Connect with MyAlice', 'myaliceai' ); ?></h2>
@@ -74,6 +74,40 @@ function myalice_dashboard_callback() {
                             <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Terms & Conditions', 'myaliceai' ); ?></a></p>
                         <p class="--login-component"><?php esc_html_e( 'Forgot your credentials?', 'myaliceai' ); ?>
                             <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Reset Password', 'myaliceai' ); ?></a></p>
+                    </form>
+                </div>
+            </section>
+
+            <section class="alice-select-the-team">
+                <div class="alice-container">
+                    <div class="alice-title">
+                        <h2><?php esc_html_e( 'Select the team to connect your store with', 'myaliceai' ); ?></h2>
+                        <p><?php esc_html_e( 'You can connect one store with one team only.', 'myaliceai' ); ?></p>
+                    </div>
+                </div>
+                <div class="alice-container">
+                    <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
+						<?php wp_nonce_field( '', 'alice-api-form' ); ?>
+                        <input type="hidden" name="action" value="">
+                        <input type="radio" name="team" id="team-1" checked>
+                        <label for="team-1">
+                            <span class="alice-team-info">
+                                <img src="https://via.placeholder.com/40x40" alt="<?php esc_attr_e( 'team avatar', 'myaliceai' ); ?>">
+                                <span><?php esc_html_e( 'Online Clothing Store', 'myaliceai' ); ?></span>
+                            </span>
+                            <span class="alice-icon"></span>
+                        </label>
+                        <input type="radio" name="team" id="team-2">
+                        <label for="team-2">
+                            <span class="alice-team-info">
+                                <img src="https://via.placeholder.com/40x40" alt="<?php esc_attr_e( 'team avatar', 'myaliceai' ); ?>">
+                                <span><?php esc_html_e( 'Panda Shop', 'myaliceai' ); ?></span>
+                            </span>
+                            <span class="alice-icon"></span>
+                        </label>
+                        <button type="submit" class="alice-btn"><?php esc_html_e( 'Continue', 'myaliceai' ); ?></button>
+                        <p><?php esc_html_e( "If you don't see any team, that might be already connected to a store. If that isn't the case,", 'myaliceai' ); ?>
+                            <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Contact Support', 'myaliceai' ); ?></a></p>
                     </form>
                 </div>
             </section>
