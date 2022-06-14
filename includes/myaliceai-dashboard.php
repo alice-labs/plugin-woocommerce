@@ -5,8 +5,8 @@ defined( 'ABSPATH' ) || die;
 // Add Alice Dashboard Menu
 add_action( 'admin_menu', function () {
 	add_menu_page(
-		__('MyAlice Dashboard', 'myaliceai'),
-		__('MyAlice', 'myaliceai'),
+		__( 'MyAlice Dashboard', 'myaliceai' ),
+		__( 'MyAlice', 'myaliceai' ),
 		'install_plugins',
 		'myalice_dashboard',
 		'myalice_dashboard_callback',
@@ -19,8 +19,8 @@ add_action( 'admin_menu', function () {
 function myalice_dashboard_callback() {
 	global $myalice_settings;
 	?>
-	<div class="wrap alice-dashboard-wrap">
-		<div id="alice-dashboard" class="<?php echo MYALICE_API_OK ? 'myalice-api-activated' : ''; ?>">
+    <div class="wrap alice-dashboard-wrap">
+        <div id="alice-dashboard" class="<?php echo MYALICE_API_OK ? 'myalice-api-activated' : ''; ?>">
 
             <section class="alice-dashboard-header">
                 <div class="alice-container">
@@ -156,10 +156,10 @@ function myalice_dashboard_callback() {
                     </svg>
 
                     <h3>
-		                <?php
-		                global $current_user;
-		                printf( __( 'Welcome Onboard, %s!', 'myaliceai' ), $current_user->display_name );
-		                ?>
+						<?php
+						global $current_user;
+						printf( __( 'Welcome Onboard, %s!', 'myaliceai' ), $current_user->display_name );
+						?>
                     </h3>
                 </div>
             </section>
@@ -171,8 +171,10 @@ function myalice_dashboard_callback() {
                         <p><?php _e( 'Please visit <a href="https://app.myalice.ai/" target="_blank">https://app.myalice.ai/</a> to complete your registration or log into your account', 'myaliceai' ); ?></p>
                     </div>
                     <div class="alice-btn-content">
-                        <a href="https://docs.myalice.ai/getting-started/create-an-account#video-tutorial-for-signing-up-to-myalice" target="_blank" class="alice-btn white-btn"><?php esc_html_e( 'Watch Video', 'myaliceai' ); ?></a>
-                        <a href="https://docs.myalice.ai/getting-started/create-an-account" target="_blank" class="alice-btn white-btn"><?php esc_html_e( 'Read Documentation', 'myaliceai' ); ?></a>
+                        <a href="https://docs.myalice.ai/getting-started/create-an-account#video-tutorial-for-signing-up-to-myalice" target="_blank"
+                           class="alice-btn white-btn"><?php esc_html_e( 'Watch Video', 'myaliceai' ); ?></a>
+                        <a href="https://docs.myalice.ai/getting-started/create-an-account" target="_blank"
+                           class="alice-btn white-btn"><?php esc_html_e( 'Read Documentation', 'myaliceai' ); ?></a>
                     </div>
                 </div>
             </section>
@@ -186,8 +188,10 @@ function myalice_dashboard_callback() {
                                 <p><?php esc_html_e( 'Please complete the steps to connect your store with MyAlice', 'myaliceai' ); ?></p>
                             </div>
                             <div class="alice-btn-content">
-                                <a href="https://docs.myalice.ai/getting-started/connect-your-marketplace#video-tutorial-for-connecting-your-woocommerce-marketplace" target="_blank" class="alice-btn white-btn"><?php esc_html_e( 'Watch Video', 'myaliceai' ); ?></a>
-                                <a href="https://docs.myalice.ai/getting-started/connect-your-marketplace" target="_blank" class="alice-btn white-btn"><?php esc_html_e( 'Read Documentation', 'myaliceai' ); ?></a>
+                                <a href="https://docs.myalice.ai/getting-started/connect-your-marketplace#video-tutorial-for-connecting-your-woocommerce-marketplace"
+                                   target="_blank" class="alice-btn white-btn"><?php esc_html_e( 'Watch Video', 'myaliceai' ); ?></a>
+                                <a href="https://docs.myalice.ai/getting-started/connect-your-marketplace" target="_blank"
+                                   class="alice-btn white-btn"><?php esc_html_e( 'Read Documentation', 'myaliceai' ); ?></a>
                             </div>
                         </div>
                         <ol>
@@ -212,11 +216,12 @@ function myalice_dashboard_callback() {
                         </div>
                         <div class="alice-plugin-key">
                             <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
-	                            <?php wp_nonce_field( 'alice-api-form', 'alice-api-form' ); ?>
+								<?php wp_nonce_field( 'alice-api-form', 'alice-api-form' ); ?>
                                 <input type="hidden" name="action" value="alice_api_form">
                                 <div class="alice-input-group <?php echo MYALICE_API_OK ? '' : 'alice-active-editing'; ?>">
                                     <input name="alice_plugin_key" type="text" id="alice-plugin-key" value="<?php echo esc_attr( MYALICE_API_TOKEN ); ?>"
-                                           placeholder="<?php esc_html_e( 'Plugin Key', 'myaliceai' ); ?>" class="alice-input-field" <?php echo MYALICE_API_OK ? 'readonly' : ''; ?>>
+                                           placeholder="<?php esc_html_e( 'Plugin Key', 'myaliceai' ); ?>"
+                                           class="alice-input-field" <?php echo MYALICE_API_OK ? 'readonly' : ''; ?>>
                                     <span class="spinner"></span>
                                     <button type="submit" class="alice-btn"><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
                                     <button type="button" class="alice-btn white-btn alice-edit-btn"><?php esc_html_e( 'Edit', 'myaliceai' ); ?></button>
@@ -269,6 +274,6 @@ function myalice_dashboard_callback() {
             </section>
 
         </div>
-	</div>
+    </div>
 	<?php
 }
