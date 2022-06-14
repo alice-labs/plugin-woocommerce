@@ -112,7 +112,19 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-explore-myalice">
+            <section class="alice-needs-your-permission">
+                <div class="alice-container">
+                    <div class="alice-title">
+                        <h2><?php esc_html_e( 'MyAlice needs your permission to work', 'myaliceai' ); ?></h2>
+                        <p><?php esc_html_e( 'Once you grant permission, your website visitors will be able to communicate with you.', 'myaliceai' ); ?></p>
+                    </div>
+                </div>
+                <div class="alice-container">
+                    <a class="alice-btn" href="#"><?php esc_html_e( 'Grant Permission', 'myaliceai' ); ?></a>
+                </div>
+            </section>
+
+            <section style="display: none" class="alice-explore-myalice">
                 <div class="alice-container">
                     <img src="<?php echo esc_url( ALICE_SVG_PATH . 'Explore-MyAlice.svg' ); ?>" alt="<?php esc_attr_e( 'MyAlice Explore Map', 'myaliceai' ); ?>">
                 </div>

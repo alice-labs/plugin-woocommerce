@@ -379,7 +379,8 @@ add_action( 'admin_head', function () { ?>
 
         /* dashboard connect-with-myalice section */
         #alice-dashboard .alice-connect-with-myalice,
-        #alice-dashboard .alice-select-the-team {
+        #alice-dashboard .alice-select-the-team,
+        #alice-dashboard .alice-needs-your-permission {
             padding: 100px 0 200px;
             background-position: bottom center;
             background-repeat: no-repeat;
@@ -472,6 +473,21 @@ add_action( 'admin_head', function () { ?>
 
         #alice-dashboard .alice-select-the-team form button + p {
             margin-top: 72px;
+            text-align: center;
+        }
+
+        /* dashboard needs-your-permission section */
+        #alice-dashboard .alice-needs-your-permission .alice-title {
+            margin-bottom: 32px;
+        }
+
+        #alice-dashboard .alice-needs-your-permission .alice-title p {
+            width: 420px;
+            display: inline-block;
+        }
+
+        #alice-dashboard .alice-needs-your-permission .alice-btn {
+            width: 200px;
             text-align: center;
         }
 
