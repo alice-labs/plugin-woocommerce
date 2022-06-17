@@ -398,6 +398,24 @@ add_action( 'admin_head', function () { ?>
             margin-top: 24px;
         }
 
+        #alice-dashboard .alice-connect-with-myalice form .spinner {
+            position: relative;
+            top: 35px;
+            float: left;
+            width: 0;
+            display: block;
+            transition: .3s;
+        }
+
+        #alice-dashboard .alice-connect-with-myalice form .spinner.is-active {
+            width: 20px;
+            margin-right: 5px;
+        }
+
+        #alice-dashboard .alice-connect-with-myalice form .spinner.is-active + button[type="submit"] {
+            width: calc(100% - 25px);
+        }
+
         #alice-dashboard .alice-connect-with-myalice form button.alice-btn {
             margin-top: 24px;
             width: 100%;

@@ -66,6 +66,7 @@ function myalice_dashboard_callback() {
 							<?php esc_html_e( 'Password', 'myaliceai' ); ?>
                             <input type="password" name="password">
                         </label>
+                        <span class="spinner"></span>
                         <button type="submit" class="alice-btn">
                             <span class="--signup-component"><?php esc_html_e( 'Signup & Connect', 'myaliceai' ); ?></span>
                             <span class="--login-component"><?php esc_html_e( 'Login & Connect', 'myaliceai' ); ?></span>
