@@ -86,7 +86,9 @@ add_action( 'admin_footer', function () { ?>
                         location.href = '<?php echo admin_url(); ?>' + deactivate_url;
                     }
                 });
-            }).on('submit', '.alice-settings form', function (e) {
+            }).on('change', '.alice-plugin-settings form', function (e) {
+                $(this).find('button[type="submit"]').removeAttr('disabled');
+            }).on('submit', '.alice-plugin-settings form', function (e) {
                 e.preventDefault();
 
                 var $form = $(this),
@@ -99,9 +101,10 @@ add_action( 'admin_footer', function () { ?>
                 $.post(url, data, function (response) {
                     spinner.removeClass('is-active');
 
-                    const notice_area = $form.siblings('.myalice-notice-area');
+                    const notice_area = $form.find('.myalice-notice-area');
 
                     if (response.success) {
+                        $form.find('button[type="submit"]').attr('disabled', 'disabled');
                         notice_area.prepend(`<div class="updated"><p>${response.data.message}</p></div>`);
                     } else {
                         notice_area.prepend(`<div class="error"><p>${response.data.message}</p></div>`);

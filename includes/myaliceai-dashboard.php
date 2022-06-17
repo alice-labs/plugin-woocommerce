@@ -143,7 +143,7 @@ function myalice_dashboard_callback() {
             <section class="alice-plugin-settings">
                 <div class="alice-container">
                     <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
-				        <?php wp_nonce_field( 'alice-settings-form', 'alice-api-form' ); ?>
+				        <?php wp_nonce_field( 'alice-settings-form', 'alice-settings-form' ); ?>
                         <input type="hidden" name="action" value="alice_settings_form">
                         <h3><?php esc_html_e( 'Plugin Settings', 'myaliceai' ); ?></h3>
                         <hr>
@@ -176,6 +176,7 @@ function myalice_dashboard_callback() {
                             <span class="spinner"></span>
                             <button type="submit" class="alice-btn" disabled><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
                         </div>
+                        <div class="myalice-notice-area"></div>
                     </form>
                 </div>
             </section>
