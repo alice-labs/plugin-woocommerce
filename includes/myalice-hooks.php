@@ -70,3 +70,7 @@ if ( ALICE_WC_OK && MYALICE_API_OK ) {
 		add_filter( 'woocommerce_update_cart_action_cart_updated', 'alice_user_cart_api_handler' );
 	}
 }
+
+// Alice Login and Signup form handler
+add_action('wp_ajax_myalice_login', 'alice_login_form_process');
+add_action('wp_ajax_myalice_signup', 'alice_signup_form_process');

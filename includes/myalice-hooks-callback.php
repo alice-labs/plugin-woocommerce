@@ -232,3 +232,56 @@ function myalice_review_notice_dismiss() {
 	update_option( 'myaliceai_review_notice_time', current_time( 'U' ) + YEAR_IN_SECONDS * 100 );
 	wp_send_json_success();
 }
+
+function alice_login_form_process() {
+	if ( check_ajax_referer( 'myalice-form-process', 'myalice-nonce' ) ) {
+		$user_email = empty( $_POST['user_email'] ) ? '' : sanitize_text_field( $_POST['user_email'] );
+		$password   = empty( $_POST['password'] ) ? '' : sanitize_text_field( $_POST['password'] );
+
+		if ( empty( $user_email ) || empty( $password ) ) {
+			wp_send_json_error( [ 'message' => __( 'Please fill up all required field', 'myaliceai' ) ] );
+		}
+
+		$alice_api_url = 'https://api.myalice.ai/api/ecommerce/login-and-connect-woocommerce';
+		$body          = wp_json_encode( array(
+			'store_url'       => site_url(),
+			'consumer_key'    => 'ck_2ea967a58335c6705384166993d4ab92d0d27d87',
+			'consumer_secret' => 'cs_69244e335f897dee048fad202292f35be9df2620',
+			'key_permissions' => 'read_write',
+			'email'           => $user_email,
+			'password'        => $password,
+		) );
+
+		$response = wp_remote_post( $alice_api_url, array(
+				'method'  => 'POST',
+				'timeout' => 45,
+				'body'    => $body,
+				'cookies' => array()
+			)
+		);
+
+		if ( is_wp_error( $response ) ) {
+			$error_message = $response->get_error_message();
+
+			wp_send_json_error( [ 'message' => "Something went wrong: {$error_message}" ] );
+		} else {
+			$alice_api_data = json_decode( $response['body'], true );
+
+			//if ( $alice_api_data['success'] === true ) {
+//				update_option( 'myaliceai_api_data', [
+//					'api_token'   => $alice_api_data['api_token'],
+//					'platform_id' => absint( $alice_api_data['platform_id'] ),
+//					'primary_id'  => $alice_api_data['primary_id']
+//				] );
+
+				wp_send_json_success( [
+					$alice_api_data,
+					$body
+				] );
+//			} else {
+//				wp_send_json_error( [ $alice_api_data, $body ] );
+//			}
+
+		}
+	}
+}
