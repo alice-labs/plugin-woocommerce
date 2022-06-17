@@ -631,7 +631,6 @@ add_action( 'admin_head', function () { ?>
 
         /* dashboard marketplace, plugin key, settings section */
         #alice-dashboard .alice-marketplace-connect-section > .alice-container,
-        #alice-dashboard .alice-plugin-key-section > .alice-container,
         #alice-dashboard .alice-settings-section > .alice-container {
             background: #fff;
             border-radius: 8px;
@@ -644,7 +643,6 @@ add_action( 'admin_head', function () { ?>
         }
 
         #alice-dashboard .alice-marketplace-connect-section .alice-text-content,
-        #alice-dashboard .alice-plugin-key-section .alice-text-content,
         #alice-dashboard .alice-settings-section .alice-text-content {
             border: none;
             padding: 0
@@ -661,49 +659,7 @@ add_action( 'admin_head', function () { ?>
             color: #111827;
         }
 
-        #alice-dashboard .alice-plugin-key-section .alice-text-content {
-            width: 70%;
-        }
 
-        #alice-dashboard .alice-plugin-key {
-            margin-top: 20px;
-        }
-
-        #alice-dashboard .alice-plugin-key-section .alice-input-group > * + * {
-            margin-left: 12px;
-        }
-
-        #alice-dashboard .alice-plugin-key input.alice-input-field {
-            background: #E5E7EB;
-        }
-
-        #alice-dashboard .alice-plugin-key [type="submit"] {
-            display: none;
-        }
-
-        #alice-dashboard .alice-plugin-key .alice-edit-btn {
-            display: inline-block;
-        }
-
-        #alice-dashboard .alice-plugin-key .alice-cancel-btn {
-            display: none;
-        }
-
-        #alice-dashboard .alice-plugin-key .alice-active-editing input.alice-input-field {
-            background: #FFFFFF;
-        }
-
-        #alice-dashboard .alice-plugin-key-section .alice-active-editing [type="submit"] {
-            display: inline-block;
-        }
-
-        #alice-dashboard .alice-plugin-key .alice-active-editing .alice-edit-btn {
-            display: none;
-        }
-
-        #alice-dashboard .alice-plugin-key .alice-active-editing .alice-cancel-btn {
-            display: inline-block;
-        }
 
         #alice-dashboard.myalice-api-activated .alice-registration-guide,
         #alice-dashboard.myalice-api-activated .alice-marketplace-connect-section {

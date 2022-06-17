@@ -86,38 +86,6 @@ add_action( 'admin_footer', function () { ?>
                         location.href = '<?php echo admin_url(); ?>' + deactivate_url;
                     }
                 });
-            }).on('submit', '.alice-plugin-key form', function (e) {
-                e.preventDefault();
-
-                var $form = $(this),
-                    url = $form.attr('action'),
-                    data = $form.serialize(),
-                    spinner = $form.find('.spinner');
-
-                spinner.addClass('is-active');
-
-                $.post(url, data, function (response) {
-                    spinner.removeClass('is-active');
-
-                    var notice_area = $form.siblings('.myalice-notice-area'),
-                        input_group = $('.alice-input-group'),
-                        input_field = $('#alice-plugin-key'),
-                        alice_dashboard = $('#alice-dashboard');
-
-                    if (response.success) {
-                        notice_area.prepend(`<div class="updated"><p>${response.data.message}</p></div>`);
-                        input_group.removeClass('alice-active-editing');
-                        input_field.attr('readonly', 'readonly');
-                        alice_dashboard.addClass('myalice-api-activated');
-                    } else {
-                        notice_area.prepend(`<div class="error"><p>${response.data.message}</p></div>`);
-                        alice_dashboard.removeClass('myalice-api-activated');
-                    }
-
-                    setTimeout(function () {
-                        notice_area.html('');
-                    }, 3000);
-                });
             }).on('submit', '.alice-settings form', function (e) {
                 e.preventDefault();
 
@@ -152,19 +120,6 @@ add_action( 'admin_footer', function () { ?>
                         notice_wrap.remove();
                     }
                 });
-            }).on('click', '.alice-edit-btn, .alice-cancel-btn', function (e) {
-                e.preventDefault();
-
-                var $this = $(this),
-                    input_group = $('.alice-input-group'),
-                    input_field = $('#alice-plugin-key');
-
-                input_group.toggleClass('alice-active-editing');
-                if ($this.hasClass('alice-cancel-btn')) {
-                    input_field.attr('readonly', 'readonly');
-                } else {
-                    input_field.removeAttr('readonly');
-                }
             });
         })(jQuery);
     </script>

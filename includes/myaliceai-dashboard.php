@@ -44,7 +44,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section style="display: none" class="alice-connect-with-myalice alice-login-active">
+            <section class="alice-connect-with-myalice alice-login-active">
                 <div class="alice-container">
                     <div class="alice-title">
                         <h2><?php esc_html_e( 'Connect with MyAlice', 'myaliceai' ); ?></h2>
@@ -78,7 +78,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section style="display: none" class="alice-select-the-team">
+            <section class="alice-select-the-team">
                 <div class="alice-container">
                     <div class="alice-title">
                         <h2><?php esc_html_e( 'Select the team to connect your store with', 'myaliceai' ); ?></h2>
@@ -112,7 +112,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section style="display: none" class="alice-needs-your-permission">
+            <section class="alice-needs-your-permission">
                 <div class="alice-container">
                     <div class="alice-title">
                         <h2><?php esc_html_e( 'MyAlice needs your permission to work', 'myaliceai' ); ?></h2>
@@ -124,7 +124,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section style="display: none" class="alice-explore-myalice">
+            <section class="alice-explore-myalice">
                 <div class="alice-container">
                     <img src="<?php echo esc_url( ALICE_SVG_PATH . 'Explore-MyAlice.svg' ); ?>" alt="<?php esc_attr_e( 'MyAlice Explore Map', 'myaliceai' ); ?>">
                 </div>
@@ -180,7 +180,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section style="display: none" class="alice-welcome-section">
+            <section class="alice-welcome-section">
                 <div class="alice-container">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0)">
@@ -216,7 +216,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section style="display: none" class="alice-registration-guide">
+            <section class="alice-registration-guide">
                 <div class="alice-container">
                     <div class="alice-text-content">
                         <h4><?php esc_html_e( 'Complete Your Registration', 'myaliceai' ); ?></h4>
@@ -231,7 +231,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section style="display: none" class="alice-marketplace-connect-section">
+            <section class="alice-marketplace-connect-section">
                 <div class="alice-container">
                     <div style="width: 100%;">
                         <div class="alice-container">
@@ -259,34 +259,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section style="display: none" class="alice-plugin-key-section">
-                <div class="alice-container">
-                    <div style="width: 100%;">
-                        <div class="alice-text-content">
-                            <h4><?php esc_html_e( 'MyAlice Plugin Key', 'myaliceai' ); ?></h4>
-                            <p><?php esc_html_e( "Please enter the Plugin Key you have received from MyAlice below. Once you have entered the Key, please check and verify in MyAlice’s Marketplace.", 'myaliceai' ); ?></p>
-                        </div>
-                        <div class="alice-plugin-key">
-                            <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
-								<?php wp_nonce_field( 'alice-api-form', 'alice-api-form' ); ?>
-                                <input type="hidden" name="action" value="alice_api_form">
-                                <div class="alice-input-group <?php echo MYALICE_API_OK ? '' : 'alice-active-editing'; ?>">
-                                    <input name="alice_plugin_key" type="text" id="alice-plugin-key" value="<?php echo esc_attr( MYALICE_API_TOKEN ); ?>"
-                                           placeholder="<?php esc_html_e( 'Plugin Key', 'myaliceai' ); ?>"
-                                           class="alice-input-field" <?php echo MYALICE_API_OK ? 'readonly' : ''; ?>>
-                                    <span class="spinner"></span>
-                                    <button type="submit" class="alice-btn"><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
-                                    <button type="button" class="alice-btn white-btn alice-edit-btn"><?php esc_html_e( 'Edit', 'myaliceai' ); ?></button>
-                                    <button type="button" class="alice-btn white-btn alice-cancel-btn"><?php esc_html_e( 'Cancel', 'myaliceai' ); ?></button>
-                                </div>
-                            </form>
-                            <div class="myalice-notice-area"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section style="display: none" class="alice-settings-section">
+            <section class="alice-settings-section">
                 <div class="alice-container">
                     <div style="width: 100%;">
                         <div class="alice-text-content">
