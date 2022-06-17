@@ -86,6 +86,20 @@ add_action( 'admin_footer', function () { ?>
                         location.href = '<?php echo admin_url(); ?>' + deactivate_url;
                     }
                 });
+            }).on('click', '[data-form]', function (e) {
+                e.preventDefault();
+                var form_section = $('.alice-connect-with-myalice');
+
+                switch ($(this).data('form')) {
+                    case 'login':
+                        form_section.addClass('alice-login-active');
+                        form_section.find('input[name="action"]').val('myalice_login');
+                        break;
+                    case 'signup':
+                        form_section.removeClass('alice-login-active');
+                        form_section.find('input[name="action"]').val('myalice_signup');
+                        break;
+                }
             }).on('change', '.alice-plugin-settings form', function (e) {
                 $(this).find('button[type="submit"]').removeAttr('disabled');
             }).on('submit', '.alice-plugin-settings form', function (e) {

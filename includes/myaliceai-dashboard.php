@@ -49,15 +49,15 @@ function myalice_dashboard_callback() {
                     <div class="alice-title">
                         <h2><?php esc_html_e( 'Connect with MyAlice', 'myaliceai' ); ?></h2>
                         <p class="--signup-component"><?php esc_html_e( 'Already have an account?', 'myaliceai' ); ?>
-                            <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'login here', 'myaliceai' ); ?></a></p>
+                            <a href="<?php echo esc_url( '#' ); ?>" data-form="login"><?php esc_html_e( 'login here', 'myaliceai' ); ?></a></p>
                         <p class="--login-component"><?php esc_html_e( 'Don’t have an account?', 'myaliceai' ); ?>
-                            <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'signup here', 'myaliceai' ); ?></a></p>
+                            <a href="<?php echo esc_url( '#' ); ?>" data-form="signup"><?php esc_html_e( 'signup here', 'myaliceai' ); ?></a></p>
                     </div>
                 </div>
                 <div class="alice-container">
                     <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
 						<?php wp_nonce_field( '', 'alice-api-form' ); ?>
-                        <input type="hidden" name="action" value="">
+                        <input type="hidden" name="action" value="myalice_login">
                         <label>
 							<?php esc_html_e( 'Email Address', 'myaliceai' ); ?>
                             <input type="email" name="user_name">
