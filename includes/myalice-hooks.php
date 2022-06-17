@@ -39,13 +39,13 @@ add_filter( "plugin_row_meta", function ( $links, $file ) {
 	return $links;
 }, 10, 2 );
 
-//Alice API form ajax handler
+// Alice API form ajax handler
 add_action( 'wp_ajax_alice_api_form', 'alice_api_form_process' );
 
-//Alice Settings form ajax handler
+// Alice Settings form ajax handler
 add_action( 'wp_ajax_alice_settings_form', 'alice_settings_form_process' );
 
-//Alice's deactivation feedback form handler
+// Alice's deactivation feedback form handler
 add_action( 'wp_ajax_alice_deactivation_feedback', 'alice_feedback_form_process' );
 
 if ( ALICE_WC_OK && MYALICE_API_OK ) {
