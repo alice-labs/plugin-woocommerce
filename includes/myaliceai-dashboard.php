@@ -56,11 +56,11 @@ function myalice_dashboard_callback() {
                 </div>
                 <div class="alice-container">
                     <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
-						<?php wp_nonce_field( '', 'alice-api-form' ); ?>
+						<?php wp_nonce_field( 'myalice-form-process', 'myalice-nonce' ); ?>
                         <input type="hidden" name="action" value="myalice_login">
                         <label>
 							<?php esc_html_e( 'Email Address', 'myaliceai' ); ?>
-                            <input type="email" name="user_name">
+                            <input type="email" name="user_email">
                         </label>
                         <label>
 							<?php esc_html_e( 'Password', 'myaliceai' ); ?>

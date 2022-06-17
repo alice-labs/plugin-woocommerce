@@ -405,6 +405,7 @@ add_action( 'admin_head', function () { ?>
 
         #alice-dashboard .alice-connect-with-myalice form button.alice-btn ~ p {
             margin-top: 16px;
+            text-align: center;
         }
 
         #alice-dashboard .alice-connect-with-myalice.alice-login-active .--signup-component,
