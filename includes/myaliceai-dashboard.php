@@ -180,45 +180,6 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-settings-section">
-                <div class="alice-container">
-                    <div style="width: 100%;">
-                        <div class="alice-text-content">
-                            <h4><?php esc_html_e( 'MyAlice Settings', 'myaliceai' ); ?></h4>
-                        </div>
-                        <div class="alice-settings">
-                            <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
-								<?php wp_nonce_field( 'alice-settings-form', 'alice-settings-form' ); ?>
-                                <input type="hidden" name="action" value="alice_settings_form">
-                                <label>
-                                    <input type="checkbox" name="allow_chat_user_only" value="true" <?php checked( 1, $myalice_settings['allow_chat_user_only'] ); ?>>
-                                    <span class="checkbox-title"><?php esc_html_e( 'Allow Chat for Logged-in User Only', 'myaliceai' ); ?></span>
-                                </label>
-                                <br class="clear">
-                                <label>
-                                    <input type="checkbox" name="allow_product_view_api" value="true" <?php checked( 1, $myalice_settings['allow_product_view_api'] ); ?>>
-                                    <span class="checkbox-title"><?php esc_html_e( 'Send product view data', 'myaliceai' ); ?></span>
-                                </label>
-                                <br class="clear">
-                                <label>
-                                    <input type="checkbox" name="allow_cart_api" value="true" <?php checked( 1, $myalice_settings['allow_cart_api'] ); ?>>
-                                    <span class="checkbox-title"><?php esc_html_e( 'Send cart data', 'myaliceai' ); ?></span>
-                                </label>
-                                <br class="clear">
-                                <label>
-                                    <input type="checkbox" name="hide_chatbox" value="true" <?php checked( 1, $myalice_settings['hide_chatbox'] ); ?>>
-                                    <span class="checkbox-title"><?php esc_html_e( 'Hide chat widget', 'myaliceai' ); ?></span>
-                                </label>
-                                <br class="clear">
-                                <span class="spinner"></span>
-                                <button type="submit" class="alice-btn" style="margin-top: 20px;"><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
-                            </form>
-                            <div class="myalice-notice-area"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
         </div>
     </div>
 	<?php
