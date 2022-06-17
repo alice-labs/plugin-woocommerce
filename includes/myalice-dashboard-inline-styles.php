@@ -252,6 +252,12 @@ add_action( 'admin_head', function () { ?>
             color: #000;
         }
 
+        #alice-dashboard .alice-btn[disabled] {
+            cursor: not-allowed;
+            background: #E5E7EB;
+            color: #6B7280;
+        }
+
         #alice-dashboard form label {
             display: block;
             font-weight: 500;

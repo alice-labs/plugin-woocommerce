@@ -174,7 +174,7 @@ function myalice_dashboard_callback() {
                         <hr>
                         <div class="submit-btn-section">
                             <span class="spinner"></span>
-                            <button type="submit" class="alice-btn"><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
+                            <button type="submit" class="alice-btn" disabled><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
                         </div>
                     </form>
                 </div>
