@@ -267,20 +267,20 @@ function alice_login_form_process() {
 		} else {
 			$alice_api_data = json_decode( $response['body'], true );
 
-			//if ( $alice_api_data['success'] === true ) {
-//				update_option( 'myaliceai_api_data', [
-//					'api_token'   => $alice_api_data['api_token'],
-//					'platform_id' => absint( $alice_api_data['platform_id'] ),
-//					'primary_id'  => $alice_api_data['primary_id']
-//				] );
+			if ( ! empty( $alice_api_data ) && $alice_api_data['success'] === true ) {
+				if ( $alice_api_data['is_auto_connected'] === true && ! empty( $alice_api_data['ecommerce_data'] ) ) {
+					update_option( 'myaliceai_api_data', [
+						'api_token'   => $alice_api_data['ecommerce_data']['api_token'],
+						'platform_id' => absint( $alice_api_data['ecommerce_data']['webchat_channel_id'] ),
+						'primary_id'  => $alice_api_data['ecommerce_data']['webchat_channel_primary_id'],
+						'project_id'  => $alice_api_data['ecommerce_data']['project_id'],
+					] );
+				}
 
-				wp_send_json_success( [
-					$alice_api_data,
-					$body
-				] );
-//			} else {
-//				wp_send_json_error( [ $alice_api_data, $body ] );
-//			}
+				wp_send_json_success( [ 'is_auto_connected' => $alice_api_data['is_auto_connected'] ] );
+			} else {
+				wp_send_json_error( [ 'message' => empty( $alice_api_data['error'] ) ? '' : $alice_api_data['error'] ] );
+			}
 
 		}
 	}
