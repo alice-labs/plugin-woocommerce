@@ -579,24 +579,7 @@ add_action( 'admin_head', function () { ?>
             text-align: right;
         }
 
-        /* dashboard welcome section */
-        #alice-dashboard .alice-welcome-section {
-            margin-top: 24px;
-            padding: 12px 0;
-        }
-
-        #alice-dashboard .alice-welcome-section h3 {
-            font-size: 24px;
-            line-height: 32px;
-            color: #111827;
-            margin-left: 12px;
-            font-weight: 700;
-        }
-
-        #alice-dashboard .alice-welcome-section .alice-container {
-            justify-content: initial;
-        }
-
+        /* spinner */
         #alice-dashboard .spinner {
             display: none;
             margin: 0;
