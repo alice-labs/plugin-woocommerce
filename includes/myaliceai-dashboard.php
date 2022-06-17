@@ -112,7 +112,7 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-needs-your-permission">
+            <section style="display: none" class="alice-needs-your-permission">
                 <div class="alice-container">
                     <div class="alice-title">
                         <h2><?php esc_html_e( 'MyAlice needs your permission to work', 'myaliceai' ); ?></h2>
@@ -137,6 +137,46 @@ function myalice_dashboard_callback() {
                 <div class="alice-container">
                     <a class="alice-btn alice-btn-lite" href="#"><?php esc_html_e( 'Open MyAlice', 'myaliceai' ); ?></a>
                     <a class="alice-btn alice-btn-lite" href="#"><?php esc_html_e( 'Open Inbox', 'myaliceai' ); ?></a>
+                </div>
+            </section>
+
+            <section class="alice-plugin-settings">
+                <div class="alice-container">
+                    <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
+				        <?php wp_nonce_field( 'alice-settings-form', 'alice-api-form' ); ?>
+                        <input type="hidden" name="action" value="alice_settings_form">
+                        <h3><?php esc_html_e( 'Plugin Settings', 'myaliceai' ); ?></h3>
+                        <hr>
+                        <label>
+                            <input type="checkbox" name="allow_chat_user_only" value="true" <?php checked( 1, $myalice_settings['allow_chat_user_only'] ); ?>>
+                            <span class="custom-checkbox"></span>
+                            <span class="checkbox-title"><?php esc_html_e( 'Allow chat for logged-in user only', 'myaliceai' ); ?></span>
+                            <span><?php esc_html_e( 'This will show the livechat in your WooCommerce Store for logged in users only.', 'myaliceai' ); ?></span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="allow_product_view_api" value="true" <?php checked( 1, $myalice_settings['allow_product_view_api'] ); ?>>
+                            <span class="custom-checkbox"></span>
+                            <span class="checkbox-title"><?php esc_html_e( 'Send product view data', 'myaliceai' ); ?></span>
+                            <span><?php esc_html_e( 'If anyone views a product in your store, this will send the data to MyAlice for your team to view.', 'myaliceai' ); ?></span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="allow_cart_api" value="true" <?php checked( 1, $myalice_settings['allow_cart_api'] ); ?>>
+                            <span class="custom-checkbox"></span>
+                            <span class="checkbox-title"><?php esc_html_e( 'Send cart data', 'myaliceai' ); ?></span>
+                            <span><?php esc_html_e( 'If anyone adds a product in their cart from your store, this will send the data to MyAlice for your team to view.', 'myaliceai' ); ?></span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="hide_chatbox" value="true" <?php checked( 1, $myalice_settings['hide_chatbox'] ); ?>>
+                            <span class="custom-checkbox"></span>
+                            <span class="checkbox-title"><?php esc_html_e( 'Hide chat widget', 'myaliceai' ); ?></span>
+                            <span><?php esc_html_e( 'This will hide the live chat widget from your store. Your visitors will not see the live chat option.', 'myaliceai' ); ?></span>
+                        </label>
+                        <hr>
+                        <div class="submit-btn-section">
+                            <span class="spinner"></span>
+                            <button type="submit" class="alice-btn"><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
+                        </div>
+                    </form>
                 </div>
             </section>
 

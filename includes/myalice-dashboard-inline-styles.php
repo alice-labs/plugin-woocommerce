@@ -509,6 +509,70 @@ add_action( 'admin_head', function () { ?>
             margin-left: 12px;
         }
 
+        /* dashboard plugin-settings section */
+        #alice-dashboard .alice-plugin-settings {
+            padding: 50px 0 100px;
+        }
+
+        #alice-dashboard .alice-plugin-settings form {
+            width: 100%;
+            max-width: 560px;
+            border: 1px solid #CCCCCC;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            padding: 24px;
+        }
+
+        #alice-dashboard .alice-plugin-settings form hr {
+            margin: 20px 0;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label {
+            margin-left: 28px;
+            position: relative;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label input[type="checkbox"] + span.custom-checkbox {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: calc(100% + 12px);
+            top: 5px;
+            border: 1px solid #D1D5DB;
+            border-radius: 4px;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label input[type="checkbox"]:checked + span.custom-checkbox {
+            background: #04B25F;
+            border-color: transparent;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik05LjIwNjkyIDAuNzkzMDMxQzkuMzk0MzkgMC45ODA1NTggOS40OTk3MSAxLjIzNDg3IDkuNDk5NzEgMS41MDAwM0M5LjQ5OTcxIDEuNzY1MTkgOS4zOTQzOSAyLjAxOTUgOS4yMDY5MiAyLjIwNzAzTDQuMjA2OTIgNy4yMDcwM0M0LjAxOTM5IDcuMzk0NSAzLjc2NTA4IDcuNDk5ODIgMy40OTk5MiA3LjQ5OTgyQzMuMjM0NzUgNy40OTk4MiAyLjk4MDQ1IDcuMzk0NSAyLjc5MjkyIDcuMjA3MDNMMC43OTI5MTkgNS4yMDcwM0MwLjYxMDc2MSA1LjAxODQzIDAuNTA5OTY2IDQuNzY1ODMgMC41MTIyNDUgNC41MDM2M0MwLjUxNDUyMyA0LjI0MTQzIDAuNjE5NjkyIDMuOTkwNjIgMC44MDUxIDMuODA1MjFDMC45OTA1MDggMy42MTk4IDEuMjQxMzIgMy41MTQ2MyAxLjUwMzUyIDMuNTEyMzZDMS43NjU3MSAzLjUxMDA4IDIuMDE4MzIgMy42MTA4NyAyLjIwNjkyIDMuNzkzMDNMMy40OTk5MiA1LjA4NjAzTDcuNzkyOTIgMC43OTMwMzFDNy45ODA0NSAwLjYwNTU2IDguMjM0NzUgMC41MDAyNDQgOC40OTk5MiAwLjUwMDI0NEM4Ljc2NTA4IDAuNTAwMjQ0IDkuMDE5MzkgMC42MDU1NiA5LjIwNjkyIDAuNzkzMDMxWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label + label {
+            margin-top: 20px;
+            margin-left: 28px;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label input[type="checkbox"] {
+            display: none;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label span {
+            display: block;
+            color: #6B7280;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label span.checkbox-title {
+            font-weight: 500;
+            color: #374151;
+        }
+
+        #alice-dashboard .alice-plugin-settings form .submit-btn-section {
+            text-align: right;
+        }
+
         /* dashboard welcome section */
         #alice-dashboard .alice-welcome-section {
             margin-top: 24px;
