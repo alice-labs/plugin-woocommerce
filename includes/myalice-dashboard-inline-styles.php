@@ -597,38 +597,6 @@ add_action( 'admin_head', function () { ?>
             justify-content: initial;
         }
 
-        /* dashboard registration guide section */
-        #alice-dashboard .alice-registration-guide {
-            margin-top: 12px;
-        }
-
-        #alice-dashboard .alice-registration-guide .alice-container {
-            background: #fff;
-            border-radius: 8px;
-            padding: 38px 24px;
-        }
-
-        #alice-dashboard .alice-text-content {
-            border-left: 4px solid #04B25F;
-            padding-left: 12px;
-            width: 50%;
-        }
-
-        #alice-dashboard .alice-text-content h4 {
-            font-size: 18px;
-            color: #111827;
-            margin-bottom: 10px;
-        }
-
-        #alice-dashboard .alice-text-content p {
-            font-size: 14px;
-            color: #6B7280;
-        }
-
-        #alice-dashboard .alice-btn-content .alice-btn + .alice-btn {
-            margin-left: 12px;
-        }
-
         #alice-dashboard .spinner {
             display: none;
             margin: 0;

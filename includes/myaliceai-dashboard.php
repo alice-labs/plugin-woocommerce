@@ -216,21 +216,6 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-registration-guide">
-                <div class="alice-container">
-                    <div class="alice-text-content">
-                        <h4><?php esc_html_e( 'Complete Your Registration', 'myaliceai' ); ?></h4>
-                        <p><?php _e( 'Please visit <a href="https://app.myalice.ai/" target="_blank">https://app.myalice.ai/</a> to complete your registration or log into your account', 'myaliceai' ); ?></p>
-                    </div>
-                    <div class="alice-btn-content">
-                        <a href="https://docs.myalice.ai/getting-started/create-an-account#video-tutorial-for-signing-up-to-myalice" target="_blank"
-                           class="alice-btn white-btn"><?php esc_html_e( 'Watch Video', 'myaliceai' ); ?></a>
-                        <a href="https://docs.myalice.ai/getting-started/create-an-account" target="_blank"
-                           class="alice-btn white-btn"><?php esc_html_e( 'Read Documentation', 'myaliceai' ); ?></a>
-                    </div>
-                </div>
-            </section>
-
             <section class="alice-settings-section">
                 <div class="alice-container">
                     <div style="width: 100%;">
