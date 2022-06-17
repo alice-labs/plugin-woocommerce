@@ -629,43 +629,6 @@ add_action( 'admin_head', function () { ?>
             margin-left: 12px;
         }
 
-        /* dashboard marketplace, plugin key, settings section */
-        #alice-dashboard .alice-marketplace-connect-section > .alice-container,
-        #alice-dashboard .alice-settings-section > .alice-container {
-            background: #fff;
-            border-radius: 8px;
-            padding: 24px;
-            margin-top: 24px;
-        }
-
-        #alice-dashboard .alice-marketplace-connect-section > .alice-container .alice-container {
-            padding-bottom: 8px;
-        }
-
-        #alice-dashboard .alice-marketplace-connect-section .alice-text-content,
-        #alice-dashboard .alice-settings-section .alice-text-content {
-            border: none;
-            padding: 0
-        }
-
-        #alice-dashboard .alice-marketplace-connect-section ol {
-            border-top: 1px solid #D1D5DB;
-            padding: 15px 0 0 15px;
-        }
-
-        #alice-dashboard .alice-marketplace-connect-section ol li {
-            font-size: 14px;
-            line-height: 22px;
-            color: #111827;
-        }
-
-
-
-        #alice-dashboard.myalice-api-activated .alice-registration-guide,
-        #alice-dashboard.myalice-api-activated .alice-marketplace-connect-section {
-            display: none;
-        }
-
         #alice-dashboard .spinner {
             display: none;
             margin: 0;

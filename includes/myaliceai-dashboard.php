@@ -231,34 +231,6 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-marketplace-connect-section">
-                <div class="alice-container">
-                    <div style="width: 100%;">
-                        <div class="alice-container">
-                            <div class="alice-text-content">
-                                <h4><?php esc_html_e( 'Connect Marketplace in MyAlice', 'myaliceai' ); ?></h4>
-                                <p><?php esc_html_e( 'Please complete the steps to connect your store with MyAlice', 'myaliceai' ); ?></p>
-                            </div>
-                            <div class="alice-btn-content">
-                                <a href="https://docs.myalice.ai/getting-started/connect-your-marketplace#video-tutorial-for-connecting-your-woocommerce-marketplace"
-                                   target="_blank" class="alice-btn white-btn"><?php esc_html_e( 'Watch Video', 'myaliceai' ); ?></a>
-                                <a href="https://docs.myalice.ai/getting-started/connect-your-marketplace" target="_blank"
-                                   class="alice-btn white-btn"><?php esc_html_e( 'Read Documentation', 'myaliceai' ); ?></a>
-                            </div>
-                        </div>
-                        <ol>
-                            <li><?php _e( 'Please log into your MyAlice account, then go to <b>Settings.</b>', 'myaliceai' ); ?></li>
-                            <li><?php _e( 'From <b>Settings,</b> go to the <b>Marketplace Settings.</b> Here, you will be able to connect your WooCommerce Store.', 'myaliceai' ); ?></li>
-                            <li><?php esc_html_e( 'Click on the Install button to connect your WooCommerce Store', 'myaliceai' ); ?></li>
-                            <li><?php esc_html_e( 'Enter your store URL. For example: https://wc.mystore.com/', 'myaliceai' ); ?></li>
-                            <li><?php esc_html_e( 'Install the webchat plugin so that your customers can interact with you!', 'myaliceai' ); ?></li>
-                            <li><?php esc_html_e( 'Now, you can connect your store with an existing channel or connect to a new channel', 'myaliceai' ); ?></li>
-                            <li><?php esc_html_e( 'After you are done connecting to your channel, you will receive a plugin key which you have to enter below.', 'myaliceai' ); ?></li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
-
             <section class="alice-settings-section">
                 <div class="alice-container">
                     <div style="width: 100%;">
