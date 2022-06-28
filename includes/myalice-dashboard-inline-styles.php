@@ -142,6 +142,10 @@ add_action( 'admin_head', function () { ?>
         }
 
         /* === Alice Dashboard === */
+        .alice-dashboard-wrap {
+            margin: 10px 20px 0 2px;
+        }
+
         #alice-dashboard {
             background: #FFFFFF;
             border: 1px solid #CCCCCC;

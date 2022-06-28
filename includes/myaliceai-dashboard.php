@@ -15,11 +15,23 @@ add_action( 'admin_menu', function () {
 	);
 } );
 
+// Store wcauth data
+if ( isset( $_GET['wcauth'] ) && $_GET['wcauth'] == 1 ) {
+	$wc_auth_data = file_get_contents( 'php://input' );
+	$wc_auth_data = json_decode( $wc_auth_data, true );
+	$auth_data    = [
+		'consumer_key'    => $wc_auth_data['consumer_key'],
+		'consumer_secret' => $wc_auth_data['consumer_secret'],
+		'key_permissions' => $wc_auth_data['key_permissions'],
+	];
+	update_option( 'myalice_wc_auth', $auth_data, false );
+}
+
 // Alice Dashboard Menu Callback
 function myalice_dashboard_callback() {
 	global $myalice_settings;
 	?>
-    <div class="wrap alice-dashboard-wrap">
+    <div class="alice-dashboard-wrap">
         <div id="alice-dashboard" class="<?php echo MYALICE_API_OK ? 'myalice-api-activated' : ''; ?>">
 
             <section class="alice-dashboard-header">
@@ -121,7 +133,19 @@ function myalice_dashboard_callback() {
                     </div>
                 </div>
                 <div class="alice-container">
-                    <a class="alice-btn" href="#"><?php esc_html_e( 'Grant Permission', 'myaliceai' ); ?></a>
+		            <?php
+		            $store_url = site_url();
+		            $endpoint  = '/wc-auth/v1/authorize';
+		            $params    = array(
+			            'app_name'     => 'MyAlice',
+			            'scope'        => 'read_write',
+			            'user_id'      => wp_rand(),
+			            'return_url'   => admin_url( 'admin.php?page=myalice_dashboard' ),
+			            'callback_url' => admin_url( 'admin.php?page=myalice_dashboard&wcauth=1' )
+		            );
+		            $wc_auth_url = $store_url . $endpoint . '?' . http_build_query( $params );
+		            ?>
+                    <a class="alice-btn" href="<?php echo esc_url( $wc_auth_url ); ?>"><?php esc_html_e( 'Grant Permission', 'myaliceai' ); ?></a>
                 </div>
             </section>
 
