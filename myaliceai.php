@@ -41,6 +41,10 @@ if ( ! defined( 'ALICE_SVG_PATH' ) ) {
 	define( 'ALICE_SVG_PATH', ALICE_URL . '/svg/' );
 }
 
+if ( ! defined( 'ALICE_IMG_PATH' ) ) {
+	define( 'ALICE_IMG_PATH', ALICE_URL . '/images/' );
+}
+
 if ( ! defined( 'ALICE_VERSION' ) ) {
 	define( 'ALICE_VERSION', '1.2.9' );
 }

@@ -101,24 +101,23 @@ function myalice_dashboard_callback() {
                 </div>
                 <div class="alice-container">
                     <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
-						<?php wp_nonce_field( '', 'alice-api-form' ); ?>
-                        <input type="hidden" name="action" value="">
-                        <input type="radio" name="team" id="team-1" checked>
-                        <label for="team-1">
+						<?php wp_nonce_field( 'myalice-form-process', 'alice-api-form' ); ?>
+                        <input type="hidden" name="action" value="myalice-connect-team">
+						<?php
+						foreach ( myalice_get_woocommerce_projects() as $single_project ) {
+							?>
+                            <input type="radio" name="team" value="<?php echo esc_attr( $single_project['id'] ); ?>" id="team-<?php echo esc_attr( $single_project['id'] ); ?>">
+                            <label for="team-<?php echo esc_attr( $single_project['id'] ); ?>">
                             <span class="alice-team-info">
-                                <img src="https://via.placeholder.com/40x40" alt="<?php esc_attr_e( 'team avatar', 'myaliceai' ); ?>">
-                                <span><?php esc_html_e( 'Online Clothing Store', 'myaliceai' ); ?></span>
+                                <?php $img_src = empty( $single_project['image'] ) ? ALICE_IMG_PATH . 'team-placeholder.png' : $single_project['image']; ?>
+                                <img src="<?php echo esc_url($img_src); ?>" alt="<?php esc_attr_e( 'team avatar', 'myaliceai' ); ?>">
+                                <span><?php echo esc_html( $single_project['name'] ); ?></span>
                             </span>
-                            <span class="alice-icon"></span>
-                        </label>
-                        <input type="radio" name="team" id="team-2">
-                        <label for="team-2">
-                            <span class="alice-team-info">
-                                <img src="https://via.placeholder.com/40x40" alt="<?php esc_attr_e( 'team avatar', 'myaliceai' ); ?>">
-                                <span><?php esc_html_e( 'Panda Shop', 'myaliceai' ); ?></span>
-                            </span>
-                            <span class="alice-icon"></span>
-                        </label>
+                                <span class="alice-icon"></span>
+                            </label>
+							<?php
+						}
+						?>
                         <button type="submit" class="alice-btn"><?php esc_html_e( 'Continue', 'myaliceai' ); ?></button>
                         <p><?php esc_html_e( "If you don't see any team, that might be already connected to a store. If that isn't the case,", 'myaliceai' ); ?>
                             <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Contact Support', 'myaliceai' ); ?></a></p>
@@ -134,18 +133,18 @@ function myalice_dashboard_callback() {
                     </div>
                 </div>
                 <div class="alice-container">
-		            <?php
-		            $store_url = site_url();
-		            $endpoint  = '/wc-auth/v1/authorize';
-		            $params    = array(
-			            'app_name'     => 'MyAlice',
-			            'scope'        => 'read_write',
-			            'user_id'      => wp_rand(),
-			            'return_url'   => admin_url( 'admin.php?page=myalice_dashboard' ),
-			            'callback_url' => admin_url( 'admin.php?page=myalice_dashboard&wcauth=1' )
-		            );
-		            $wc_auth_url = $store_url . $endpoint . '?' . http_build_query( $params );
-		            ?>
+					<?php
+					$store_url   = site_url();
+					$endpoint    = '/wc-auth/v1/authorize';
+					$params      = array(
+						'app_name'     => 'MyAlice',
+						'scope'        => 'read_write',
+						'user_id'      => wp_rand(),
+						'return_url'   => admin_url( 'admin.php?page=myalice_dashboard' ),
+						'callback_url' => admin_url( 'admin.php?page=myalice_dashboard&wcauth=1' )
+					);
+					$wc_auth_url = $store_url . $endpoint . '?' . http_build_query( $params );
+					?>
                     <a class="alice-btn" href="<?php echo esc_url( $wc_auth_url ); ?>"><?php esc_html_e( 'Grant Permission', 'myaliceai' ); ?></a>
                 </div>
             </section>
@@ -169,7 +168,7 @@ function myalice_dashboard_callback() {
             <section class="alice-plugin-settings">
                 <div class="alice-container">
                     <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
-				        <?php wp_nonce_field( 'alice-settings-form', 'alice-settings-form' ); ?>
+						<?php wp_nonce_field( 'alice-settings-form', 'alice-settings-form' ); ?>
                         <input type="hidden" name="action" value="alice_settings_form">
                         <h3><?php esc_html_e( 'Plugin Settings', 'myaliceai' ); ?></h3>
                         <hr>
