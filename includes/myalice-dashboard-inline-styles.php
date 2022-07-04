@@ -440,7 +440,9 @@ add_action( 'admin_head', function () { ?>
             display: block;
         }
 
-        #alice-dashboard .alice-connect-with-myalice .
+        #alice-dashboard .alice-connect-with-myalice .myalice-notice-area {
+            width: 350px;
+        }
 
         /* dashboard select-the-team section */
         #alice-dashboard .alice-select-the-team form {
