@@ -97,6 +97,7 @@ add_action( 'plugins_loaded', function () {
 	}
 
 	//Include required files
+	require ALICE_INC_PATH . '/myalice-helper-functions.php';
 	require ALICE_INC_PATH . '/myalice-dashboard-inline-styles.php';
 	require ALICE_INC_PATH . '/myaliceai-dashboard.php';
 	require ALICE_INC_PATH . '/myalice-dashboard-templates-and-scripts.php';
