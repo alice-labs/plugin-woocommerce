@@ -242,12 +242,18 @@ function alice_login_form_process() {
 			wp_send_json_error( [ 'message' => __( 'Please fill up all required field', 'myaliceai' ) ] );
 		}
 
+		$wc_data = get_option( 'myalice_wc_auth' );
+		if ( empty( $wc_data['consumer_key'] ) || empty( $wc_data['consumer_secret'] ) || empty( $wc_data['key_permissions'] ) ) {
+			wp_send_json_error( [ 'message' => __( 'MyAlice needs your permission to work. Please Grant Permission First.', 'myaliceai' ) ] );
+
+		}
+
 		$alice_api_url = 'https://api.myalice.ai/api/ecommerce/login-and-connect-woocommerce';
 		$body          = wp_json_encode( array(
 			'store_url'       => site_url(),
-			'consumer_key'    => 'ck_2ea967a58335c6705384166993d4ab92d0d27d87',
-			'consumer_secret' => 'cs_69244e335f897dee048fad202292f35be9df2620',
-			'key_permissions' => 'read_write',
+			'consumer_key'    => $wc_data['consumer_key'],
+			'consumer_secret' => $wc_data['consumer_secret'],
+			'key_permissions' => $wc_data['key_permissions'],
 			'email'           => $user_email,
 			'password'        => $password,
 		) );

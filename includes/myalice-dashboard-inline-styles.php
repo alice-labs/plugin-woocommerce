@@ -440,6 +440,8 @@ add_action( 'admin_head', function () { ?>
             display: block;
         }
 
+        #alice-dashboard .alice-connect-with-myalice .
+
         /* dashboard select-the-team section */
         #alice-dashboard .alice-select-the-team form {
             max-width: 500px;
