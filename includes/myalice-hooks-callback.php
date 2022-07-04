@@ -282,6 +282,10 @@ function alice_login_form_process() {
 						'project_id'  => $alice_api_data['ecommerce_data']['project_id'],
 						'email'       => $user_email,
 					] );
+				} elseif ( $alice_api_data['is_auto_connected'] === false ) {
+					update_option( 'myaliceai_api_data', [
+						'email' => $user_email,
+					] );
 				}
 
 				wp_send_json_success( [ 'is_auto_connected' => $alice_api_data['is_auto_connected'], 'message' => __( 'You are logged in successfully', 'myaliceai' ) ] );
