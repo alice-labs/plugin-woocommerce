@@ -274,12 +274,13 @@ function alice_login_form_process() {
 						'platform_id' => absint( $alice_api_data['ecommerce_data']['webchat_channel_id'] ),
 						'primary_id'  => $alice_api_data['ecommerce_data']['webchat_channel_primary_id'],
 						'project_id'  => $alice_api_data['ecommerce_data']['project_id'],
+						'email'       => $user_email,
 					] );
 				}
 
-				wp_send_json_success( [ 'is_auto_connected' => $alice_api_data['is_auto_connected'] ] );
+				wp_send_json_success( [ 'is_auto_connected' => $alice_api_data['is_auto_connected'], 'message' => __( 'You are logged in successfully', 'myaliceai' ) ] );
 			} else {
-				wp_send_json_error( [ 'message' => empty( $alice_api_data['error'] ) ? '' : $alice_api_data['error'] ] );
+				wp_send_json_error( [ 'message' => empty( $alice_api_data['error'] ) ? ( empty( $alice_api_data['detail'] ) ? '' : $alice_api_data['detail'] ) : $alice_api_data['error'] ] );
 			}
 
 		}
