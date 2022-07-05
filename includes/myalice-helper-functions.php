@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || die;
 
 function myalice_get_woocommerce_projects() {
-	$wc_data = get_option( 'myalice_wc_auth' );
+	$wc_data = get_option( 'myaliceai_wc_auth' );
 	if ( empty( $wc_data['consumer_key'] ) || empty( $wc_data['consumer_secret'] ) || empty( $wc_data['key_permissions'] ) ) {
 		return [];
 	}
@@ -47,7 +47,7 @@ function myalice_get_woocommerce_projects() {
 }
 
 function myalice_get_dashboard_class() {
-	$wc_auth = get_option( 'myalice_wc_auth' );
+	$wc_auth = get_option( 'myaliceai_wc_auth' );
 	if ( empty( $wc_auth ) ) {
 		return '--needs-your-permission';
 	}

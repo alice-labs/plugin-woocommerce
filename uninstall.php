@@ -10,6 +10,7 @@ delete_option( 'myaliceai_api_data' );
 delete_option( 'myaliceai_settings' );
 delete_option( 'myaliceai_plugin_status' );
 delete_option( 'myaliceai_review_notice_time' );
+delete_option( 'myaliceai_wc_auth' );
 
 // Plugin remove API
 $alice_api_url = MYALICE_API_URL . 'remove-ecommerce-plugin?api_token=' . MYALICE_API_TOKEN;

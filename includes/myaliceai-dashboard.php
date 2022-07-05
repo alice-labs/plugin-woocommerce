@@ -24,7 +24,7 @@ if ( isset( $_GET['wcauth'] ) && $_GET['wcauth'] == 1 ) {
 		'consumer_secret' => $wc_auth_data['consumer_secret'],
 		'key_permissions' => $wc_auth_data['key_permissions'],
 	];
-	update_option( 'myalice_wc_auth', $auth_data, false );
+	update_option( 'myaliceai_wc_auth', $auth_data, false );
 }
 
 // Alice Dashboard Menu Callback
