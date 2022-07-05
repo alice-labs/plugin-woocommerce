@@ -41,14 +41,16 @@ function myalice_dashboard_callback() {
                     </div>
                     <nav class="alice-main-menu">
                         <ul>
-                            <li><a href="#"><?php esc_html_e( 'Dashboard', 'myaliceai' ); ?></a></li>
-                            <li><a href="#"><?php esc_html_e( 'Review MyAlice', 'myaliceai' ); ?></a></li>
+                            <li><a href="<?php echo esc_url( admin_url( '/admin.php?page=myalice_dashboard' ) ) ?>"><?php esc_html_e( 'Dashboard', 'myaliceai' ); ?></a></li>
+                            <li><a href="https://wordpress.org/support/plugin/myaliceai/reviews/?filter=5#new-post" target="_blank"><?php esc_html_e( 'Review MyAlice', 'myaliceai' ); ?></a></li>
                             <li class="alice-has-sub-menu">
                                 <a href="#"><?php esc_html_e( 'Help & Support', 'myaliceai' ); ?></a>
                                 <ul class="alice-sub-menu">
-                                    <li><a href="#"><?php esc_html_e( 'Read Documentation', 'myaliceai' ); ?></a></li>
-                                    <li><a href="#"><?php esc_html_e( 'Watch Tutorials', 'myaliceai' ); ?></a></li>
-                                    <li><a href="#"><?php esc_html_e( 'Contact Support', 'myaliceai' ); ?></a></li>
+                                    <li><a href="https://docs.myalice.ai/myalice-ecommerce/woocommerce" target="_blank"><?php esc_html_e( 'Read Documentation', 'myaliceai' ); ?></a></li>
+                                    <li>
+                                        <a href="https://www.youtube.com/watch?v=ktSGc6zNsF8&list=PL_EdxcvIGFEacr3fV8McbglwYhhTAi2pO" target="_blank"><?php esc_html_e( 'Watch Tutorials', 'myaliceai' ); ?></a>
+                                    </li>
+                                    <li><a href="https://www.myalice.ai/support" target="_blank"><?php esc_html_e( 'Contact Support', 'myaliceai' ); ?></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -110,7 +112,7 @@ function myalice_dashboard_callback() {
                             <label for="team-<?php echo esc_attr( $single_project['id'] ); ?>">
                             <span class="alice-team-info">
                                 <?php $img_src = empty( $single_project['image'] ) ? ALICE_IMG_PATH . 'team-placeholder.png' : $single_project['image']; ?>
-                                <img src="<?php echo esc_url($img_src); ?>" alt="<?php esc_attr_e( 'team avatar', 'myaliceai' ); ?>">
+                                <img src="<?php echo esc_url( $img_src ); ?>" alt="<?php esc_attr_e( 'team avatar', 'myaliceai' ); ?>">
                                 <span><?php echo esc_html( $single_project['name'] ); ?></span>
                             </span>
                                 <span class="alice-icon"></span>
