@@ -302,6 +302,7 @@ add_action( 'admin_head', function () { ?>
         #alice-dashboard .alice-dashboard-header {
             background: #fff;
             padding: 20px 0;
+            display: block !important;
         }
 
         #alice-dashboard .alice-dashboard-header .alice-container {
@@ -604,6 +605,15 @@ add_action( 'admin_head', function () { ?>
 
         #alice-dashboard .alice-plugin-settings form .submit-btn-section {
             text-align: right;
+        }
+
+        /* Dashboard show/hide control */
+        .--connect-with-myalice > section:not(.alice-connect-with-myalice),
+        .--select-the-team > section:not(.alice-select-the-team),
+        .--needs-your-permission > section:not(.alice-needs-your-permission),
+        .--explore-myalice > section:not(.alice-explore-myalice),
+        .--plugin-settings > section:not(.alice-plugin-settings) {
+            display: none;
         }
 
         /* spinner */

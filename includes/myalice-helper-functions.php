@@ -45,3 +45,21 @@ function myalice_get_woocommerce_projects() {
 		return [];
 	}
 }
+
+function myalice_get_dashboard_class() {
+	$wc_auth = get_option( 'myalice_wc_auth' );
+	if ( empty( $wc_auth ) ) {
+		return '--needs-your-permission';
+	}
+
+	$api_data = get_option( 'myaliceai_api_data' );
+	if ( empty( $api_data ) ) {
+		return '--connect-with-myalice';
+	}
+
+	if ( empty( $api_data['api_token'] ) ) {
+		return '--select-the-team';
+	}
+
+	return '--explore-myalice';
+}
