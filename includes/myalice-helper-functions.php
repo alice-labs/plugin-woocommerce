@@ -13,6 +13,10 @@ function myalice_get_woocommerce_projects() {
 		return [];
 	}
 
+	if ( ! empty( $myalice_api_data['api_token'] ) ) {
+		return [];
+	}
+
 	$alice_api_url = 'https://api.myalice.ai/api/ecommerce/available-woocommerce-projects';
 	$body          = wp_json_encode( array(
 		'store_url'       => home_url(),
