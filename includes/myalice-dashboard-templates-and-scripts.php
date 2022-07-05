@@ -160,6 +160,31 @@ add_action( 'admin_footer', function () { ?>
                         notice_area.html('');
                     }, 3000);
                 });
+            }).on('submit', '.alice-select-the-team form', function (e) {
+                e.preventDefault();
+
+                var $form = $(this),
+                    url = $form.attr('action'),
+                    data = $form.serialize(),
+                    spinner = $form.find('.spinner');
+
+                spinner.addClass('is-active');
+
+                $.post(url, data, function (response) {
+                    spinner.removeClass('is-active');
+
+                    const notice_area = $form.find('.myalice-notice-area');
+
+                    if (response.success) {
+                        notice_area.prepend(`<div class="updated"><p>${response.data.message}</p></div>`);
+                    } else {
+                        notice_area.prepend(`<div class="error"><p>${response.data.message}</p></div>`);
+                    }
+
+                    setTimeout(function () {
+                        notice_area.html('');
+                    }, 3000);
+                });
             }).on('click', '.myalice-notice-dismiss', function (e) {
                 e.preventDefault();
                 var notice_wrap = $(this).closest('.notice.notice-info');

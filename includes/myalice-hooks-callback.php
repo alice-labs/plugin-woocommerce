@@ -296,3 +296,69 @@ function alice_login_form_process() {
 		}
 	}
 }
+
+function myalice_select_team_form_process() {
+	if ( check_ajax_referer( 'myalice-form-process', 'myalice-nonce' ) ) {
+		$project_id = empty( $_POST['team'] ) ? '' : sanitize_text_field( $_POST['team'] );
+
+		if ( empty( $project_id ) ) {
+			wp_send_json_error( [ 'message' => __( 'Please fill up all required field', 'myaliceai' ) ] );
+		}
+
+		$wc_data = get_option( 'myalice_wc_auth' );
+		if ( empty( $wc_data['consumer_key'] ) || empty( $wc_data['consumer_secret'] ) || empty( $wc_data['key_permissions'] ) ) {
+			wp_send_json_error( [ 'message' => __( 'MyAlice needs your permission to work. Please Grant Permission First.', 'myaliceai' ) ] );
+		}
+
+		$myalice_api_data = get_option( 'myaliceai_api_data' );
+		if ( empty( $myalice_api_data['email'] ) ) {
+			wp_send_json_error( [ 'message' => __( 'Email Address Missing, Please login again.', 'myaliceai' ) ] );
+		}
+
+		$alice_api_url = 'https://api.myalice.ai/api/ecommerce/connect-woocommerce-with-project';
+		$body          = wp_json_encode( array(
+			'store_url'       => site_url(),
+			'consumer_key'    => $wc_data['consumer_key'],
+			'consumer_secret' => $wc_data['consumer_secret'],
+			'key_permissions' => $wc_data['key_permissions'],
+			'email'           => $myalice_api_data['email'],
+			'project_id'      => $project_id,
+		) );
+
+		$response = wp_remote_post( $alice_api_url, array(
+				'method'  => 'POST',
+				'timeout' => 45,
+				'body'    => $body,
+				'cookies' => array()
+			)
+		);
+
+		if ( is_wp_error( $response ) ) {
+			$error_message = $response->get_error_message();
+
+			wp_send_json_error( [ 'message' => "Something went wrong: {$error_message}" ] );
+		} else {
+			$alice_api_data = json_decode( $response['body'], true );
+
+			if ( ! empty( $alice_api_data ) && $alice_api_data['success'] === true ) {
+				if ( ! empty( $alice_api_data['ecommerce_data'] ) ) {
+					update_option( 'myaliceai_api_data', [
+						'api_token'   => $alice_api_data['ecommerce_data']['api_token'],
+						'platform_id' => absint( $alice_api_data['ecommerce_data']['webchat_channel_id'] ),
+						'primary_id'  => $alice_api_data['ecommerce_data']['webchat_channel_primary_id'],
+						'project_id'  => $alice_api_data['ecommerce_data']['project_id'],
+						'email'       => $myalice_api_data['email'],
+					] );
+				} else {
+					wp_send_json_error( [ 'message' => __( 'Something went wrong: ecommerce_data is empty', 'myaliceai' ) ] );
+				}
+
+				wp_send_json_success( [ 'message' => __( 'You selected team is connected', 'myaliceai' ) ] );
+			} else {
+				wp_send_json_error( [ 'message' => empty( $alice_api_data['error'] ) ? ( empty( $alice_api_data['detail'] ) ? '' : $alice_api_data['detail'] ) : $alice_api_data['error'] ] );
+			}
+
+		}
+	}
+	wp_send_json_error( [ 'message' => __( 'Something went wrong: nonce not match', 'myaliceai' ) ] );
+}

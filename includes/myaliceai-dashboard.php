@@ -101,8 +101,8 @@ function myalice_dashboard_callback() {
                 </div>
                 <div class="alice-container">
                     <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
-						<?php wp_nonce_field( 'myalice-form-process', 'alice-api-form' ); ?>
-                        <input type="hidden" name="action" value="myalice-connect-team">
+						<?php wp_nonce_field( 'myalice-form-process', 'myalice-nonce' ); ?>
+                        <input type="hidden" name="action" value="myalice_select_team">
 						<?php
 						foreach ( myalice_get_woocommerce_projects() as $single_project ) {
 							?>
