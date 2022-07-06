@@ -525,6 +525,24 @@ add_action( 'admin_head', function () { ?>
             text-align: center;
         }
 
+        #alice-dashboard .alice-needs-your-permission .alice-ssl-warning {
+            width: 515px;
+            text-align: left;
+            background-color: #FFFBEB;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNiAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNi4yNTcwNiAxLjA5ODU4QzcuMDIxNjcgLTAuMjYwNzI0IDguOTc4NzUgLTAuMjYwNzI1IDkuNzQzMzYgMS4wOTg1OEwxNS4zMjM3IDExLjAxOTFDMTYuMDczNiAxMi4zNTIzIDE1LjExMDIgMTMuOTk5NiAxMy41ODA1IDEzLjk5OTZIMi40MTk5QzAuODkwMjUxIDEzLjk5OTYgLTAuMDczMTc2OSAxMi4zNTIzIDAuNjc2NzUzIDExLjAxOTFMNi4yNTcwNiAxLjA5ODU4Wk05LjAwMDEyIDEwLjk5OThDOS4wMDAxMiAxMS41NTIgOC41NTI0MSAxMS45OTk4IDguMDAwMTIgMTEuOTk5OEM3LjQ0Nzg0IDExLjk5OTggNy4wMDAxMiAxMS41NTIgNy4wMDAxMiAxMC45OTk4QzcuMDAwMTIgMTAuNDQ3NSA3LjQ0Nzg0IDkuOTk5NzYgOC4wMDAxMiA5Ljk5OTc2QzguNTUyNDEgOS45OTk3NiA5LjAwMDEyIDEwLjQ0NzUgOS4wMDAxMiAxMC45OTk4Wk04LjAwMDEyIDIuOTk5NzZDNy40NDc4NCAyLjk5OTc2IDcuMDAwMTIgMy40NDc0NyA3LjAwMDEyIDMuOTk5NzZWNi45OTk3NkM3LjAwMDEyIDcuNTUyMDQgNy40NDc4NCA3Ljk5OTc2IDguMDAwMTIgNy45OTk3NkM4LjU1MjQxIDcuOTk5NzYgOS4wMDAxMiA3LjU1MjA0IDkuMDAwMTIgNi45OTk3NlYzLjk5OTc2QzkuMDAwMTIgMy40NDc0NyA4LjU1MjQxIDIuOTk5NzYgOC4wMDAxMiAyLjk5OTc2WiIgZmlsbD0iI0ZCQkYyNCIvPgo8L3N2Zz4K");
+            background-repeat: no-repeat;
+            background-position: 18px 18px;
+            border-radius: 6px;
+            padding: 16px 16px 16px 48px;
+            margin-top: 32px;
+        }
+
+        #alice-dashboard .alice-needs-your-permission .alice-ssl-warning p {
+            margin: 0;
+            padding: 0;
+            color: #B45309;
+        }
+
         /* dashboard explore-myalice section */
         #alice-dashboard .alice-explore-myalice {
             padding: 80px 0 150px;

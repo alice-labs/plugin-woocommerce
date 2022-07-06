@@ -42,13 +42,16 @@ function myalice_dashboard_callback() {
                     <nav class="alice-main-menu">
                         <ul>
                             <li><a href="<?php echo esc_url( admin_url( '/admin.php?page=myalice_dashboard' ) ) ?>"><?php esc_html_e( 'Dashboard', 'myaliceai' ); ?></a></li>
-                            <li><a href="https://wordpress.org/support/plugin/myaliceai/reviews/?filter=5#new-post" target="_blank"><?php esc_html_e( 'Review MyAlice', 'myaliceai' ); ?></a></li>
+                            <li><a href="https://wordpress.org/support/plugin/myaliceai/reviews/?filter=5#new-post"
+                                   target="_blank"><?php esc_html_e( 'Review MyAlice', 'myaliceai' ); ?></a></li>
                             <li class="alice-has-sub-menu">
                                 <a href="#"><?php esc_html_e( 'Help & Support', 'myaliceai' ); ?></a>
                                 <ul class="alice-sub-menu">
-                                    <li><a href="https://docs.myalice.ai/myalice-ecommerce/woocommerce" target="_blank"><?php esc_html_e( 'Read Documentation', 'myaliceai' ); ?></a></li>
+                                    <li><a href="https://docs.myalice.ai/myalice-ecommerce/woocommerce"
+                                           target="_blank"><?php esc_html_e( 'Read Documentation', 'myaliceai' ); ?></a></li>
                                     <li>
-                                        <a href="https://www.youtube.com/watch?v=ktSGc6zNsF8&list=PL_EdxcvIGFEacr3fV8McbglwYhhTAi2pO" target="_blank"><?php esc_html_e( 'Watch Tutorials', 'myaliceai' ); ?></a>
+                                        <a href="https://www.youtube.com/watch?v=ktSGc6zNsF8&list=PL_EdxcvIGFEacr3fV8McbglwYhhTAi2pO"
+                                           target="_blank"><?php esc_html_e( 'Watch Tutorials', 'myaliceai' ); ?></a>
                                     </li>
                                     <li><a href="https://www.myalice.ai/support" target="_blank"><?php esc_html_e( 'Contact Support', 'myaliceai' ); ?></a></li>
                                 </ul>
@@ -149,6 +152,13 @@ function myalice_dashboard_callback() {
 					?>
                     <a class="alice-btn" href="<?php echo esc_url( $wc_auth_url ); ?>"><?php esc_html_e( 'Grant Permission', 'myaliceai' ); ?></a>
                 </div>
+				<?php if ( ! is_ssl() ) { ?>
+                    <div class="alice-container">
+                        <div class="alice-ssl-warning">
+                            <p><?php esc_html_e( 'Your store doesn’t appear to be using a secure connection. We highly recommend serving your entire website over an HTTPS connection to help keep customer data secure.', 'myaliceai' ); ?></p>
+                        </div>
+                    </div>
+				<?php } ?>
             </section>
 
             <section class="alice-explore-myalice">
