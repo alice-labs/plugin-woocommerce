@@ -353,7 +353,7 @@ function myalice_select_team_form_process() {
 					wp_send_json_error( [ 'message' => __( 'Something went wrong: ecommerce_data is empty', 'myaliceai' ) ] );
 				}
 
-				wp_send_json_success( [ 'message' => __( 'You selected team is connected', 'myaliceai' ) ] );
+				wp_send_json_success( [ 'is_connected' => true, 'message' => __( 'You selected team is connected', 'myaliceai' ) ] );
 			} else {
 				wp_send_json_error( [ 'message' => empty( $alice_api_data['error'] ) ? ( empty( $alice_api_data['detail'] ) ? '' : $alice_api_data['detail'] ) : $alice_api_data['error'] ] );
 			}

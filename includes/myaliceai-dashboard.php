@@ -41,7 +41,7 @@ function myalice_dashboard_callback() {
                     </div>
                     <nav class="alice-main-menu">
                         <ul>
-                            <li><a href="<?php echo esc_url( admin_url( '/admin.php?page=myalice_dashboard' ) ); ?>"><?php esc_html_e( 'Dashboard', 'myaliceai' ); ?></a></li>
+                            <li><a class="--myalice-dashboard-menu-link" href="<?php echo esc_url( admin_url( '/admin.php?page=myalice_dashboard' ) ); ?>"><?php esc_html_e( 'Dashboard', 'myaliceai' ); ?></a></li>
                             <li><a href="#" data-link-section="--plugin-settings"><?php esc_html_e( 'Settings', 'myaliceai' ); ?></a></li>
                             <li><a href="https://wordpress.org/support/plugin/myaliceai/reviews/?filter=5#new-post"
                                    target="_blank"><?php esc_html_e( 'Review MyAlice', 'myaliceai' ); ?></a></li>
