@@ -107,6 +107,9 @@ add_action( 'admin_footer', function () { ?>
                         form_section.find('input[name="action"]').val('myalice_signup');
                         break;
                 }
+            }).on('click', '[data-link-section]', function (e) {
+                e.preventDefault();
+                $('#alice-dashboard').removeClass('--connect-with-myalice --select-the-team --needs-your-permission --explore-myalice --plugin-settings').addClass($(this).data('link-section'));
             }).on('change', '.alice-plugin-settings form', function (e) {
                 $(this).find('button[type="submit"]').removeAttr('disabled');
             }).on('submit', '.alice-plugin-settings form', function (e) {
