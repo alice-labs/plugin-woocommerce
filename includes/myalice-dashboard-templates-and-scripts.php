@@ -157,7 +157,7 @@ add_action( 'admin_footer', function () { ?>
                         if (response.data.is_auto_connected) {
                             $('#alice-dashboard').removeClass('--connect-with-myalice --select-the-team --needs-your-permission --explore-myalice --plugin-settings').addClass('--explore-myalice');
                         } else {
-                            $('.--myalice-dashboard-menu-link').trigger('click');
+                            $('.--myalice-dashboard-menu-link')[0].click();
                         }
 
                         notice_area.prepend(`<div class="updated"><p>${response.data.message}</p></div>`);
