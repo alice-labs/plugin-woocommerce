@@ -100,10 +100,12 @@ add_action( 'admin_footer', function () { ?>
                 switch ($(this).data('form')) {
                     case 'login':
                         form_section.addClass('alice-login-active');
+                        form_section.find('.--full-name input').attr('disabled', 'disabled');
                         form_section.find('input[name="action"]').val('myalice_login');
                         break;
                     case 'signup':
                         form_section.removeClass('alice-login-active');
+                        form_section.find('.--full-name input').removeAttr('disabled');
                         form_section.find('input[name="action"]').val('myalice_signup');
                         break;
                 }

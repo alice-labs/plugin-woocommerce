@@ -432,11 +432,13 @@ add_action( 'admin_head', function () { ?>
         }
 
         #alice-dashboard .alice-connect-with-myalice.alice-login-active .--signup-component,
+        #alice-dashboard .alice-connect-with-myalice.alice-login-active .--full-name,
         #alice-dashboard .alice-connect-with-myalice .--login-component {
             display: none;
         }
 
         #alice-dashboard .alice-connect-with-myalice .--signup-component,
+        #alice-dashboard .alice-connect-with-myalice .--full-name,
         #alice-dashboard .alice-connect-with-myalice.alice-login-active .--login-component {
             display: block;
         }

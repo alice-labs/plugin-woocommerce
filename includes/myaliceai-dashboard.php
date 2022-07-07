@@ -76,13 +76,17 @@ function myalice_dashboard_callback() {
                     <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
 						<?php wp_nonce_field( 'myalice-form-process', 'myalice-nonce' ); ?>
                         <input type="hidden" name="action" value="myalice_login">
+                        <label class="--full-name">
+							<?php esc_html_e( 'Full Name', 'myaliceai' ); ?>
+                            <input type="text" name="full_name" disabled>
+                        </label>
                         <label>
 							<?php esc_html_e( 'Email Address', 'myaliceai' ); ?>
-                            <input type="email" name="user_email">
+                            <input type="email" name="user_email" required>
                         </label>
                         <label>
 							<?php esc_html_e( 'Password', 'myaliceai' ); ?>
-                            <input type="password" name="password">
+                            <input type="password" name="password" required>
                         </label>
                         <span class="spinner"></span>
                         <button type="submit" class="alice-btn">
