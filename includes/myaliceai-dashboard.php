@@ -41,7 +41,8 @@ function myalice_dashboard_callback() {
                     </div>
                     <nav class="alice-main-menu">
                         <ul>
-                            <li><a class="--myalice-dashboard-menu-link" href="<?php echo esc_url( admin_url( '/admin.php?page=myalice_dashboard' ) ); ?>"><?php esc_html_e( 'Dashboard', 'myaliceai' ); ?></a></li>
+                            <li><a class="--myalice-dashboard-menu-link"
+                                   href="<?php echo esc_url( admin_url( '/admin.php?page=myalice_dashboard' ) ); ?>"><?php esc_html_e( 'Dashboard', 'myaliceai' ); ?></a></li>
                             <li><a href="#" data-link-section="--plugin-settings"><?php esc_html_e( 'Settings', 'myaliceai' ); ?></a></li>
                             <li><a href="https://wordpress.org/support/plugin/myaliceai/reviews/?filter=5#new-post"
                                    target="_blank"><?php esc_html_e( 'Review MyAlice', 'myaliceai' ); ?></a></li>
@@ -62,7 +63,8 @@ function myalice_dashboard_callback() {
                 </div>
             </section>
 
-            <section class="alice-connect-with-myalice alice-login-active">
+			<?php $is_email_registered = myalice_is_email_registered(); ?>
+            <section class="alice-connect-with-myalice <?php echo $is_email_registered ? 'alice-login-active' : ''; ?>">
                 <div class="alice-container">
                     <div class="alice-title">
                         <h2><?php esc_html_e( 'Connect with MyAlice', 'myaliceai' ); ?></h2>
@@ -75,10 +77,10 @@ function myalice_dashboard_callback() {
                 <div class="alice-container">
                     <form action="<?php echo admin_url( 'admin-ajax.php' ); ?>" method="post">
 						<?php wp_nonce_field( 'myalice-form-process', 'myalice-nonce' ); ?>
-                        <input type="hidden" name="action" value="myalice_login">
+                        <input type="hidden" name="action" value="<?php echo $is_email_registered ? 'myalice_login' : 'myalice_signup'; ?>">
                         <label class="--full-name">
 							<?php esc_html_e( 'Full Name', 'myaliceai' ); ?>
-                            <input type="text" name="full_name" disabled>
+                            <input type="text" name="full_name" <?php echo $is_email_registered ? 'disabled' : ''; ?>>
                         </label>
                         <label>
 							<?php esc_html_e( 'Email Address', 'myaliceai' ); ?>

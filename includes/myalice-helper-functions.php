@@ -63,3 +63,30 @@ function myalice_get_dashboard_class() {
 
 	return '--explore-myalice';
 }
+
+function myalice_is_email_registered() {
+	$alice_api_data = get_option( 'myaliceai_api_data' );
+	if ( empty( $alice_api_data['email'] ) ) {
+		$current_user = wp_get_current_user();
+		$body         = wp_json_encode( array(
+			'email' => $current_user->user_email
+		) );
+
+		$alice_api_url = 'https://api.myalice.ai/api/ecommerce/is-email-registered';
+		$response      = wp_remote_post( $alice_api_url, array(
+				'method'  => 'POST',
+				'timeout' => 45,
+				'body'    => $body,
+				'cookies' => array()
+			)
+		);
+
+		if ( ! is_wp_error( $response ) ) {
+			$alice_is_register_data = json_decode( $response['body'], true );
+
+			return isset( $alice_is_register_data['is_registered'] ) ? $alice_is_register_data['is_registered'] : false;
+		}
+	}
+
+	return false;
+}
