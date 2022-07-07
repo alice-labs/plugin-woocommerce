@@ -90,3 +90,9 @@ function myalice_is_email_registered() {
 
 	return false;
 }
+
+function myalice_get_current_user_email() {
+	$current_user = wp_get_current_user();
+
+	return $current_user->user_email;
+}

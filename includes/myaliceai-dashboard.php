@@ -84,7 +84,7 @@ function myalice_dashboard_callback() {
                         </label>
                         <label>
 							<?php esc_html_e( 'Email Address', 'myaliceai' ); ?>
-                            <input type="email" name="user_email" required>
+                            <input type="email" name="user_email" value="<?php echo esc_attr( myalice_get_current_user_email() ); ?>" required>
                         </label>
                         <label>
 							<?php esc_html_e( 'Password', 'myaliceai' ); ?>
