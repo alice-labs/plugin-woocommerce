@@ -297,6 +297,72 @@ function alice_login_form_process() {
 	}
 }
 
+function alice_signup_form_process() {
+	if ( check_ajax_referer( 'myalice-form-process', 'myalice-nonce' ) ) {
+		$full_name  = empty( $_POST['full_name'] ) ? '' : sanitize_text_field( $_POST['full_name'] );
+		$user_email = empty( $_POST['user_email'] ) ? '' : sanitize_text_field( $_POST['user_email'] );
+		$password   = empty( $_POST['password'] ) ? '' : sanitize_text_field( $_POST['password'] );
+
+		if ( empty( $full_name ) || empty( $user_email ) || empty( $password ) ) {
+			wp_send_json_error( [ 'message' => __( 'Please fill up all required field', 'myaliceai' ) ] );
+		}
+
+		$wc_data = get_option( 'myaliceai_wc_auth' );
+		if ( empty( $wc_data['consumer_key'] ) || empty( $wc_data['consumer_secret'] ) || empty( $wc_data['key_permissions'] ) ) {
+			wp_send_json_error( [ 'message' => __( 'MyAlice needs your permission to work. Please Grant Permission First.', 'myaliceai' ) ] );
+
+		}
+
+		$alice_api_url = 'https://api.myalice.ai/api/ecommerce/register-and-connect-woocommerce';
+		$body          = wp_json_encode( array(
+			'store_url'       => site_url(),
+			'consumer_key'    => $wc_data['consumer_key'],
+			'consumer_secret' => $wc_data['consumer_secret'],
+			'key_permissions' => $wc_data['key_permissions'],
+			'full_name'       => $full_name,
+			'email'           => $user_email,
+			'password'        => $password,
+		) );
+
+		$response = wp_remote_post( $alice_api_url, array(
+				'method'  => 'POST',
+				'timeout' => 45,
+				'body'    => $body,
+				'cookies' => array()
+			)
+		);
+
+		if ( is_wp_error( $response ) ) {
+			$error_message = $response->get_error_message();
+
+			wp_send_json_error( [ 'message' => "Something went wrong: {$error_message}" ] );
+		} else {
+			$alice_api_data = json_decode( $response['body'], true );
+
+			if ( ! empty( $alice_api_data ) && $alice_api_data['success'] === true ) {
+				if ( $alice_api_data['is_auto_connected'] === true && ! empty( $alice_api_data['ecommerce_data'] ) ) {
+					update_option( 'myaliceai_api_data', [
+						'api_token'   => $alice_api_data['ecommerce_data']['api_token'],
+						'platform_id' => absint( $alice_api_data['ecommerce_data']['webchat_channel_id'] ),
+						'primary_id'  => $alice_api_data['ecommerce_data']['webchat_channel_primary_id'],
+						'project_id'  => $alice_api_data['ecommerce_data']['project_id'],
+						'email'       => $user_email,
+					] );
+				} elseif ( $alice_api_data['is_auto_connected'] === false ) {
+					update_option( 'myaliceai_api_data', [
+						'email' => $user_email,
+					] );
+				}
+
+				wp_send_json_success( [ 'is_auto_connected' => $alice_api_data['is_auto_connected'], 'message' => __( 'You are logged in successfully', 'myaliceai' ) ] );
+			} else {
+				wp_send_json_error( [ 'message' => empty( $alice_api_data['error'] ) ? ( empty( $alice_api_data['detail'] ) ? '' : $alice_api_data['detail'] ) : $alice_api_data['error'] ] );
+			}
+
+		}
+	}
+}
+
 function myalice_select_team_form_process() {
 	if ( check_ajax_referer( 'myalice-form-process', 'myalice-nonce' ) ) {
 		$project_id = empty( $_POST['team'] ) ? '' : sanitize_text_field( $_POST['team'] );
