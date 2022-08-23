@@ -179,8 +179,8 @@ function myalice_dashboard_callback() {
                     </div>
                 </div>
                 <div class="alice-container">
-                    <a class="alice-btn alice-btn-lite" href="#"><?php esc_html_e( 'Open MyAlice', 'myaliceai' ); ?></a>
-                    <a class="alice-btn alice-btn-lite" href="#"><?php esc_html_e( 'Open Inbox', 'myaliceai' ); ?></a>
+                    <a class="alice-btn alice-btn-lite" href="https://app.myalice.ai/dashboard"><?php esc_html_e( 'Open MyAlice', 'myaliceai' ); ?></a>
+                    <a class="alice-btn alice-btn-lite" href="<?php echo esc_url( 'https://app.myalice.ai/projects/' . MYALICE_PROJECT_ID . '/chat' ); ?>"><?php esc_html_e( 'Open Inbox', 'myaliceai' ); ?></a>
                 </div>
             </section>
 

@@ -53,7 +53,8 @@ $api_data = get_option( 'myaliceai_api_data' );
 $api_data = wp_parse_args( $api_data, [
 	'api_token'   => '',
 	'platform_id' => '',
-	'primary_id'  => ''
+	'primary_id'  => '',
+	'project_id'  => ''
 ] );
 
 $myalice_settings = get_option( 'myaliceai_settings', [] );
@@ -74,6 +75,10 @@ if ( ! defined( 'MYALICE_PLATFORM_ID' ) ) {
 
 if ( ! defined( 'MYALICE_PRIMARY_ID' ) ) {
 	define( 'MYALICE_PRIMARY_ID', $api_data['primary_id'] );
+}
+
+if ( ! defined( 'MYALICE_PROJECT_ID' ) ) {
+	define( 'MYALICE_PROJECT_ID', $api_data['project_id'] );
 }
 
 if ( ! defined( 'MYALICE_API_URL' ) ) {
