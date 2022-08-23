@@ -16,7 +16,7 @@ add_action( 'admin_menu', function () {
 } );
 
 // Store wcauth data
-if ( isset( $_GET['wcauth'] ) && $_GET['wcauth'] == 1 ) {
+if ( isset( $_GET['myalice_action'], $_GET['wcauth'] ) && $_GET['myalice_action'] === 'wcauth' && $_GET['wcauth'] == 1 ) {
 	$wc_auth_data = file_get_contents( 'php://input' );
 	$wc_auth_data = json_decode( $wc_auth_data, true );
 	$auth_data    = [
@@ -153,7 +153,7 @@ function myalice_dashboard_callback() {
 						'scope'        => 'read_write',
 						'user_id'      => wp_rand(),
 						'return_url'   => admin_url( 'admin.php?page=myalice_dashboard' ),
-						'callback_url' => admin_url( 'admin.php?page=myalice_dashboard&wcauth=1' )
+						'callback_url' => site_url( '?myalice_action=wcauth&wcauth=1' )
 					);
 					$wc_auth_url = $store_url . $endpoint . '?' . http_build_query( $params );
 					?>
