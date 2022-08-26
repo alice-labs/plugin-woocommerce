@@ -2,50 +2,6 @@
 // Direct file access is disallowed
 defined( 'ABSPATH' ) || die;
 
-//Alice API form ajax callback
-function alice_api_form_process() {
-	if ( check_ajax_referer( 'alice-api-form', 'alice-api-form' ) ) {
-		$api_key = empty( $_POST['alice_plugin_key'] ) ? '' : sanitize_text_field( $_POST['alice_plugin_key'] );
-
-		if ( empty( $api_key ) ) {
-			wp_send_json_error( [ 'message' => 'You provided an empty field, please provide the correct token.' ] );
-		}
-
-		$alice_api_url = MYALICE_API_URL . 'connect-ecommerce-plugin?api_token=' . $api_key;
-		$response      = wp_remote_post( $alice_api_url, array(
-				'method'  => 'POST',
-				'timeout' => 45,
-				'cookies' => array()
-			)
-		);
-
-		if ( is_wp_error( $response ) ) {
-			$error_message = $response->get_error_message();
-
-			wp_send_json_error( [ 'message' => "Something went wrong: {$error_message}" ] );
-		} else {
-			$alice_api_data = json_decode( $response['body'], true );
-
-			if ( $alice_api_data['success'] === true ) {
-				update_option( 'myaliceai_api_data', [
-					'api_token'   => $alice_api_data['api_token'],
-					'platform_id' => absint( $alice_api_data['platform_id'] ),
-					'primary_id'  => $alice_api_data['primary_id']
-				] );
-
-				wp_send_json_success( [
-					'message'     => __( 'Your API token is valid and successfully updated.', 'myaliceai' ),
-					'platform_id' => $alice_api_data['platform_id'],
-					'primary_id'  => $alice_api_data['primary_id']
-				] );
-			} else {
-				wp_send_json_error( [ 'message' => $alice_api_data['error'] ] );
-			}
-
-		}
-	}
-}
-
 //Alice Settings form ajax callback
 function alice_settings_form_process() {
 	if ( check_ajax_referer( 'alice-settings-form', 'alice-settings-form' ) ) {

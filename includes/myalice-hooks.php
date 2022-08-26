@@ -39,9 +39,6 @@ add_filter( "plugin_row_meta", function ( $links, $file ) {
 	return $links;
 }, 10, 2 );
 
-// Alice API form ajax handler
-add_action( 'wp_ajax_alice_api_form', 'alice_api_form_process' );
-
 // Alice Settings form ajax handler
 add_action( 'wp_ajax_alice_settings_form', 'alice_settings_form_process' );
 
