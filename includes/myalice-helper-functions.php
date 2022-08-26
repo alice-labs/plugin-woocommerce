@@ -17,7 +17,7 @@ function myalice_get_woocommerce_projects() {
 		return [];
 	}
 
-	$alice_api_url = 'https://api.myalice.ai/api/ecommerce/available-woocommerce-projects';
+	$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/available-woocommerce-projects';
 	$body          = wp_json_encode( array(
 		'store_url'       => home_url(),
 		'consumer_key'    => $wc_data['consumer_key'],
@@ -72,7 +72,7 @@ function myalice_is_email_registered() {
 			'email' => $current_user->user_email
 		) );
 
-		$alice_api_url = 'https://api.myalice.ai/api/ecommerce/is-email-registered';
+		$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/is-email-registered';
 		$response      = wp_remote_post( $alice_api_url, array(
 				'method'  => 'POST',
 				'timeout' => 45,
