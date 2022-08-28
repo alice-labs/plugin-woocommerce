@@ -4,7 +4,7 @@ Contributors: shuvorahmanalice, rudlinkon
 Tags: live chat, chatbot, helpdesk, woocommerce livechat, woocommerce chatbot, livechat plugin, chat plugin, wordpress chat, free livechat, wordpress live chat, customer support, live chat plugin, facebook plugin, messenger plugin, whatsApp plugin, instagram plugin, viber plugin, line plugin, telegram plugin, wordpress live chat, best live chat plugin, best wordpress live chat plugin, best live chat, best live chat plugin, best live chat software, chat plugin, chatbot plugin, ai chatbot, facebook messenger chat, livechat, facebook chat plugin, woocommerce live chat, free live chat, whatsapp chat, messenger chat
 Requires at least: 5.0
 Tested up to: 6.0
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -142,6 +142,9 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 
 == Changelog ==
 
+
+= 2.0.2 – 28/08/2022 =
+* Added: Added some important links
 
 = 2.0.1 – 28/08/2022 =
 * Updated: Updated all API with new links
