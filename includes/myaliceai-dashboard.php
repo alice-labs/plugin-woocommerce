@@ -97,9 +97,9 @@ function myalice_dashboard_callback() {
                         </button>
                         <div class="myalice-notice-area"></div>
                         <p class="--signup-component"><?php esc_html_e( 'By proceeding, you agree to the', 'myaliceai' ); ?>
-                            <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Terms & Conditions', 'myaliceai' ); ?></a></p>
+                            <a href="<?php echo esc_url( 'https://www.myalice.ai/terms' ); ?>" target="_blank"><?php esc_html_e( 'Terms & Conditions', 'myaliceai' ); ?></a></p>
                         <p class="--login-component"><?php esc_html_e( 'Forgot your credentials?', 'myaliceai' ); ?>
-                            <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Reset Password', 'myaliceai' ); ?></a></p>
+                            <a href="<?php echo esc_url( 'https://app.myalice.ai/reset' ); ?>" target="_blank"><?php esc_html_e( 'Reset Password', 'myaliceai' ); ?></a></p>
                     </form>
                 </div>
             </section>
@@ -132,7 +132,7 @@ function myalice_dashboard_callback() {
 						?>
                         <button type="submit" class="alice-btn"><?php esc_html_e( 'Continue', 'myaliceai' ); ?></button>
                         <p><?php esc_html_e( "If you don't see any team, that might be already connected to a store. If that isn't the case,", 'myaliceai' ); ?>
-                            <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Contact Support', 'myaliceai' ); ?></a></p>
+                            <a href="<?php echo esc_url( 'https://www.myalice.ai/support' ); ?>" target="_blank"><?php esc_html_e( 'Contact Support', 'myaliceai' ); ?></a></p>
                     </form>
                 </div>
             </section>
