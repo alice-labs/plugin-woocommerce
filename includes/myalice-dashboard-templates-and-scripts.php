@@ -209,6 +209,19 @@ add_action( 'admin_footer', function () { ?>
                         notice_wrap.remove();
                     }
                 });
+            }).on('click', 'span', function (e) {
+                e.preventDefault();
+
+                var $this = $(this),
+                    password_field = $this.siblings('input');
+
+                if ($this.hasClass('dashicons-visibility')) {
+                    password_field.attr('type', 'text');
+                } else {
+                    password_field.attr('type', 'password');
+                }
+
+                $this.toggleClass('dashicons-visibility dashicons-hidden')
             });
         })(jQuery);
     </script>

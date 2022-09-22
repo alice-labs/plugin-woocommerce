@@ -443,6 +443,16 @@ add_action( 'admin_head', function () { ?>
             display: block;
         }
 
+        #alice-dashboard .alice-connect-with-myalice form label {
+            position: relative;
+        }
+
+        #alice-dashboard .alice-connect-with-myalice form span.dashicons.myalice-pass-show {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
         #alice-dashboard .alice-connect-with-myalice .myalice-notice-area {
             width: 350px;
         }

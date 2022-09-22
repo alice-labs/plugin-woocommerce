@@ -89,6 +89,7 @@ function myalice_dashboard_callback() {
                         <label>
 							<?php esc_html_e( 'Password', 'myaliceai' ); ?>
                             <input type="password" name="password" required>
+                            <span class="dashicons dashicons-visibility myalice-pass-show" aria-hidden="true"></span>
                         </label>
                         <span class="spinner"></span>
                         <button type="submit" class="alice-btn">
