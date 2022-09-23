@@ -132,8 +132,8 @@ function myalice_dashboard_callback() {
 						}
 						?>
                         <button type="submit" class="alice-btn"><?php esc_html_e( 'Continue', 'myaliceai' ); ?></button>
-                        <p><?php esc_html_e( "If you don't see any team, that might be already connected to a store. If that isn't the case,", 'myaliceai' ); ?>
-                            <a href="<?php echo esc_url( 'https://www.myalice.ai/support' ); ?>" target="_blank"><?php esc_html_e( 'Contact Support', 'myaliceai' ); ?></a></p>
+                        <p><?php esc_html_e( "If you see any missing teams, it might be because it's already connected. If that isn't the case,", 'myaliceai' ); ?>
+                            <a href="<?php echo esc_url( 'https://www.myalice.ai/support' ); ?>" target="_blank"><?php esc_html_e( 'contact support.', 'myaliceai' ); ?></a></p>
                     </form>
                 </div>
             </section>
