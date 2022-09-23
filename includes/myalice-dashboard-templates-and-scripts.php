@@ -209,7 +209,7 @@ add_action( 'admin_footer', function () { ?>
                         notice_wrap.remove();
                     }
                 });
-            }).on('click', 'span', function (e) {
+            }).on('click', 'span.myalice-pass-show', function (e) {
                 e.preventDefault();
 
                 var $this = $(this),
