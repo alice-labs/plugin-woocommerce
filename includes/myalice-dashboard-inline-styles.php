@@ -637,6 +637,10 @@ add_action( 'admin_head', function () { ?>
             text-align: right;
         }
 
+        #alice-dashboard .alice-plugin-settings form .submit-btn-section button.myalice-back-to-home {
+            float: left;
+        }
+
         /* Dashboard show/hide control */
         .--connect-with-myalice > section:not(.alice-connect-with-myalice),
         .--select-the-team > section:not(.alice-select-the-team),
