@@ -220,7 +220,7 @@ function myalice_dashboard_callback() {
                         <div class="submit-btn-section">
                             <span class="spinner"></span>
                             <button type="submit" class="alice-btn" disabled><?php esc_html_e( 'Save Changes', 'myaliceai' ); ?></button>
-                            <button type="button" class="alice-btn alice-btn-lite myalice-back-to-home"><?php esc_html_e( 'Back', 'myaliceai' ); ?></button>
+                            <button type="button" class="alice-btn alice-btn-lite myalice-back-to-home" data-link-section="<?php echo myalice_get_dashboard_class(); ?>"><?php esc_html_e( 'Back', 'myaliceai' ); ?></button>
                         </div>
                         <div class="myalice-notice-area"></div>
                     </form>
