@@ -156,11 +156,13 @@ add_action( 'admin_footer', function () { ?>
                     const notice_area = $form.find('.myalice-notice-area');
 
                     if (response.success) {
-                        if (response.data.is_auto_connected) {
-                            $('#alice-dashboard').removeClass('--connect-with-myalice --select-the-team --needs-your-permission --explore-myalice --plugin-settings').addClass('--explore-myalice');
-                        } else {
-                            $('.--myalice-dashboard-menu-link')[0].click();
-                        }
+                        setTimeout(function () {
+                            if (response.data.is_auto_connected) {
+                                $('#alice-dashboard').removeClass('--connect-with-myalice --select-the-team --needs-your-permission --explore-myalice --plugin-settings').addClass('--explore-myalice');
+                            } else {
+                                $('.--myalice-dashboard-menu-link')[0].click();
+                            }
+                        }, 3000);
 
                         notice_area.prepend(`<div class="updated"><p>${response.data.message}</p></div>`);
                     } else {
