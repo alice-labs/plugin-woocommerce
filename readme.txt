@@ -1,7 +1,7 @@
 ﻿=== Social Live Chat Support, Sales, and Marketing – MyAlice ===
 
 Contributors: shuvorahmanalice, rudlinkon
-Tags: live chat, chatbot, helpdesk, woocommerce livechat, woocommerce chatbot, livechat plugin, chat plugin, wordpress chat, free livechat, wordpress live chat, customer support, live chat plugin, facebook plugin, messenger plugin, whatsApp plugin, instagram plugin, viber plugin, line plugin, telegram plugin, wordpress live chat, best live chat plugin, best wordpress live chat plugin, best live chat, best live chat plugin, best live chat software, chat plugin, chatbot plugin, ai chatbot, facebook messenger chat, livechat, facebook chat plugin, woocommerce live chat, free live chat, whatsapp chat, messenger chat
+Tags: whatsapp, live chat, telegram, line, viber, whatsapp business, whatsapp commerce, whatsapp support, whatsapp broadcasting, whatsapp chat, whatsapp plugin, whatsapp chat plugin, whatsapp wordpress plugin, whatsapp woocommerce plugin, facebook plugin, messenger plugin, instagram plugin, viber plugin, line plugin, telegram plugin, woocommerce livechat, woocommerce chatbot, chat plugin
 Requires at least: 5.0
 Tested up to: 6.0
 Stable tag: 2.0.2
