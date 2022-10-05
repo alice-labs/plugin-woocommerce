@@ -10,7 +10,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
 
-More than a live chat or a chatbot platform. One tool, all the features you need for sales and support through live conversations.
+A workspace for all your WhatsApp, Telegram, Line, Viber, Instagram, Facebook Messenger conversations, sales, and marketing.
 
 == Description ==
 
