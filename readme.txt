@@ -26,7 +26,7 @@ The old way of using communication tools like WhatsApp and other social channels
 MyAlice puts an end to silos and delivers a new way of growing your business.
 
 
-##MARKETING
+###MARKETING
 
 **Send broadcast messages**
 Reach out to customers where their friends are for higher CTRs and engagement. Create WhatsApp audience and easily schedule campaigns. Watch new orders roll in!
@@ -35,7 +35,7 @@ Reach out to customers where their friends are for higher CTRs and engagement. C
 Automatically send WhatsApp messages based on customer actions. Follow up on new purchases, abandoned shopping carts, and more WooCommerce triggers by creating business templates.
 
 
-##SALES
+###SALES
 
 **Take and update orders**
 When customers come to your store intending to buy something, you need to help them as much as possible. Which includes placing the order for him. With MyAlice's deep WooCommerce integration, you can now do it with a single click while chatting with your customer.
@@ -44,7 +44,7 @@ When customers come to your store intending to buy something, you need to help t
 Analyze the revenue of your WhatsApp messages, campaigns, and store automation.
 
 
-##SUPPORT
+###SUPPORT
 
 **Multiple agents in 1 inbox**
 Your customers are on WhatsApp and other social channels. All the time. So when they’re looking to buy, and they message you, they’re at their moment of highest intent. Engaging with these visitors through a team collaboration inbox.
