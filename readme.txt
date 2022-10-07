@@ -14,55 +14,61 @@ A workspace for all your WhatsApp, Telegram, Line, Viber, Instagram, Facebook Me
 
 == Description ==
 
-So your online store’s poppin’ off. Success is great, but it’s getting overwhelming. Buyers and potential customers have questions about products, deliveries, refunds, and exchanges… You want to answer them, but trying to manage CX across all your channels is a fool’s errand. However, if you leave messages unanswered, you’ll damage your brand, and your reputation, and kill your growth. So what do you do? Clone your customer service team? Ask them to work 25 hours a day? Or make it easy on everyone with MyAlice.
+**A workspace to manage all your WhatsApp conversations, sales, and marketing to turn you and your team into revenue champions.**
 
-MyAlice is modern customer support and social selling platform which helps hundreds of growing ECommerce and DTC brands every day.
+**Wait, we are not done yet,**
 
-HERE’S THE OLD WAY VS THE NEW WAY OF DELIVERING STELLAR CUSTOMER SERVICE
+**You can also connect Facebook, Messenger, Instagram, Viber, Line, Telegram, and more to keep all your customers active and make them come back.**
 
-**Old way:** You need to hover on multiple tabs simultaneously to interact with your customers.
-**New way:** As your socials and website inventory are connected in one single platform, you can do all the customer interactions like order process, order canceling, and order update in one single browser tab.
+**Here's the OLD WAY vs the NEW WAY of growing business**
+The old way of using communication tools like WhatsApp and other social channels plus eCommerce was disjointed and siloed. You and your team going through multiple tabs to respond to customers.
 
-**Old way:** Your human agents cannot address all of your customers in an efficient manner 24/7.
-**New way:** Our powerful self-service chatbots will help your customers to make a purchase even during the holidays and odd hours. Technically, your online store will be open 24/7 throughout the year for your customers.
+MyAlice puts an end to silos and delivers a new way of growing your business.
 
-**Old way:** There’s no way to track and improve your customer support quality and agent performance in the socials.
-**New way:** You can always track and monitor your agents’ conversation quality with the customers, their conversion rates, and response time to improve your customer support every day.
 
-Want to learn how you can power up your sales and support the modern way? [Book a demo](https://www.myalice.ai/demo) here or [Sign-up](https://app.myalice.ai/register/) here to see it in action.
+##MARKETING
 
-ONE TOOL, ALL THE FEATURES YOU NEED TO SELL AND SUPPORT WITH EASE
+**Send broadcast messages**
+Reach out to customers where their friends are for higher CTRs and engagement. Create WhatsApp audience and easily schedule campaigns. Watch new orders roll in!
 
-### Live Chat and Messaging
+**Automate your WhatsApp Marketing**
+Automatically send WhatsApp messages based on customer actions. Follow up on new purchases, abandoned shopping carts, and more WooCommerce triggers by creating business templates.
 
-No more switching tabs to respond to Live Chat, Facebook, Instagram, WhatsApp, Line, Telegram, and Viber. Manage all channels from one simple Inbox. Chat with website visitors, help answer their questions, make recommendations, share coupon codes and make sales.
 
-### Sales and Commerce
+##SALES
 
-See order and customer information next to each conversation. Take actions like cancel, refund, duplicate and edit orders without leaving the inbox.
+**Take and update orders**
+When customers come to your store intending to buy something, you need to help them as much as possible. Which includes placing the order for him. With MyAlice's deep WooCommerce integration, you can now do it with a single click while chatting with your customer.
 
-### Agent Collaboration
+**Track revenue and ROI**
+Analyze the revenue of your WhatsApp messages, campaigns, and store automation.
 
-Assign or reassign conversation, create notes, and use saved responses to deliver faster support. Get more done together.
 
-### Automation
+##SUPPORT
 
-Focus on what matters. Auto-resolve 60% of your customer conversations on any channels in your language. Let customers track packages, request returns, exchanges, and get product recommendations - before they reach agents. No code is required.
+**Multiple agents in 1 inbox**
+Your customers are on WhatsApp and other social channels. All the time. So when they’re looking to buy, and they message you, they’re at their moment of highest intent. Engaging with these visitors through a team collaboration inbox.
 
-### Reporting and Analytics
+**Chat widget**
+Add a chat widget in a few simple steps to your WooCommerce store. Add your own logo, text, and colors, and set up in a matter of minutes.
 
-From sales to customer data to monitoring agent performance. Measure response times, resolution times, and revenues brought in by customer service teams. Send surveys after conversations and measure customer satisfaction scores.
+**Centralized interactions and support on the go**
+No more switching tabs to respond to WhatsApp, Live Chat, Facebook Messenger, Instagram, Line, Telegram, and Viber. Centralize all your customer interactions under one dashboard. Use our iOS or Android mobile app that allows support from anywhere.
 
-### Marketing
+**Chatbot for all social channels**
+Using MyAlice's automation, create AI-powered chatbot that will automatically respond to your customers 24x7. For all social channels including WhatsApp.
 
-Manage customer contact list, find target customers, and have conversations directly from MyAlice. Say no to excel sheets.
+**Get verified green tick mark**
+Stop sending your order confirmations from some other companies’ WhatsApp numbers. Let customers see your brand and number in all store notifications. MyAlice helps you get verified without any charges, get access to the Official WhatsApp API.
 
-### Official WhatsApp Business API
+**View reports and analytics**
+Access reports on all incoming messages, agent response times, agent performance, conversation status, etc. Use these in-depth analytics to improve agent performance. Send a targeted message to new customers through WhatsApp and check the status through campaign reports.
 
-Get an official WhatsApp Business API phone number, which can be used for support and marketing. Free Green Tick application to WhatsApp.
 
-Easily migrate from Zendesk, Freshdesk, Drift, Intercom, Richpanel, Reamaze, [Tawk.To](http://Tawk.To), Tidio, HubSpot, Crisp, Live Chat. We'll assist you with migration. [Sign up](https://app.myalice.ai/register/) for a free trial now or [Book a demo](https://www.myalice.ai/demo) here.
+Easily migrate from Wati, Zendesk, Freshdesk, Reamaze, Tidio, Drift, Intercom, Tawk, HubSpot, Crisp, Reve Chat, Live Chat, Gupshup, 360Dialog. Kaleyr, ZOKO, Interakt, AiSensy, SuperLemon, DelightChat, Bitespeed, Gorgias, Richpanel, Helpscout, UVDesk and eDesk. We'll assist you with migration.
 
+
+**When you succeed, we succeed. Our team of experts will go above and beyond to understand your business and implement a solution that shows immediate impact. [Get a demo](https://www.myalice.ai/demo) or [Sign-up](https://app.myalice.ai/register/) to see it in action.**
 
 == Installation ==
 
