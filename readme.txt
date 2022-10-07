@@ -95,43 +95,31 @@ Install MyAlice as a regular WordPress plugin. Here are 2 different ways to inst
 
 == Frequently Asked Questions ==
 
+= Do you use the official Meta API? =
+Yes, we use the official Meta API for WhatsApp, Facebook, and Instagram connections.
+
 = What happens when I connect my WooCommerce store with MyAlice? =
 Once you connect your store, you can view your store inventory, customer details, order details, customer summary, product interactions, and past conversations. You can create or update orders while chatting with your customers directly from MyAlice inbox without switching between platforms.
 
-Next, if you install the [MyAlice plugin](https://wordpress.org/plugins/myaliceai/) on your store website, you can place a WooCommerce live chat widget on your store website to chat with your store visitors, respond to their queries and guide their shopping journey.
-
-Lastly, you can create chatbots to auto-respond to common queries and use your inventory information to automate the complete purchase journey.
-
-= How many WooCommerce stores can I connect to MyAlice? =
-You can create multiple teams and connect one store for each team. The more teams you create, the more stores you have. Additionally, we will be allowing users to connect multiple stores per team by the middle of this year, 2022.
-
-= How do I get the WooCommerce customer data from the time when my store was originally created? =
-All your customer data and order history will sync automatically once you connect your store on [MyAlice](https://myalice.ai/). However, for product interactions, you can view only the data from after you installed [MyAlice plugin](https://wordpress.org/plugins/myaliceai/) on your store. Please note that the Product Interaction section contains data on which products the customer has viewed, added to the cart, or bought.
+Next, you can place a live chat widget on your store website to chat with the store visitors, respond to their queries and guide their shopping journey.
 
 = Does the inventory on MyAlice change every time I update my WooCommerce store? =
-Yes. Every time you update anything on your store — product, stock, or price, the information is automatically synced on your MyAlice dashboard. On the other hand, when you create an order from MyAlice, the inventory will also be on your WooCommerce dashboard. All in all, WooCommerce and [MyAlice](https://myalice.ai/) sync in real-time.
+Yes. Every time you update anything on your store — product, stock, or price, the information is automatically synced on your MyAlice dashboard. On the other hand, when you create an order from MyAlice, the inventory will also be updated on your WooCommerce dashboard. All in all, WooCommerce and [MyAlice](https://myalice.ai/) sync in real-time.
 
-= How do you handle the payment for products? =
-Once an order is created, you will receive a payment link from our end, which you can share with your customers. Customers can then pay as per the payment system set up in your store. If a customer opts for Cash on Delivery, it would be highlighted accordingly in the checkout menu.
-
-= Can non-eCommerce users use MyAlice? =
-We primarily serve the WooCommerce and Shopify community. Nonetheless, non-eCommerce companies use [MyAlice](https://myalice.ai/) as a multichannel helpdesk, live chat, or chatbot solution.
-
-= Do you use the official Meta API? =
-Yes, we use the official Meta API for Facebook, Instagram, and WhatsApp connections.
-
-= How do I add livechat on WooCommerce? =
-1.  Go to your WordPress dashboard. Click on the add new button.
-2.  Type MyAlice in the search tool available on the right.
-3.  In the Search Results, you will find [MyAlice – Multichannel Helpdesk, Live Chat, and Chatbot for WooCommerce](https://wordpress.org/plugins/myaliceai/) plugin.
-4.  After the installation, activate the plugin.
+= How do I add WhatsApp chat on WordPress? =
+1. Go to your WordPress dashboard. Click on the add new button.
+2. Type MyAlice in the search tool available on the right.
+3. In the Search Results, you will find [MyAlice plugin](https://wordpress.org/plugins/myaliceai/).
+4. After the installation, activate the plugin.
+5. Sign up to MyAlice and voilà WhatsApp chat is added to your WordPress website.
 
 = Can I stay connected to my customers while on the go? =
-With our mobile apps - both [android](https://play.google.com/store/apps/details?id=com.alice.myalice) and [iOS](https://apps.apple.com/sg/app/myalice/id1585089223) you can chat anywhere.
+With our mobile apps - both [android](https://play.google.com/store/apps/details?id=com.alice.myalice) and [iOS](https://apps.apple.com/sg/app/myalice/id1585089223) you can chat anytime, anywhere.
 
 = Can I use it for my client? =
-Of course, you can! Expand your business offer by adding MyAlice to projects you run for your customers. [Check our Partner Program](https://www.myalice.ai/partner)
+Of course, you can! Expand your business offer by adding MyAlice to projects you run for your customers.
 
+[Check our Partner Program](https://www.myalice.ai/partner)
 
 == Screenshots ==
 
