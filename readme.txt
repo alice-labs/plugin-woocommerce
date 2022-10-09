@@ -124,14 +124,17 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 == Screenshots ==
 
 
-1. Dashboard
-2. Livechat
-3. Multichannel
-4. eCommerce
-5. Chatbot
-6. Analytics
-7. Embed
-8. Apps
+1. Widget
+2. Multi Channel Inbox
+3. eCommerce
+4. Broadcast Campaign
+5. Abandoned Cart
+6. Campaign Report
+7. Conversation Context
+8. Agent Analytics
+9. Automation
+10. Mobile App
+11. Dashboard
 
 
 == Changelog ==
