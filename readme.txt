@@ -4,7 +4,7 @@ Contributors: shuvorahmanalice, rudlinkon
 Tags: whatsapp, live chat, telegram, line, viber, whatsapp business, whatsapp commerce, whatsapp support, whatsapp broadcasting, whatsapp chat, whatsapp plugin, whatsapp chat plugin, whatsapp wordpress plugin, whatsapp woocommerce plugin, facebook plugin, messenger plugin, instagram plugin, viber plugin, line plugin, telegram plugin, woocommerce livechat, woocommerce chatbot, chat plugin
 Requires at least: 5.0
 Tested up to: 6.0
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -139,6 +139,13 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 
 == Changelog ==
 
+
+= 2.0.3 – 09/10/2022 =
+* Added: Password show/hide option in the login/registration form
+* Added: Back button in the settings page
+* Improved: Showing the success message after successful login then redirect
+* Improved: Compatible with WooCommerce 6.9
+* Fixed: Few minor bug fix
 
 = 2.0.2 – 28/08/2022 =
 * Added: Added some important links
