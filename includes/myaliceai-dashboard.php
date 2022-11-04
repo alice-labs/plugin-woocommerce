@@ -176,7 +176,9 @@ function myalice_dashboard_callback() {
 		        <?php if ( myalice_is_needed_migration() ) { ?>
                     <div class="alice-container">
                         <div class="alice-migration-warning">
-                            <p><?php esc_html_e( 'Please migrate your live chate settings form myalice dashboard', 'myaliceai' ); ?></p>
+                            <h3><?php esc_html_e( 'Switch to New Live Chat for a better way to communicate with your customers.', 'myaliceai' ) ?></h3>
+                            <p><?php esc_html_e( 'Your Webchat will be automatically transitioned over to the New Live Chat. Switch your existing Webchat now and get early access to new features. We will automatically transition your account roughly after 30 days.', 'myaliceai' ); ?> <a href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Learn More', 'myaliceai' ); ?></a></p>
+                            <a class="alice-btn alice-btn-lite" href="<?php echo esc_url( 'https://app.myalice.ai/integrations/integrated' ); ?>"><?php esc_html_e( 'Switch to New Live Chat', 'myaliceai' ); ?></a>
                         </div>
                     </div>
 		        <?php } else { ?>
@@ -187,7 +189,7 @@ function myalice_dashboard_callback() {
                         </div>
                     </div>
                     <div class="alice-container">
-                        <a class="alice-btn alice-btn-lite" href="https://app.myalice.ai/dashboard"><?php esc_html_e( 'Open MyAlice', 'myaliceai' ); ?></a>
+                        <a class="alice-btn alice-btn-lite" href="<?php echo esc_url( 'https://app.myalice.ai/dashboard' ); ?>"><?php esc_html_e( 'Open MyAlice', 'myaliceai' ); ?></a>
                         <a class="alice-btn alice-btn-lite" href="<?php echo esc_url( 'https://app.myalice.ai/projects/' . MYALICE_PROJECT_ID . '/chat' ); ?>"><?php esc_html_e( 'Open Inbox', 'myaliceai' ); ?></a>
                     </div>
 		        <?php } ?>

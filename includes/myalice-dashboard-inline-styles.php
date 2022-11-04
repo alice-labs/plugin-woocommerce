@@ -575,6 +575,15 @@ add_action( 'admin_head', function () { ?>
             margin-left: 12px;
         }
 
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning {
+            width: 100%;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning p {
+            margin: 10px 0;
+            color: #4B5563;
+        }
+
         /* dashboard plugin-settings section */
         #alice-dashboard .alice-plugin-settings {
             padding: 50px 0 100px;
