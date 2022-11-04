@@ -1,16 +1,16 @@
 // Alice Customer ID
 var promise = new Promise(function (resolve, reject) {
     var interval = setInterval(function () {
-        var aliceDataString = localStorage.getItem("persist:inconnect:webchat:sdk"),
+        var aliceDataString = localStorage.getItem("persist:myalice:webchat:sdk"),
             aliceDataObj;
 
         if (aliceDataString !== null && (aliceDataObj = JSON.parse(aliceDataString))) {
-            var aliceDataChatBotObj = JSON.parse(aliceDataObj.chatbot);
+            var aliceDataChatBotObj = JSON.parse(aliceDataObj.livechat);
 
-            if (aliceDataChatBotObj.customerID !== null) {
+            if (aliceDataChatBotObj.customerId !== null) {
                 clearInterval(interval);
 
-                resolve(aliceDataChatBotObj.customerID);
+                resolve(aliceDataChatBotObj.customerId);
             }
         }
     }, 100);
