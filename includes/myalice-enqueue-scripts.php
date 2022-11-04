@@ -9,18 +9,18 @@ function alice_chatbot_script_callback() { ?>
     <script type="text/javascript">
         (function () {
             var div = document.createElement('div');
-            div.id = 'icWebChat';
+            div.id = 'myAliceWebChat';
             var script = document.createElement('script');
             script.type = 'text/javascript';
             script.async = true;
-            script.src = 'https://webchat.getalice.ai/index.js';
+            script.src = 'https://livechat.myalice.ai/index.js';
             var lel = document.body.getElementsByTagName('script');
             var el = lel[lel.length - 1];
             el.parentNode.insertBefore(script, el);
             el.parentNode.insertBefore(div, el);
             script.addEventListener('load', function () {
-                ICWebChat.init({
-                    selector: '#icWebChat',
+                MyAliceWebChat.init({
+                    selector: '#myAliceWebChat',
                     platformId: '<?php echo esc_js( MYALICE_PLATFORM_ID ); ?>',
                     primaryId: '<?php echo esc_js( MYALICE_PRIMARY_ID ); ?>',
                     token: '<?php echo esc_js( MYALICE_API_TOKEN ); ?>'
