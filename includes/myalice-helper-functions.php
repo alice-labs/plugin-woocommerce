@@ -96,3 +96,28 @@ function myalice_get_current_user_email() {
 
 	return $current_user->user_email;
 }
+
+function myalice_is_needed_migration() {
+	if ( myalice_get_dashboard_class() === '--explore-myalice' ) {
+		$body = wp_json_encode( array(
+			'site_url' => site_url()
+		) );
+
+//		$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/is-needed-migration';
+//		$response      = wp_remote_post( $alice_api_url, array(
+//				'method'  => 'POST',
+//				'timeout' => 45,
+//				'body'    => $body,
+//				'cookies' => array()
+//			)
+//		);
+//
+//		if ( ! is_wp_error( $response ) ) {
+//			return json_decode( $response['body'], true );
+//		}
+
+		return true;
+	}
+
+	return false;
+}

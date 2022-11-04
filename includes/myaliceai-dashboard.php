@@ -173,16 +173,24 @@ function myalice_dashboard_callback() {
                 <div class="alice-container">
                     <img src="<?php echo esc_url( ALICE_SVG_PATH . 'Explore-MyAlice.svg' ); ?>" alt="<?php esc_attr_e( 'MyAlice Explore Map', 'myaliceai' ); ?>">
                 </div>
-                <div class="alice-container">
-                    <div class="alice-title">
-                        <h2><?php esc_html_e( 'Explore MyAlice', 'myaliceai' ); ?></h2>
-                        <p><?php esc_html_e( 'Check your inbox for pending conversations, customise the livechat to update brand or automate responses with chatbot.', 'myaliceai' ); ?></p>
+		        <?php if ( myalice_is_needed_migration() ) { ?>
+                    <div class="alice-container">
+                        <div class="alice-migration-warning">
+                            <p><?php esc_html_e( 'Please migrate your live chate settings form myalice dashboard', 'myaliceai' ); ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="alice-container">
-                    <a class="alice-btn alice-btn-lite" href="https://app.myalice.ai/dashboard"><?php esc_html_e( 'Open MyAlice', 'myaliceai' ); ?></a>
-                    <a class="alice-btn alice-btn-lite" href="<?php echo esc_url( 'https://app.myalice.ai/projects/' . MYALICE_PROJECT_ID . '/chat' ); ?>"><?php esc_html_e( 'Open Inbox', 'myaliceai' ); ?></a>
-                </div>
+		        <?php } else { ?>
+                    <div class="alice-container">
+                        <div class="alice-title">
+                            <h2><?php esc_html_e( 'Explore MyAlice', 'myaliceai' ); ?></h2>
+                            <p><?php esc_html_e( 'Check your inbox for pending conversations, customise the livechat to update brand or automate responses with chatbot.', 'myaliceai' ); ?></p>
+                        </div>
+                    </div>
+                    <div class="alice-container">
+                        <a class="alice-btn alice-btn-lite" href="https://app.myalice.ai/dashboard"><?php esc_html_e( 'Open MyAlice', 'myaliceai' ); ?></a>
+                        <a class="alice-btn alice-btn-lite" href="<?php echo esc_url( 'https://app.myalice.ai/projects/' . MYALICE_PROJECT_ID . '/chat' ); ?>"><?php esc_html_e( 'Open Inbox', 'myaliceai' ); ?></a>
+                    </div>
+		        <?php } ?>
             </section>
 
             <section class="alice-plugin-settings">

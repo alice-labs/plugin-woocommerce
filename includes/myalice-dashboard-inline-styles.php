@@ -537,7 +537,8 @@ add_action( 'admin_head', function () { ?>
             text-align: center;
         }
 
-        #alice-dashboard .alice-needs-your-permission .alice-ssl-warning {
+        #alice-dashboard .alice-needs-your-permission .alice-ssl-warning,
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning {
             width: 515px;
             text-align: left;
             background-color: #FFFBEB;
@@ -549,7 +550,8 @@ add_action( 'admin_head', function () { ?>
             margin-top: 32px;
         }
 
-        #alice-dashboard .alice-needs-your-permission .alice-ssl-warning p {
+        #alice-dashboard .alice-needs-your-permission .alice-ssl-warning p,
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning p {
             margin: 0;
             padding: 0;
             color: #B45309;
