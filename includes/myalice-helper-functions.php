@@ -114,8 +114,10 @@ function myalice_is_needed_migration() {
 
 		if ( ! is_wp_error( $response ) ) {
 			$response_body = json_decode( $response['body'], true );
+			$return        = isset( $response_body['is_using_new_live_chat'] ) && $response_body['is_using_new_live_chat'] === false;
+			update_option( 'myalice_is_needed_migration', $return );
 
-			return isset( $response_body['is_using_new_live_chat'] ) && $response_body['is_using_new_live_chat'] === false;
+			return $return;
 		}
 	}
 
