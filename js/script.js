@@ -1,7 +1,7 @@
 // Alice Customer ID
-if (myaliceai.is_needed_migration) {
-    var promise = new Promise(function (resolve, reject) {
-        var interval = setInterval(function () {
+var promise = new Promise(function (resolve, reject) {
+    var interval = setInterval(function () {
+        if (myaliceai.is_needed_migration) {
             var aliceDataString = localStorage.getItem("persist:inconnect:webchat:sdk"),
                 aliceDataObj;
 
@@ -14,11 +14,7 @@ if (myaliceai.is_needed_migration) {
                     resolve(aliceDataChatBotObj.customerID);
                 }
             }
-        }, 100);
-    });
-} else {
-    var promise = new Promise(function (resolve, reject) {
-        var interval = setInterval(function () {
+        } else {
             var aliceDataString = localStorage.getItem("persist:myalice:webchat:sdk"),
                 aliceDataObj;
 
@@ -31,9 +27,9 @@ if (myaliceai.is_needed_migration) {
                     resolve(aliceDataChatBotObj.customerId);
                 }
             }
-        }, 100);
-    });
-}
+        }
+    }, 100);
+});
 
 promise.then(function (aliceCustomerId) {
     document.cookie = "aliceCustomerId = " + aliceCustomerId + ";path=/;";
