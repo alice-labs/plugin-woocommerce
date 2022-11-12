@@ -100,7 +100,7 @@ function myalice_get_current_user_email() {
 function myalice_is_needed_migration() {
 	if ( myalice_get_dashboard_class() === '--explore-myalice' ) {
 		$body = wp_json_encode( array(
-			'store_url' => site_url()
+			'store_url' => site_url( '/' )
 		) );
 
 		$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/is-using-new-live-chat';

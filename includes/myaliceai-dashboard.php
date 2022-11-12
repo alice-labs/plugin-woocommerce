@@ -147,7 +147,7 @@ function myalice_dashboard_callback() {
                 </div>
                 <div class="alice-container">
 					<?php
-					$store_url   = site_url();
+					$store_url   = site_url( '/' );
 					$endpoint    = '/wc-auth/v1/authorize';
 					$params      = array(
 						'app_name'     => 'MyAlice',
