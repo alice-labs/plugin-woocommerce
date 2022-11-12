@@ -6,7 +6,7 @@ global $myalice_settings;
 
 // Insert JS code in Footer
 function alice_chatbot_script_callback() {
-	if ( get_option( 'myalice_is_needed_migration' ) ) {
+	if ( get_option( 'myaliceai_is_needed_migration' ) ) {
 		?>
         <script type="text/javascript">
             (function () {
@@ -44,7 +44,7 @@ if ( MYALICE_API_OK ) {
 		wp_enqueue_script( 'alice-script', ALICE_JS_PATH . 'script.js', [ 'jquery' ], ALICE_VERSION, false );
 
 		$inline_js = [
-			'is_needed_migration' => get_option( 'myalice_is_needed_migration' )
+			'is_needed_migration' => get_option( 'myaliceai_is_needed_migration' )
 		];
 		wp_localize_script( 'alice-script', 'myaliceai', $inline_js );
 	} );

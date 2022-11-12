@@ -224,6 +224,27 @@ add_action( 'admin_footer', function () { ?>
                 }
 
                 $this.toggleClass('dashicons-visibility dashicons-hidden')
+            }).on('click', '.alice-migration-warning button', function (e) {
+                e.preventDefault();
+
+                var spinner = $(this).siblings('.spinner'),
+                    url = "<?php echo admin_url( 'admin-ajax.php' ); ?>",
+                    data = {
+                        "action": "myalice_migration",
+                        "nonce": "<?php echo wp_create_nonce( 'myaliceai' ); ?>"
+                    };
+
+                spinner.addClass('is-active');
+
+                $.post(url, data, function (response) {
+                    spinner.removeClass('is-active');
+
+                    if (response.success) {
+                        location.href = "<?php echo admin_url('admin.php?page=myalice_dashboard'); ?>";
+                    } else {
+
+                    }
+                });
             });
         })(jQuery);
     </script>

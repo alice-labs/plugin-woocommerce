@@ -384,3 +384,37 @@ function myalice_select_team_form_process() {
 	}
 	wp_send_json_error( [ 'message' => __( 'Something went wrong: nonce not match', 'myaliceai' ) ] );
 }
+
+function myalice_migration_livechat() {
+	if ( check_ajax_referer( 'myaliceai', 'nonce' ) ) {
+		$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/migrate-to-new-live-chat';
+		$body          = wp_json_encode( array(
+			'store_url' => site_url()
+		) );
+
+		$response = wp_remote_post( $alice_api_url, array(
+				'method'  => 'POST',
+				'timeout' => 45,
+				'body'    => $body,
+				'cookies' => array()
+			)
+		);
+
+		if ( is_wp_error( $response ) ) {
+			$error_message = $response->get_error_message();
+
+			wp_send_json_error( [ 'message' => "Something went wrong: {$error_message}" ] );
+		} else {
+			$alice_api_data = json_decode( $response['body'], true );
+
+			if ( ! empty( $alice_api_data ) && $alice_api_data['success'] === true ) {
+                update_option( 'myaliceai_is_needed_migration', false );
+
+				wp_send_json_success( $alice_api_data );
+			} else {
+				wp_send_json_error( $alice_api_data );
+			}
+
+		}
+	}
+}
