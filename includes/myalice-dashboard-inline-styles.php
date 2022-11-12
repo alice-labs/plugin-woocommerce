@@ -537,8 +537,7 @@ add_action( 'admin_head', function () { ?>
             text-align: center;
         }
 
-        #alice-dashboard .alice-needs-your-permission .alice-ssl-warning,
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning {
+        #alice-dashboard .alice-needs-your-permission .alice-ssl-warning {
             width: 515px;
             text-align: left;
             background-color: #FFFBEB;
@@ -550,8 +549,7 @@ add_action( 'admin_head', function () { ?>
             margin-top: 32px;
         }
 
-        #alice-dashboard .alice-needs-your-permission .alice-ssl-warning p,
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning p {
+        #alice-dashboard .alice-needs-your-permission .alice-ssl-warning p {
             margin: 0;
             padding: 0;
             color: #B45309;
@@ -577,11 +575,38 @@ add_action( 'admin_head', function () { ?>
 
         #alice-dashboard .alice-explore-myalice .alice-migration-warning {
             width: 100%;
+            padding: 32px;
+            border: 1px solid #CCCCCC;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            display: flex;
         }
 
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning p {
-            margin: 10px 0;
-            color: #4B5563;
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content {
+            flex: 1 0 60%;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content p {
+            margin: 11px 0;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content button.alice-btn {
+            background: #007cba;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content button.alice-btn:hover {
+            background: #006ba1;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-thumb {
+            flex: 1 0 40%;
+            position: relative;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-thumb img {
+            position: absolute;
+            bottom: -32px;
+            right: 0;
         }
 
         /* dashboard plugin-settings section */
