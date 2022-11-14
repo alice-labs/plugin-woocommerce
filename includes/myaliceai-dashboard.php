@@ -188,6 +188,18 @@ function myalice_dashboard_callback() {
                     </div>
 		        <?php } else { ?>
                     <div class="alice-container">
+                        <div class="alice-migration-warning">
+                            <div class="alice-migration-warning-content">
+                                <h3><?php esc_html_e( 'Livechat has been migrated. Time to customize!', 'myaliceai' ) ?></h3>
+                                <p><?php esc_html_e( 'Your livechat has been migrated to the latest one. Now you can customize the livechat the way you want! Set up how you want to greet your customers, set up livechat styles, add pre-chat survey and many more.', 'myaliceai' ); ?></p>
+                                <a class="alice-btn" href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Customize Livechat', 'myaliceai' ); ?></a>
+                            </div>
+                            <div class="alice-migration-warning-thumb">
+                                <img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg-2.png' ); ?>" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alice-container">
                         <img src="<?php echo esc_url( ALICE_SVG_PATH . 'Explore-MyAlice.svg' ); ?>" alt="<?php esc_attr_e( 'MyAlice Explore Map', 'myaliceai' ); ?>">
                     </div>
                     <div class="alice-container">

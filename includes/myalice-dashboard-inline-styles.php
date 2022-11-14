@@ -557,7 +557,7 @@ add_action( 'admin_head', function () { ?>
 
         /* dashboard explore-myalice section */
         #alice-dashboard .alice-explore-myalice {
-            padding: 80px 0 150px;
+            padding: 0 0 150px;
         }
 
         #alice-dashboard .alice-explore-myalice .alice-title {
@@ -580,6 +580,7 @@ add_action( 'admin_head', function () { ?>
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
             border-radius: 6px;
             display: flex;
+            margin-bottom: 80px;
         }
 
         #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content {
@@ -587,14 +588,14 @@ add_action( 'admin_head', function () { ?>
         }
 
         #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content p {
-            margin: 11px 0;
+            margin: 11px 0 15px;
         }
 
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content button.alice-btn {
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content .alice-btn {
             background: #007cba;
         }
 
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content button.alice-btn:hover {
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content .alice-btn:hover {
             background: #006ba1;
         }
 
