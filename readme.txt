@@ -10,7 +10,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
 
-A workspace for all your WhatsApp, Telegram, Line, Viber, Instagram, Facebook Messenger conversations, sales, and marketing.
+A workspace to manage all your Live Chat, WhatsApp, Telegram, Line, Viber, Instagram, and Facebook Messenger conversations, and increase sales by automating the entire buying experience.
 
 == Description ==
 
