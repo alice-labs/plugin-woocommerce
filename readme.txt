@@ -1,4 +1,4 @@
-﻿=== Social Live Chat Support, Sales, and Marketing – MyAlice ===
+﻿=== Social Live Chat Helpdesk – MyAlice ===
 
 Contributors: shuvorahmanalice, rudlinkon
 Tags: whatsapp, live chat, telegram, line, viber, whatsapp business, whatsapp commerce, whatsapp support, whatsapp broadcasting, whatsapp chat, whatsapp plugin, whatsapp chat plugin, whatsapp wordpress plugin, whatsapp woocommerce plugin, facebook plugin, messenger plugin, instagram plugin, viber plugin, line plugin, telegram plugin, woocommerce livechat, woocommerce chatbot, chat plugin
