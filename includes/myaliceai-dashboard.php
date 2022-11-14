@@ -193,7 +193,7 @@ function myalice_dashboard_callback() {
                             <div class="alice-migration-warning-content">
                                 <h3><?php esc_html_e( 'Livechat has been migrated. Time to customize!', 'myaliceai' ) ?></h3>
                                 <p><?php esc_html_e( 'Your livechat has been migrated to the latest one. Now you can customize the livechat the way you want! Set up how you want to greet your customers, set up livechat styles, add pre-chat survey and many more.', 'myaliceai' ); ?></p>
-                                <a class="alice-btn" href="<?php echo esc_url( '#' ); ?>"><?php esc_html_e( 'Customize Livechat', 'myaliceai' ); ?></a>
+                                <a class="alice-btn" href="<?php echo esc_url( 'https://app.myalice.ai/integrations/integrated' ); ?>"><?php esc_html_e( 'Customize Livechat', 'myaliceai' ); ?></a>
                             </div>
                             <div class="alice-migration-warning-thumb">
                                 <img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg-2.png' ); ?>" alt="">
