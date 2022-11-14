@@ -610,6 +610,11 @@ add_action( 'admin_head', function () { ?>
             right: 0;
         }
 
+        #alice-dashboard .alice-explore-myalice .alice-migration-warning .myalice-notice-area {
+            margin: 10px 0 0;
+            display: none;
+        }
+
         /* dashboard plugin-settings section */
         #alice-dashboard .alice-plugin-settings {
             padding: 50px 0 100px;

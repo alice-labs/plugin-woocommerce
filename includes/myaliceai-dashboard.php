@@ -180,6 +180,7 @@ function myalice_dashboard_callback() {
                                 </p>
                                 <button class="alice-btn" type="button"><?php esc_html_e( 'Switch to New Live Chat', 'myaliceai' ); ?></button>
                                 <span class="spinner"></span>
+                                <div class="myalice-notice-area error"><?php esc_html_e( 'Something went wrong,', 'myaliceai' ); ?> <a href="https://www.myalice.ai/support"><?php esc_html_e( 'contact support', 'myaliceai' ); ?></a></div>
                             </div>
                             <div class="alice-migration-warning-thumb">
                                 <img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg.jpg' ); ?>" alt="">

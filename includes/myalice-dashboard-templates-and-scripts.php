@@ -227,7 +227,9 @@ add_action( 'admin_footer', function () { ?>
             }).on('click', '.alice-migration-warning button', function (e) {
                 e.preventDefault();
 
-                var spinner = $(this).siblings('.spinner'),
+                var $this = $(this),
+                    spinner = $this.siblings('.spinner'),
+                    notice_area = $this.siblings('.myalice-notice-area'),
                     url = "<?php echo admin_url( 'admin-ajax.php' ); ?>",
                     data = {
                         "action": "myalice_migration",
@@ -235,6 +237,7 @@ add_action( 'admin_footer', function () { ?>
                     };
 
                 spinner.addClass('is-active');
+                notice_area.hide();
 
                 $.post(url, data, function (response) {
                     spinner.removeClass('is-active');
@@ -242,7 +245,7 @@ add_action( 'admin_footer', function () { ?>
                     if (response.success) {
                         location.href = "<?php echo admin_url('admin.php?page=myalice_dashboard'); ?>";
                     } else {
-
+                        notice_area.show();
                     }
                 });
             });
