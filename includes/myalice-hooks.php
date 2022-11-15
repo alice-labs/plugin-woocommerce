@@ -79,3 +79,10 @@ add_action( 'wp_ajax_myalice_select_team', 'myalice_select_team_form_process' );
 add_action( 'admin_notices', 'myalice_migration_admin_notice', 0 );
 add_action( 'admin_notices', 'myalice_chat_customization_admin_notice', 0 );
 add_action( 'wp_ajax_myalice_migration', 'myalice_migration_livechat' );
+
+add_action( 'admin_init', function () {
+	$page = empty( $_GET['page'] ) ? '' : $_GET['page'];
+	if ( $page === 'myalice_dashboard' ) {
+		myalice_is_needed_migration();
+	}
+} );

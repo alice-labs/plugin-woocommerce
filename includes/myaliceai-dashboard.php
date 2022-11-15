@@ -30,7 +30,6 @@ if ( isset( $_GET['myalice_action'], $_GET['wcauth'] ) && $_GET['myalice_action'
 // Alice Dashboard Menu Callback
 function myalice_dashboard_callback() {
 	global $myalice_settings;
-	myalice_is_needed_migration();
 	?>
     <div class="alice-dashboard-wrap">
         <div id="alice-dashboard" class="<?php echo myalice_get_dashboard_class(); ?>">
