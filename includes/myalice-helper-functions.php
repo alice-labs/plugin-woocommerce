@@ -98,27 +98,25 @@ function myalice_get_current_user_email() {
 }
 
 function myalice_is_needed_migration() {
-	if ( myalice_get_dashboard_class() === '--explore-myalice' ) {
-		$body = wp_json_encode( array(
-			'store_url' => site_url( '/' )
-		) );
+	$body = wp_json_encode( array(
+		'store_url' => site_url( '/' )
+	) );
 
-		$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/is-using-new-live-chat';
-		$response      = wp_remote_post( $alice_api_url, array(
-				'method'  => 'POST',
-				'timeout' => 45,
-				'body'    => $body,
-				'cookies' => array()
-			)
-		);
+	$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/is-using-new-live-chat';
+	$response      = wp_remote_post( $alice_api_url, array(
+			'method'  => 'POST',
+			'timeout' => 45,
+			'body'    => $body,
+			'cookies' => array()
+		)
+	);
 
-		if ( ! is_wp_error( $response ) ) {
-			$response_body = json_decode( $response['body'], true );
-			$return        = isset( $response_body['is_using_new_live_chat'] ) && $response_body['is_using_new_live_chat'] === false;
-			update_option( 'myaliceai_is_needed_migration', $return );
+	if ( ! is_wp_error( $response ) ) {
+		$response_body = json_decode( $response['body'], true );
+		$return        = isset( $response_body['is_using_new_live_chat'] ) && $response_body['is_using_new_live_chat'] === false;
+		update_option( 'myaliceai_is_needed_migration', $return );
 
-			return $return;
-		}
+		return $return;
 	}
 
 	return false;
