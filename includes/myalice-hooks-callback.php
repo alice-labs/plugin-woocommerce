@@ -418,3 +418,27 @@ function myalice_migration_livechat() {
 		}
 	}
 }
+
+function myalice_migration_admin_notice() {
+	?>
+    <div class="wpnotice-wrapper notice is-dismissible myalice-migration-admin-notice">
+        <div class="wpnotice-content-wrapper">
+            <div class="alice-migration-warning">
+                <div class="alice-migration-warning-content">
+                    <h3><?php esc_html_e( 'Switch to New Live Chat for a better way to communicate with your customers.', 'myaliceai' ) ?></h3>
+                    <p><?php esc_html_e( 'Your Webchat will be automatically transitioned over to the New Live Chat. Switch your existing Webchat now and get early access to new features. We will automatically transition your account roughly after 30 days.', 'myaliceai' ); ?>
+                        <a href="https://docs.myalice.ai/connect-social-channels/connect-web-app/connect-live-chat"><?php esc_html_e( 'Learn More', 'myaliceai' ); ?></a>
+                    </p>
+                    <button class="alice-btn" type="button"><?php esc_html_e( 'Switch to New Live Chat', 'myaliceai' ); ?></button>
+                    <span class="spinner"></span>
+                    <div class="myalice-notice-area"><?php esc_html_e( 'Something went wrong,', 'myaliceai' ); ?> <a
+                                href="https://www.myalice.ai/support"><?php esc_html_e( 'contact support', 'myaliceai' ); ?></a></div>
+                </div>
+                <div class="alice-migration-warning-thumb">
+                    <img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg.jpg' ); ?>" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+	<?php
+}

@@ -205,7 +205,8 @@ add_action( 'admin_head', function () { ?>
             align-items: center;
         }
 
-        #alice-dashboard .alice-btn {
+        #alice-dashboard .alice-btn,
+        .myalice-migration-admin-notice .alice-btn {
             background: #04B25F;
             color: #fff;
             border-radius: 6px;
@@ -557,7 +558,7 @@ add_action( 'admin_head', function () { ?>
 
         /* dashboard explore-myalice section */
         #alice-dashboard .alice-explore-myalice {
-            padding: 0 0 150px;
+            padding: 80px 0 150px;
         }
 
         #alice-dashboard .alice-explore-myalice .alice-title {
@@ -571,48 +572,6 @@ add_action( 'admin_head', function () { ?>
 
         #alice-dashboard .alice-explore-myalice .alice-btn + .alice-btn {
             margin-left: 12px;
-        }
-
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning {
-            width: 100%;
-            padding: 32px;
-            border: 1px solid #CCCCCC;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-            border-radius: 6px;
-            display: flex;
-            margin-bottom: 80px;
-        }
-
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content {
-            flex: 1 0 60%;
-        }
-
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content p {
-            margin: 11px 0 15px;
-        }
-
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content .alice-btn {
-            background: #007cba;
-        }
-
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-content .alice-btn:hover {
-            background: #006ba1;
-        }
-
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-thumb {
-            flex: 1 0 40%;
-            position: relative;
-        }
-
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning .alice-migration-warning-thumb img {
-            position: absolute;
-            bottom: -32px;
-            right: 0;
-        }
-
-        #alice-dashboard .alice-explore-myalice .alice-migration-warning .myalice-notice-area {
-            margin: 10px 0 0;
-            display: none;
         }
 
         /* dashboard plugin-settings section */
@@ -701,6 +660,75 @@ add_action( 'admin_head', function () { ?>
         #alice-dashboard .spinner.is-active {
             display: inline-block;
             float: none;
+        }
+
+        /* Migration admin notice */
+        .myalice-migration-admin-notice {
+            padding: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            border: none;
+            box-shadow: none;
+            background: transparent;
+        }
+
+        .toplevel_page_myalice_dashboard .myalice-migration-admin-notice {
+            margin-right: 20px !important;
+        }
+
+        .myalice-migration-admin-notice * {
+            box-sizing: border-box;
+        }
+
+        .alice-migration-warning {
+            width: 100%;
+            padding: 32px;
+            border: 1px solid #CCCCCC;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            display: flex;
+            background: #fff;
+        }
+
+        .alice-migration-warning .alice-migration-warning-content {
+            flex: 1 0 65%;
+        }
+
+        .alice-migration-warning .alice-migration-warning-content h3 {
+            margin: 0;
+        }
+
+        .alice-migration-warning .alice-migration-warning-content p {
+            margin: 11px 0 15px;
+        }
+
+        .alice-migration-warning .alice-migration-warning-content .alice-btn {
+            background: #007cba;
+        }
+
+        .alice-migration-warning .alice-migration-warning-content .alice-btn:hover {
+            background: #006ba1;
+        }
+
+        .alice-migration-warning .alice-migration-warning-content .spinner {
+            float: none;
+            vertical-align: text-bottom;
+        }
+
+        .alice-migration-warning .alice-migration-warning-thumb {
+            flex: 1 0 35%;
+            position: relative;
+        }
+
+        .alice-migration-warning .alice-migration-warning-thumb img {
+            position: absolute;
+            bottom: -32px;
+            right: 0;
+        }
+
+        .alice-migration-warning .myalice-notice-area {
+            margin: 10px 0 0 !important;
+            display: none;
         }
     </style>
 	<?php

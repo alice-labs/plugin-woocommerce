@@ -30,6 +30,7 @@ if ( isset( $_GET['myalice_action'], $_GET['wcauth'] ) && $_GET['myalice_action'
 // Alice Dashboard Menu Callback
 function myalice_dashboard_callback() {
 	global $myalice_settings;
+	myalice_is_needed_migration();
 	?>
     <div class="alice-dashboard-wrap">
         <div id="alice-dashboard" class="<?php echo myalice_get_dashboard_class(); ?>">
@@ -170,50 +171,33 @@ function myalice_dashboard_callback() {
             </section>
 
             <section class="alice-explore-myalice">
-		        <?php if ( myalice_is_needed_migration() ) { ?>
-                    <div class="alice-container">
-                        <div class="alice-migration-warning">
-                            <div class="alice-migration-warning-content">
-                                <h3><?php esc_html_e( 'Switch to New Live Chat for a better way to communicate with your customers.', 'myaliceai' ) ?></h3>
-                                <p><?php esc_html_e( 'Your Webchat will be automatically transitioned over to the New Live Chat. Switch your existing Webchat now and get early access to new features. We will automatically transition your account roughly after 30 days.', 'myaliceai' ); ?>
-                                    <a href="https://docs.myalice.ai/connect-social-channels/connect-web-app/connect-live-chat"><?php esc_html_e( 'Learn More', 'myaliceai' ); ?></a>
-                                </p>
-                                <button class="alice-btn" type="button"><?php esc_html_e( 'Switch to New Live Chat', 'myaliceai' ); ?></button>
-                                <span class="spinner"></span>
-                                <div class="myalice-notice-area error"><?php esc_html_e( 'Something went wrong,', 'myaliceai' ); ?> <a href="https://www.myalice.ai/support"><?php esc_html_e( 'contact support', 'myaliceai' ); ?></a></div>
-                            </div>
-                            <div class="alice-migration-warning-thumb">
-                                <img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg.jpg' ); ?>" alt="">
-                            </div>
+                <div class="alice-container">
+                    <div class="alice-migration-warning">
+                        <div class="alice-migration-warning-content">
+                            <h3><?php esc_html_e( 'Livechat has been migrated. Time to customize!', 'myaliceai' ) ?></h3>
+                            <p><?php esc_html_e( 'Your livechat has been migrated to the latest one. Now you can customize the livechat the way you want! Set up how you want to greet your customers, set up livechat styles, add pre-chat survey and many more.', 'myaliceai' ); ?></p>
+                            <a class="alice-btn"
+                               href="<?php echo esc_url( 'https://app.myalice.ai/integrations/integrated' ); ?>"><?php esc_html_e( 'Customize Livechat', 'myaliceai' ); ?></a>
+                        </div>
+                        <div class="alice-migration-warning-thumb">
+                            <img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg-2.png' ); ?>" alt="">
                         </div>
                     </div>
-		        <?php } else { ?>
-                    <div class="alice-container">
-                        <div class="alice-migration-warning">
-                            <div class="alice-migration-warning-content">
-                                <h3><?php esc_html_e( 'Livechat has been migrated. Time to customize!', 'myaliceai' ) ?></h3>
-                                <p><?php esc_html_e( 'Your livechat has been migrated to the latest one. Now you can customize the livechat the way you want! Set up how you want to greet your customers, set up livechat styles, add pre-chat survey and many more.', 'myaliceai' ); ?></p>
-                                <a class="alice-btn" href="<?php echo esc_url( 'https://app.myalice.ai/integrations/integrated' ); ?>"><?php esc_html_e( 'Customize Livechat', 'myaliceai' ); ?></a>
-                            </div>
-                            <div class="alice-migration-warning-thumb">
-                                <img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg-2.png' ); ?>" alt="">
-                            </div>
-                        </div>
+                </div>
+                <div class="alice-container">
+                    <img src="<?php echo esc_url( ALICE_SVG_PATH . 'Explore-MyAlice.svg' ); ?>" alt="<?php esc_attr_e( 'MyAlice Explore Map', 'myaliceai' ); ?>">
+                </div>
+                <div class="alice-container">
+                    <div class="alice-title">
+                        <h2><?php esc_html_e( 'Explore MyAlice', 'myaliceai' ); ?></h2>
+                        <p><?php esc_html_e( 'Check your inbox for pending conversations, customise the livechat to update brand or automate responses with chatbot.', 'myaliceai' ); ?></p>
                     </div>
-                    <div class="alice-container">
-                        <img src="<?php echo esc_url( ALICE_SVG_PATH . 'Explore-MyAlice.svg' ); ?>" alt="<?php esc_attr_e( 'MyAlice Explore Map', 'myaliceai' ); ?>">
-                    </div>
-                    <div class="alice-container">
-                        <div class="alice-title">
-                            <h2><?php esc_html_e( 'Explore MyAlice', 'myaliceai' ); ?></h2>
-                            <p><?php esc_html_e( 'Check your inbox for pending conversations, customise the livechat to update brand or automate responses with chatbot.', 'myaliceai' ); ?></p>
-                        </div>
-                    </div>
-                    <div class="alice-container">
-                        <a class="alice-btn alice-btn-lite" href="<?php echo esc_url( 'https://app.myalice.ai/dashboard' ); ?>"><?php esc_html_e( 'Open MyAlice', 'myaliceai' ); ?></a>
-                        <a class="alice-btn alice-btn-lite" href="<?php echo esc_url( 'https://app.myalice.ai/projects/' . MYALICE_PROJECT_ID . '/chat' ); ?>"><?php esc_html_e( 'Open Inbox', 'myaliceai' ); ?></a>
-                    </div>
-		        <?php } ?>
+                </div>
+                <div class="alice-container">
+                    <a class="alice-btn alice-btn-lite" href="<?php echo esc_url( 'https://app.myalice.ai/dashboard' ); ?>"><?php esc_html_e( 'Open MyAlice', 'myaliceai' ); ?></a>
+                    <a class="alice-btn alice-btn-lite"
+                       href="<?php echo esc_url( 'https://app.myalice.ai/projects/' . MYALICE_PROJECT_ID . '/chat' ); ?>"><?php esc_html_e( 'Open Inbox', 'myaliceai' ); ?></a>
+                </div>
             </section>
 
             <section class="alice-plugin-settings">

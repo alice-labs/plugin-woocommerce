@@ -224,7 +224,7 @@ add_action( 'admin_footer', function () { ?>
                 }
 
                 $this.toggleClass('dashicons-visibility dashicons-hidden')
-            }).on('click', '.alice-migration-warning button', function (e) {
+            }).on('click', '.alice-migration-warning button.alice-btn', function (e) {
                 e.preventDefault();
 
                 var $this = $(this),
