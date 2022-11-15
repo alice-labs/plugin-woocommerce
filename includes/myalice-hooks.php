@@ -77,4 +77,5 @@ add_action( 'wp_ajax_myalice_select_team', 'myalice_select_team_form_process' );
 
 // Alice Migration
 add_action( 'admin_notices', 'myalice_migration_admin_notice', 0 );
+add_action( 'admin_notices', 'myalice_chat_customization_admin_notice', 0 );
 add_action( 'wp_ajax_myalice_migration', 'myalice_migration_livechat' );
