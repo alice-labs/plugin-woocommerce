@@ -420,6 +420,9 @@ function myalice_migration_livechat() {
 }
 
 function myalice_migration_admin_notice() {
+	if ( ! get_option( 'myaliceai_is_needed_migration' ) ) {
+		return;
+	}
 	?>
     <div class="wpnotice-wrapper notice is-dismissible myalice-migration-admin-notice">
         <div class="wpnotice-content-wrapper">
