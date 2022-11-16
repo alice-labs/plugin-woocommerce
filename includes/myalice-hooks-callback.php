@@ -189,6 +189,12 @@ function myalice_review_notice_dismiss() {
 	wp_send_json_success();
 }
 
+// Customization notice dismiss action
+function myalice_customization_notice_dismiss() {
+	update_option( 'myaliceai_customization_notice_dismiss', true );
+	wp_send_json_success();
+}
+
 function alice_login_form_process() {
 	if ( check_ajax_referer( 'myalice-form-process', 'myalice-nonce' ) ) {
 		$user_email = empty( $_POST['user_email'] ) ? '' : sanitize_text_field( $_POST['user_email'] );
@@ -447,11 +453,11 @@ function myalice_migration_admin_notice() {
 }
 
 function myalice_chat_customization_admin_notice() {
-	if ( get_option( 'myaliceai_is_needed_migration' ) ) {
+	if ( get_option( 'myaliceai_is_needed_migration' ) || get_option( 'myaliceai_customization_notice_dismiss' ) ) {
 		return;
 	}
 	?>
-    <div class="wpnotice-wrapper notice is-dismissible myalice-migration-admin-notice">
+    <div class="wpnotice-wrapper notice is-dismissible myalice-migration-admin-notice myalice-customization-admin-notice">
         <div class="wpnotice-content-wrapper">
             <div class="alice-migration-warning">
                 <div class="alice-migration-warning-content">

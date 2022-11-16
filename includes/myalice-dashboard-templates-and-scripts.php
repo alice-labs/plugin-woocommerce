@@ -248,6 +248,15 @@ add_action( 'admin_footer', function () { ?>
                         notice_area.show();
                     }
                 });
+            }).on('click', '.myalice-customization-admin-notice button.notice-dismiss', function (e) {
+                e.preventDefault();
+                var notice_wrap = $(this).closest('.myalice-customization-admin-notice');
+
+                $.post(ajaxurl, {action: 'myalice_customization_notice_dismiss'}, function (response) {
+                    if (response.success) {
+                        notice_wrap.remove();
+                    }
+                });
             });
         })(jQuery);
     </script>

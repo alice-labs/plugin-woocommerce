@@ -90,3 +90,6 @@ add_action( 'admin_init', function () {
 } );
 
 add_action( 'in_admin_header', 'myalice_remove_admin_notice', 99 );
+
+// Customization notice dismiss action
+add_action( 'wp_ajax_myalice_customization_notice_dismiss', 'myalice_customization_notice_dismiss' );
