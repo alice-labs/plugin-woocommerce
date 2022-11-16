@@ -6,9 +6,8 @@ global $myalice_settings;
 
 // WooCommerce's installation notice
 if ( ! ALICE_WC_OK ) {
-	add_action( 'admin_notices', function () {
-		_e( '<div class="notice notice-error"><p><strong>WooCommerce</strong> is not installed/activated in your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> to use MyAlice Plugin. If you want to use MyAlice without WooCommerce, <a href="https://docs.myalice.ai/connect-social-channels/connect-web-app/connect-live-chat" target="_blank">follow this</a>.</p></div>', 'myaliceai' );
-	} );
+	add_action( 'admin_notices', 'myalice_wc_not_activate_notice' );
+	add_action( 'myalice_admin_notices', 'myalice_wc_not_activate_notice' );
 }
 
 // WordPress review notice
@@ -16,6 +15,7 @@ if ( $notice_time = get_option( 'myaliceai_review_notice_time' ) ) {
 	$current_time = current_time( 'U' );
 	if ( $notice_time < $current_time ) {
 		add_action( 'admin_notices', 'alice_review_admin_notice' );
+		add_action( 'myalice_admin_notices', 'alice_review_admin_notice' );
 	}
 }
 
@@ -77,7 +77,9 @@ add_action( 'wp_ajax_myalice_select_team', 'myalice_select_team_form_process' );
 
 // Alice Migration
 add_action( 'admin_notices', 'myalice_migration_admin_notice', 0 );
+add_action( 'myalice_admin_notices', 'myalice_migration_admin_notice', 0 );
 add_action( 'admin_notices', 'myalice_chat_customization_admin_notice', 0 );
+add_action( 'myalice_admin_notices', 'myalice_chat_customization_admin_notice', 0 );
 add_action( 'wp_ajax_myalice_migration', 'myalice_migration_livechat' );
 
 add_action( 'admin_init', function () {
@@ -86,3 +88,5 @@ add_action( 'admin_init', function () {
 		myalice_is_needed_migration();
 	}
 } );
+
+add_action( 'in_admin_header', 'myalice_remove_admin_notice', 99 );

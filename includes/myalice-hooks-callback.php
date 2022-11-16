@@ -468,3 +468,21 @@ function myalice_chat_customization_admin_notice() {
     </div>
 	<?php
 }
+
+function myalice_remove_admin_notice(){
+	$current_screen = get_current_screen();
+	if ( $current_screen->id == 'toplevel_page_myalice_dashboard' ) {
+
+		remove_all_actions( 'user_admin_notices' );
+		remove_all_actions( 'admin_notices' );
+
+		// To showing notice in EA settings page we have to use 'eael_admin_notices' action hook
+		add_action( 'admin_notices', function () {
+			do_action( 'myalice_admin_notices' );
+		} );
+	}
+}
+
+function myalice_wc_not_activate_notice() {
+	_e( '<div class="notice notice-error"><p><strong>WooCommerce</strong> is not installed/activated in your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> to use MyAlice Plugin. If you want to use MyAlice without WooCommerce, <a href="https://docs.myalice.ai/connect-social-channels/connect-web-app/connect-live-chat" target="_blank">follow this</a>.</p></div>', 'myaliceai' );
+}
