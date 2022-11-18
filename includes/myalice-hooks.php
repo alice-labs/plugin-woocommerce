@@ -96,7 +96,7 @@ add_action( 'wp_ajax_myalice_customization_notice_dismiss', 'myalice_customizati
 
 add_action( 'upgrader_process_complete', function ( $upgrader_object, $options ) {
 	if ( $options['action'] == 'update' && $options['type'] == 'plugin' ) {
-		if ( in_array( ALICE_PLUGIN_BASENAME, $options['plugins'] ) ) {
+		if ( ( isset( $options['plugins'] ) && in_array( ALICE_PLUGIN_BASENAME, $options['plugins'] ) ) || ( isset( $options['plugin'] ) && $options['plugin'] === ALICE_PLUGIN_BASENAME ) ) {
 			myalice_is_needed_migration();
 		}
 	}
