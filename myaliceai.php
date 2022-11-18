@@ -21,6 +21,10 @@ if ( ! defined( 'ALICE_BASE_PATH' ) ) {
 	define( 'ALICE_BASE_PATH', __FILE__ );
 }
 
+if ( ! defined( 'ALICE_PLUGIN_BASENAME' ) ) {
+	define( 'ALICE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+}
+
 if ( ! defined( 'ALICE_PATH' ) ) {
 	define( 'ALICE_PATH', untrailingslashit( dirname( ALICE_BASE_PATH ) ) );
 }

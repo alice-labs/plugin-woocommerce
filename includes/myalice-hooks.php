@@ -93,3 +93,11 @@ add_action( 'in_admin_header', 'myalice_remove_admin_notice', 99 );
 
 // Customization notice dismiss action
 add_action( 'wp_ajax_myalice_customization_notice_dismiss', 'myalice_customization_notice_dismiss' );
+
+add_action( 'upgrader_process_complete', function ( $upgrader_object, $options ) {
+	if ( $options['action'] == 'update' && $options['type'] == 'plugin' ) {
+		if ( in_array( ALICE_PLUGIN_BASENAME, $options['plugins'] ) ) {
+			myalice_is_needed_migration();
+		}
+	}
+}, 10, 2 );
