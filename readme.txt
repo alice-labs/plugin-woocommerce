@@ -68,7 +68,7 @@ Install MyAlice as a regular WordPress plugin. Here are 2 different ways to inst
 - Search with MyAlice.
 - Click to install.
 - Activate the plugin.
-- You will see a MyAlice tab in your right side navigation bar in Wordpress. The next steps are described there.
+- You will see a MyAlice tab in your right side navigation bar in WordPress. The next steps are described there.
 
 ### **INSTALL BY UPLOADING PLUGIN**
 
@@ -78,7 +78,7 @@ Install MyAlice as a regular WordPress plugin. Here are 2 different ways to inst
 - Click on “Choose File”.
 - Select downloaded myalice.zip & click on "Install Now" button.
 - Activate the plugin.
-- You will see a MyAlice tab in your left side navigation bar in Wordpress. The next steps are described there.
+- You will see a MyAlice tab in your left side navigation bar in WordPress. The next steps are described there.
 
 
 == Frequently Asked Questions ==
@@ -187,7 +187,7 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 * Update MyAlice Dashboard Access Permission
 
 = 1.2.0 =
-* Added MyAlice Branded Panel in Wordpress Dashboard.
+* Added MyAlice Branded Panel in WordPress Dashboard.
 * Auto redirection added after activating the plugin.
 * Improved and optimised API connections.
 * Improved and optimised API calling.
