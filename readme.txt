@@ -215,8 +215,3 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 
 = 1.2.5 =
 We improved customer connect API also added language template file and dashboard settings.
-
-
-== CONTACT ==
-
-Alice - https://myalice.ai/
