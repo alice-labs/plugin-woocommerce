@@ -1,7 +1,7 @@
 ﻿=== Social Live Chat Helpdesk – MyAlice ===
 
 Contributors: shuvorahmanalice, rudlinkon
-Tags: whatsapp, live chat, telegram, line, viber, whatsapp business, whatsapp commerce, whatsapp support, whatsapp broadcasting, whatsapp chat, whatsapp plugin, whatsapp chat plugin, whatsapp wordpress plugin, whatsapp woocommerce plugin, facebook plugin, messenger plugin, instagram plugin, viber plugin, line plugin, telegram plugin, woocommerce livechat, woocommerce chatbot, chat plugin
+Tags: Whatsapp, Live Chat, Telegram, Line, Viber, Messenger, Instagram, WhatsApp Chat, Live Chat Helpdesk, Chatbot, WordPress Live Chat, WooCommerce Live Chat
 Requires at least: 5.0
 Tested up to: 6.0
 Stable tag: 2.0.3
