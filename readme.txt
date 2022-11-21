@@ -130,7 +130,7 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 
 = 2.1.0 – 21/11/2022 =
 * Added: Brand New Live Chat
-* Added: Migration Process of new lite chat for existing user
+* Added: Migration process of new live chat for existing user
 * Improved: Compatible with WordPress 6.1
 * Improved: Compatible with WooCommerce 7.1
 * Fixed: Few minor bug fix
