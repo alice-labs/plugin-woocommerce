@@ -95,11 +95,11 @@ Next, you can place a live chat widget on your store website to chat with the st
 Yes. Every time you update anything on your store — product, stock, or price, the information is automatically synced on your MyAlice dashboard. On the other hand, when you create an order from MyAlice, the inventory will also be updated on your WooCommerce dashboard. All in all, WooCommerce and [MyAlice](https://myalice.ai/) sync in real-time.
 
 = How do I add WhatsApp chat on WordPress? =
-1. Go to your WordPress dashboard. Click on the add new button.
-2. Type MyAlice in the search tool available on the right.
-3. In the Search Results, you will find [MyAlice plugin](https://wordpress.org/plugins/myaliceai/).
-4. After the installation, activate the plugin.
-5. Sign up to MyAlice and voilà WhatsApp chat is added to your WordPress website.
+1.  Go to your WordPress dashboard. Click on the add new button.
+2.  Type MyAlice in the search tool available on the right.
+3.  In the Search Results, you will find [MyAlice plugin](https://wordpress.org/plugins/myaliceai/).
+4.  After the installation, activate the plugin.
+5.  Sign up to MyAlice and voilà WhatsApp chat is added to your WordPress website.
 
 = Can I stay connected to my customers while on the go? =
 With our mobile apps - both [android](https://play.google.com/store/apps/details?id=com.alice.myalice) and [iOS](https://apps.apple.com/sg/app/myalice/id1585089223) you can chat anytime, anywhere.
