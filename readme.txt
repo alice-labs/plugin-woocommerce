@@ -3,8 +3,8 @@
 Contributors: shuvorahmanalice, rudlinkon
 Tags: WhatsApp, Live Chat, Telegram, Line, Viber, Messenger, Instagram, WhatsApp Chat, Live Chat Helpdesk, Chatbot, WordPress Live Chat, WooCommerce Live Chat
 Requires at least: 5.0
-Tested up to: 6.0
-Stable tag: 2.0.3
+Tested up to: 6.1
+Stable tag: 2.1.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
@@ -127,6 +127,13 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 
 == Changelog ==
 
+
+= 2.1.0 – 21/11/2022 =
+* Added: Brand New Live Chat
+* Added: Migration Process of new lite chat for existing user
+* Improved: Compatible with WordPress 6.1
+* Improved: Compatible with WooCommerce 7.1
+* Fixed: Few minor bug fix
 
 = 2.0.3 – 09/10/2022 =
 * Added: Password show/hide option in the login/registration form

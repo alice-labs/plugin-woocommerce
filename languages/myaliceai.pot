@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: MyAlice 2.0.3\n"
+"Project-Id-Version: MyAlice 2.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/myaliceai\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-10-09T03:00:46+00:00\n"
+"POT-Creation-Date: 2022-11-21T09:01:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: myaliceai\n"
@@ -91,40 +91,76 @@ msgstr ""
 msgid "I already did"
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:198
-#: includes/myalice-hooks-callback.php:263
-#: includes/myalice-hooks-callback.php:327
+#: includes/myalice-hooks-callback.php:204
+#: includes/myalice-hooks-callback.php:269
+#: includes/myalice-hooks-callback.php:333
 msgid "Please fill up all required field"
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:203
-#: includes/myalice-hooks-callback.php:268
-#: includes/myalice-hooks-callback.php:332
+#: includes/myalice-hooks-callback.php:209
+#: includes/myalice-hooks-callback.php:274
+#: includes/myalice-hooks-callback.php:338
 msgid "MyAlice needs your permission to work. Please Grant Permission First."
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:247
-#: includes/myalice-hooks-callback.php:313
+#: includes/myalice-hooks-callback.php:253
+#: includes/myalice-hooks-callback.php:319
 msgid "You are logged in successfully"
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:337
+#: includes/myalice-hooks-callback.php:343
 msgid "Email Address Missing, Please login again."
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:375
+#: includes/myalice-hooks-callback.php:381
 msgid "Something went wrong: ecommerce_data is empty"
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:378
+#: includes/myalice-hooks-callback.php:384
 msgid "You selected team is connected"
 msgstr ""
 
-#: includes/myalice-hooks-callback.php:385
+#: includes/myalice-hooks-callback.php:391
 msgid "Something went wrong: nonce not match"
 msgstr ""
 
-#: includes/myalice-hooks.php:10
+#: includes/myalice-hooks-callback.php:437
+msgid "Switch to New Live Chat for a better way to communicate with your customers."
+msgstr ""
+
+#: includes/myalice-hooks-callback.php:438
+msgid "Your Webchat will be automatically transitioned over to the New Live Chat. Switch your existing Webchat now and get early access to new features. We will automatically transition your account roughly after 30 days."
+msgstr ""
+
+#: includes/myalice-hooks-callback.php:439
+msgid "Learn More"
+msgstr ""
+
+#: includes/myalice-hooks-callback.php:441
+msgid "Switch to New Live Chat"
+msgstr ""
+
+#: includes/myalice-hooks-callback.php:443
+msgid "Something went wrong,"
+msgstr ""
+
+#: includes/myalice-hooks-callback.php:444
+msgid "contact support"
+msgstr ""
+
+#: includes/myalice-hooks-callback.php:464
+msgid "Livechat has been migrated. Time to customize!"
+msgstr ""
+
+#: includes/myalice-hooks-callback.php:465
+msgid "Your livechat has been migrated to the latest one. Now you can customize the livechat the way you want! Set up how you want to greet your customers, set up livechat styles, add pre-chat survey and many more."
+msgstr ""
+
+#: includes/myalice-hooks-callback.php:467
+msgid "Customize Livechat"
+msgstr ""
+
+#: includes/myalice-hooks-callback.php:493
 msgid "<div class=\"notice notice-error\"><p><strong>WooCommerce</strong> is not installed/activated in your site. Please install and activate <a href=\"plugin-install.php?s=woocommerce&tab=search&type=term\" target=\"_blank\">WooCommerce</a> to use MyAlice Plugin. If you want to use MyAlice without WooCommerce, <a href=\"https://docs.myalice.ai/connect-social-channels/connect-web-app/connect-live-chat\" target=\"_blank\">follow this</a>.</p></div>"
 msgstr ""
 
@@ -297,50 +333,50 @@ msgstr ""
 msgid "Open MyAlice"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:184
+#: includes/myaliceai-dashboard.php:185
 msgid "Open Inbox"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:193
+#: includes/myaliceai-dashboard.php:194
 msgid "Plugin Settings"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:198
+#: includes/myaliceai-dashboard.php:199
 msgid "Allow chat for logged-in user only"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:199
+#: includes/myaliceai-dashboard.php:200
 msgid "This will show the livechat in your WooCommerce Store for logged in users only."
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:204
+#: includes/myaliceai-dashboard.php:205
 msgid "Send product view data"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:205
+#: includes/myaliceai-dashboard.php:206
 msgid "If anyone views a product in your store, this will send the data to MyAlice for your team to view."
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:210
+#: includes/myaliceai-dashboard.php:211
 msgid "Send cart data"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:211
+#: includes/myaliceai-dashboard.php:212
 msgid "If anyone adds a product in their cart from your store, this will send the data to MyAlice for your team to view."
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:216
+#: includes/myaliceai-dashboard.php:217
 msgid "Hide chat widget"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:217
+#: includes/myaliceai-dashboard.php:218
 msgid "This will hide the live chat widget from your store. Your visitors will not see the live chat option."
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:222
+#: includes/myaliceai-dashboard.php:223
 msgid "Save Changes"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:223
+#: includes/myaliceai-dashboard.php:224
 msgid "Back"
 msgstr ""
