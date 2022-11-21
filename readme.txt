@@ -7,7 +7,7 @@ Tested up to: 6.0
 Stable tag: 2.0.3
 Requires PHP: 5.6
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 
 
 A workspace to manage all your Live Chat, WhatsApp, Telegram, Line, Viber, Instagram, and Facebook Messenger conversations, and increase sales by automating the entire buying experience.
