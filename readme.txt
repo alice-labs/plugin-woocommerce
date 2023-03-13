@@ -130,7 +130,7 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 
 = 2.2.0 – 14/03/2023 =
 * Improved: Compatible with WooCommerce 7.4
-* Fixed: Network Deactivate option does not work in network site
+* Fixed: Network Deactivate option does not work on the network site
 
 
 = 2.1.0 – 21/11/2022 =
