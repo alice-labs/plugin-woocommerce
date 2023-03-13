@@ -74,9 +74,11 @@ add_action( 'admin_footer', function () { ?>
             var alice_feedback_modal = $('#alice-feedback-modal');
 
             $(document).on('click', '#deactivate-myaliceai', function (e) {
-                e.preventDefault();
+                if ($(this).text() !== 'Network Deactivate') {
+                    e.preventDefault();
 
-                alice_feedback_modal.fadeIn();
+                    alice_feedback_modal.fadeIn();
+                }
             }).on('click', '.alice-modal-close, .alice-modal-bg', function (e) {
                 e.preventDefault();
 
