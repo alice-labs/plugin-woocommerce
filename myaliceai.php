@@ -4,7 +4,7 @@
  * Plugin URI:        https://app.getalice.ai/
  * Description:       Alice is a Multi-Channel customer service platform for your e-commerce store or online business that centralises all customer interactions and helps to manage and automate customer support.
  * Version:           2.1.0
- * WC tested up to:   7.1
+ * WC tested up to:   7.4
  * Author:            Alice Labs
  * Author URI:        https://myalice.ai/
  * License:           GPL-2.0+
