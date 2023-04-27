@@ -231,4 +231,35 @@ function myalice_dashboard_callback() {
         </div>
     </div>
 	<?php
+
+    $consumer_key    = 'ck_01c91d7d789803c684c74045b62f6c3fdde700ee';
+    $consumer_secret = 'cs_1aa8886a5e8ede1fbab019b5ff328266b35bf600';
+    $request_url     = site_url() . '/wp-json/wc/v3/products';
+    $result          = [ 'error' => false, 'message' => '', 'success' => false ];
+
+    $args = array(
+        'headers'   => array(
+            'Authorization' => 'Basic ' . base64_encode( $consumer_key . ':' . $consumer_secret )
+        ),
+        'sslverify' => false
+    );
+
+    $response = wp_remote_get( $request_url, $args );
+
+    if ( is_wp_error( $response ) ) {
+        $result['error']   = true;
+        $result['message'] = $response->get_error_message();
+    } else {
+        $body = json_decode( wp_remote_retrieve_body( $response ), true );
+
+        if ( $response['response']['code'] === 200 ) {
+            $result['success'] = true;
+        } else {
+            $result['error']   = true;
+            $result['message'] = $body['message'];
+        }
+    }
+    var_dump( $result );
+
+
 }
