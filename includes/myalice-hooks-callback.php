@@ -493,9 +493,9 @@ function myalice_wc_not_activate_notice() {
 	_e( '<div class="notice notice-error"><p><strong>WooCommerce</strong> is not installed/activated in your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> to use MyAlice Plugin. If you want to use MyAlice without WooCommerce, <a href="https://docs.myalice.ai/connect-social-channels/connect-web-app/connect-live-chat" target="_blank">follow this</a>.</p></div>', 'myaliceai' );
 }
 
-function myalice_is_working_wcapi() {
+function myalice_is_working_wcapi( $force = false ) {
 	$wc_api_status = get_transient( 'myaliceai_wc_api_status' );
-	if ( ! empty( $wc_api_status ) ) {
+	if ( ! empty( $wc_api_status ) && ! $force ) {
 		return $wc_api_status;
 	} else {
 		$consumer_key    = 'ck_01c91d7d789803c684c74045b62f6c3fdde700ee';
