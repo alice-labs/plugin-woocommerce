@@ -621,7 +621,9 @@ add_action( 'admin_head', function () { ?>
             margin-left: 12px;
         }
 
+        #alice-dashboard .alice-explore-myalice .alice-btn.--wc-api-sync-btn span,
         #alice-dashboard .alice-explore-myalice .alice-btn.--wc-api-sync-btn svg {
+            display: inline-block;
             vertical-align: middle;
         }
 

@@ -259,6 +259,29 @@ add_action( 'admin_footer', function () { ?>
                         notice_wrap.remove();
                     }
                 });
+            }).on('click', '.--wc-api-sync-btn', function (e) {
+                e.preventDefault();
+
+                var $this = $(this),
+                    $label = $this.children('span'),
+                    url = "<?php echo admin_url( 'admin-ajax.php' ); ?>",
+                    data = {
+                        "action": "myalice_check_wc_api_status",
+                        "nonce": "<?php echo wp_create_nonce( 'myaliceai' ); ?>"
+                    };
+
+                $this.addClass('--active');
+                $label.text('Syncing Changes...');
+
+                $.post(url, data, function (response) {
+                    $this.removeClass('--active');
+
+                    if (response.success) {
+                        $label.text('Changes synced');
+                    } else {
+                        $label.text('Changes failed');
+                    }
+                });
             });
         })(jQuery);
     </script>

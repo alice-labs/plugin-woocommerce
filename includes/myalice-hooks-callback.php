@@ -530,3 +530,9 @@ function myalice_is_working_wcapi( $force = false ) {
 		return $result;
 	}
 }
+
+function myalice_check_wc_api_status() {
+	if ( check_ajax_referer( 'myaliceai', 'nonce' ) ) {
+		wp_send_json_success( myalice_is_working_wcapi( true ) );
+	}
+}

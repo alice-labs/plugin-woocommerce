@@ -81,6 +81,7 @@ add_action( 'myalice_admin_notices', 'myalice_migration_admin_notice', 0 );
 add_action( 'admin_notices', 'myalice_chat_customization_admin_notice', 0 );
 add_action( 'myalice_admin_notices', 'myalice_chat_customization_admin_notice', 0 );
 add_action( 'wp_ajax_myalice_migration', 'myalice_migration_livechat' );
+add_action( 'wp_ajax_myalice_check_wc_api_status', 'myalice_check_wc_api_status' );
 
 add_action( 'admin_init', function () {
 	$page = empty( $_GET['page'] ) ? '' : $_GET['page'];
