@@ -5,6 +5,15 @@ defined( 'ABSPATH' ) || die;
 // Admin Internal Style
 add_action( 'admin_head', function () { ?>
     <style>
+        @keyframes alice-rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         /* === Alice Admin Menu === */
         #adminmenu #toplevel_page_myalice_dashboard div.wp-menu-image > img {
             padding-top: 8px;
@@ -610,6 +619,17 @@ add_action( 'admin_head', function () { ?>
 
         #alice-dashboard .alice-explore-myalice .alice-btn + .alice-btn {
             margin-left: 12px;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-btn.--wc-api-sync-btn svg {
+            vertical-align: middle;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-btn.--wc-api-sync-btn.--active svg {
+            animation-name: alice-rotate;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
         }
 
         /* dashboard plugin-settings section */
