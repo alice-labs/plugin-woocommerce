@@ -58,6 +58,13 @@ function myalice_dashboard_callback() {
                                     <li><a href="https://www.myalice.ai/support" target="_blank"><?php esc_html_e( 'Contact Support', 'myaliceai' ); ?></a></li>
                                 </ul>
                             </li>
+                            <li class="--wcapi-status">
+                                <?php
+                                $status_class = '--wcapi-operational';
+                                $status_text  = __( 'Operational', 'myaliceai' );
+                                ?>
+                                <button class="<?php echo esc_attr( $status_class ); ?>"><?php echo esc_html( $status_text ); ?></button>
+                            </li>
                         </ul>
                     </nav>
                 </div>

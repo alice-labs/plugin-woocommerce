@@ -389,6 +389,44 @@ add_action( 'admin_head', function () { ?>
             opacity: 1;
         }
 
+        #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.--wcapi-status button {
+            height: 24px;
+            line-height: 24px;
+            border-radius: 4px;
+            border: none;
+            padding: 0 6px 0 18px;
+            position: relative;
+        }
+
+        #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.--wcapi-status button::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: calc(50% - 3px);
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            display: block;
+        }
+
+        #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.--wcapi-status button.--wcapi-operational {
+            color: #065F46;
+            background: #D1FAE5;
+        }
+
+        #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.--wcapi-status button.--wcapi-operational::before {
+            background: #34D399;
+        }
+
+        #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.--wcapi-status button.--wcapi-disconnected {
+            color: #991B1B;
+            background: #FEE2E2;
+        }
+
+        #alice-dashboard .alice-dashboard-header .alice-main-menu ul li.--wcapi-status button.--wcapi-disconnected::before {
+            background: #F87171;
+        }
+
         /* dashboard connect-with-myalice section */
         #alice-dashboard .alice-connect-with-myalice,
         #alice-dashboard .alice-select-the-team,
