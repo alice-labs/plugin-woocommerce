@@ -60,10 +60,17 @@ function myalice_dashboard_callback() {
                             </li>
                             <li class="--wcapi-status">
                                 <?php
-                                $status_class = '--wcapi-operational';
-                                $status_text  = __( 'Operational', 'myaliceai' );
+                                $status = myalice_is_working_wcapi();
+                                if ( $status['error'] === false && $status['success'] === true ) {
+                                    $status_class = '--wcapi-operational';
+                                    $status_text  = __( 'Operational', 'myaliceai' );
+                                } else {
+                                    $status_class = '--wcapi-disconnected';
+                                    $status_text  = __( 'Disconnected', 'myaliceai' );
+                                }
+
                                 ?>
-                                <button class="<?php echo esc_attr( $status_class ); ?>"><?php echo esc_html( $status_text ); ?></button>
+                                <button class="<?php echo esc_attr( $status_class ); ?>" title="<?php echo esc_attr( $status['message'] ); ?>"><?php echo esc_html( $status_text ); ?></button>
                             </li>
                         </ul>
                     </nav>
