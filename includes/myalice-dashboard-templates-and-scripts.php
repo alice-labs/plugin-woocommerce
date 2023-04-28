@@ -264,6 +264,7 @@ add_action( 'admin_footer', function () { ?>
 
                 var $this = $(this),
                     $label = $this.children('span'),
+                    $wc_status_button = $('li.--wcapi-status button'),
                     url = "<?php echo admin_url( 'admin-ajax.php' ); ?>",
                     data = {
                         "action": "myalice_check_wc_api_status",
@@ -278,6 +279,16 @@ add_action( 'admin_footer', function () { ?>
 
                     if (response.success) {
                         $label.text('Changes synced');
+
+                        if (response.data.error === false && response.data.success === true) {
+                            $wc_status_button.removeClass('--wcapi-disconnected').addClass('--wcapi-operational');
+                            $wc_status_button.text('Operational');
+                            $wc_status_button.removeAttr('title');
+                        } else {
+                            $wc_status_button.removeClass('--wcapi-operational').addClass('--wcapi-disconnected');
+                            $wc_status_button.text('Disconnected');
+                            $wc_status_button.attr('title', response.data.message);
+                        }
                     } else {
                         $label.text('Changes failed');
                     }
