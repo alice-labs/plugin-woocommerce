@@ -627,11 +627,23 @@ add_action( 'admin_head', function () { ?>
             vertical-align: middle;
         }
 
-        #alice-dashboard .alice-explore-myalice .alice-btn.--wc-api-sync-btn.--active svg {
+        #alice-dashboard .alice-explore-myalice .alice-btn.--wc-api-sync-btn svg + svg {
+            display: none;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-btn.--wc-api-sync-btn.--syncing svg {
             animation-name: alice-rotate;
             animation-duration: 2s;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-btn.--wc-api-sync-btn.--synced svg {
+            display: none;
+        }
+
+        #alice-dashboard .alice-explore-myalice .alice-btn.--wc-api-sync-btn.--synced svg + svg {
+            display: inline-block;
         }
 
         /* dashboard plugin-settings section */

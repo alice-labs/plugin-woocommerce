@@ -271,11 +271,11 @@ add_action( 'admin_footer', function () { ?>
                         "nonce": "<?php echo wp_create_nonce( 'myaliceai' ); ?>"
                     };
 
-                $this.addClass('--active');
+                $this.addClass('--syncing').removeClass('--synced');
                 $label.text('Syncing Changes...');
 
                 $.post(url, data, function (response) {
-                    $this.removeClass('--active');
+                    $this.removeClass('--syncing').addClass('--synced');
 
                     if (response.success) {
                         $label.text('Changes synced');
@@ -290,6 +290,7 @@ add_action( 'admin_footer', function () { ?>
                             $wc_status_button.attr('title', response.data.message);
                         }
                     } else {
+                        $this.removeClass('--syncing --synced');
                         $label.text('Changes failed');
                     }
                 });
