@@ -47,8 +47,9 @@ function myalice_get_woocommerce_projects() {
 }
 
 function myalice_get_dashboard_class() {
-	$wc_auth = get_option( 'myaliceai_wc_auth' );
-	if ( empty( $wc_auth ) ) {
+	$wc_auth   = get_option( 'myaliceai_wc_auth' );
+	$wc_status = myalice_is_working_wcapi();
+	if ( empty( $wc_auth ) || $wc_status['error'] === true ) {
 		return '--needs-your-permission';
 	}
 
