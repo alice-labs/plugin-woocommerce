@@ -27,7 +27,7 @@ if ( isset( $_GET['myalice_action'], $_GET['wcauth'] ) && $_GET['myalice_action'
     update_option( 'myaliceai_wc_auth', $auth_data, false );
 
     // Update the WC API Status
-    myalice_is_working_wcapi( true );
+    //myalice_is_working_wcapi( true );
 }
 
 // Alice Dashboard Menu Callback
