@@ -493,45 +493,6 @@ function myalice_wc_not_activate_notice() {
 	_e( '<div class="notice notice-error"><p><strong>WooCommerce</strong> is not installed/activated in your site. Please install and activate <a href="plugin-install.php?s=woocommerce&tab=search&type=term" target="_blank">WooCommerce</a> to use MyAlice Plugin. If you want to use MyAlice without WooCommerce, <a href="https://docs.myalice.ai/connect-social-channels/connect-web-app/connect-live-chat" target="_blank">follow this</a>.</p></div>', 'myaliceai' );
 }
 
-function myalice_is_working_wcapi( $force = false ) {
-	$wc_api_status = get_transient( 'myaliceai_wc_api_status' );
-	if ( ! empty( $wc_api_status ) && ! $force ) {
-		return $wc_api_status;
-	} else {
-		$wc_auth         = get_option( 'myaliceai_wc_auth' );
-		$consumer_key    = empty( $wc_auth['consumer_key'] ) ? '' : $wc_auth['consumer_key'];
-		$consumer_secret = empty( $wc_auth['consumer_secret'] ) ? '' : $wc_auth['consumer_secret'];;
-		$request_url     = site_url() . '/wp-json/wc/v3/products';
-		$result          = [ 'error' => false, 'message' => '', 'success' => false ];
-
-		$args = array(
-			'headers' => array(
-				'Authorization' => 'Basic ' . base64_encode( $consumer_key . ':' . $consumer_secret )
-			)
-		);
-
-		$response = wp_remote_get( $request_url, $args );
-
-		if ( is_wp_error( $response ) ) {
-			$result['error']   = true;
-			$result['message'] = $response->get_error_message();
-		} else {
-			$body = json_decode( wp_remote_retrieve_body( $response ), true );
-
-			if ( $response['response']['code'] === 200 ) {
-				$result['success'] = true;
-			} else {
-				$result['error']   = true;
-				$result['message'] = $body['message'];
-			}
-		}
-
-		set_transient( 'myaliceai_wc_api_status', $result, HOUR_IN_SECONDS );
-
-		return $result;
-	}
-}
-
 function myalice_check_wc_api_status() {
 	if ( check_ajax_referer( 'myaliceai', 'nonce' ) ) {
 		wp_send_json_success( myalice_is_working_wcapi( true ) );
