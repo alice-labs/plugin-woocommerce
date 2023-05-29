@@ -17,17 +17,21 @@ add_action( 'admin_menu', function () {
 
 // Store wcauth data
 if ( isset( $_GET['myalice_action'], $_GET['wcauth'] ) && $_GET['myalice_action'] === 'wcauth' && $_GET['wcauth'] == 1 ) {
-    $wc_auth_data = file_get_contents( 'php://input' );
-    $wc_auth_data = json_decode( $wc_auth_data, true );
-    $auth_data    = [
-        'consumer_key'    => $wc_auth_data['consumer_key'],
-        'consumer_secret' => $wc_auth_data['consumer_secret'],
-        'key_permissions' => $wc_auth_data['key_permissions'],
-    ];
-    update_option( 'myaliceai_wc_auth', $auth_data, false );
+	$wc_auth_data = file_get_contents( 'php://input' );
+	$wc_auth_data = json_decode( $wc_auth_data, true );
+	$auth_data    = [
+		'consumer_key'    => $wc_auth_data['consumer_key'],
+		'consumer_secret' => $wc_auth_data['consumer_secret'],
+		'key_permissions' => $wc_auth_data['key_permissions'],
+	];
 
-    // Update the WC API Status
-    //myalice_is_working_wcapi( true );
+	update_option( 'myaliceai_wc_auth', $auth_data, false );
+}
+
+// Update the WC API Status
+if ( isset( $_GET['page'], $_GET['success'], $_GET['user_id'] ) && $_GET['page'] === 'myalice_dashboard' && $_GET['success'] == 1 && ! empty( $_GET['user_id'] ) ) {
+	myalice_is_working_wcapi( true );
+	wp_safe_redirect( admin_url( '?page=myalice_dashboard' ) );
 }
 
 // Alice Dashboard Menu Callback
