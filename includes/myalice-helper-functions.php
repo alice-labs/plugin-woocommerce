@@ -135,10 +135,9 @@ function myalice_is_working_wcapi( $force = false ) {
 		$result          = [ 'error' => false, 'message' => '', 'success' => false ];
 
 		$args = array(
-			'headers'   => array(
+			'headers' => array(
 				'Authorization' => 'Basic ' . base64_encode( $consumer_key . ':' . $consumer_secret )
-			),
-			'sslverify' => false
+			)
 		);
 
 		$response = wp_remote_get( $request_url, $args );
