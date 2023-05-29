@@ -498,8 +498,9 @@ function myalice_is_working_wcapi( $force = false ) {
 	if ( ! empty( $wc_api_status ) && ! $force ) {
 		return $wc_api_status;
 	} else {
-		$consumer_key    = 'ck_01c91d7d789803c684c74045b62f6c3fdde700ee';
-		$consumer_secret = 'cs_1aa8886a5e8ede1fbab019b5ff328266b35bf600';
+		$wc_auth         = get_option( 'myaliceai_wc_auth' );
+		$consumer_key    = empty( $wc_auth['consumer_key'] ) ? '' : $wc_auth['consumer_key'];
+		$consumer_secret = empty( $wc_auth['consumer_secret'] ) ? '' : $wc_auth['consumer_secret'];;
 		$request_url     = site_url() . '/wp-json/wc/v3/products';
 		$result          = [ 'error' => false, 'message' => '', 'success' => false ];
 
