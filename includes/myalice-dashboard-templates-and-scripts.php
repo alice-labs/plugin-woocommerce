@@ -288,6 +288,7 @@ add_action( 'admin_footer', function () { ?>
                             $wc_status_button.removeClass('--wcapi-operational').addClass('--wcapi-disconnected');
                             $wc_status_button.text('Disconnected');
                             $wc_status_button.attr('title', response.data.message);
+                            $('#alice-dashboard').removeClass('--explore-myalice').addClass('--needs-your-permission');
                         }
                     } else {
                         $this.removeClass('--syncing --synced');
