@@ -134,12 +134,12 @@ function myalice_is_working_wcapi( $force = false ) {
 		$request_url     = site_url() . '/wp-json/wc/v3/products';
 		$result          = [ 'error' => false, 'message' => '', 'success' => false ];
 
-		$body = wp_json_encode( array(
+		$request_url = add_query_arg( array(
 			'consumer_key'    => $consumer_key,
 			'consumer_secret' => $consumer_secret
-		) );
+		), $request_url );
 
-		$response = wp_remote_get( $request_url, [ 'body' => $body ] );
+		$response = wp_remote_get( $request_url );
 
 		if ( is_wp_error( $response ) ) {
 			$result['error']   = true;
