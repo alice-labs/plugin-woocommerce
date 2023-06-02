@@ -131,7 +131,7 @@ function myalice_is_working_wcapi( $force = false ) {
 		$wc_auth         = get_option( 'myaliceai_wc_auth' );
 		$consumer_key    = empty( $wc_auth['consumer_key'] ) ? '' : $wc_auth['consumer_key'];
 		$consumer_secret = empty( $wc_auth['consumer_secret'] ) ? '' : $wc_auth['consumer_secret'];;
-		$request_url     = site_url() . '/wp-json/wc/v3/products';
+		$request_url     = site_url() . '/wp-json/wc/v3/settings';
 		$result          = [ 'error' => false, 'message' => '', 'success' => false ];
 
 		$request_url = add_query_arg( array(
