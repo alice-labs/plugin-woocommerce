@@ -134,13 +134,12 @@ function myalice_is_working_wcapi( $force = false ) {
 		$request_url     = site_url() . '/wp-json/wc/v3/products';
 		$result          = [ 'error' => false, 'message' => '', 'success' => false ];
 
-		$args = array(
-			'headers' => array(
-				'Authorization' => 'Basic ' . base64_encode( $consumer_key . ':' . $consumer_secret )
-			)
-		);
+		$body = wp_json_encode( array(
+			'consumer_key'    => $consumer_key,
+			'consumer_secret' => $consumer_secret
+		) );
 
-		$response = wp_remote_get( $request_url, $args );
+		$response = wp_remote_get( $request_url, [ 'body' => $body ] );
 
 		if ( is_wp_error( $response ) ) {
 			$result['error']   = true;
