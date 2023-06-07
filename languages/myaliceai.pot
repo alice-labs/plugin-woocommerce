@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: MyAlice 2.2.0\n"
+"Project-Id-Version: MyAlice 2.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/myaliceai\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-13T18:39:56+00:00\n"
+"POT-Creation-Date: 2023-06-07T07:43:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: myaliceai\n"
@@ -169,7 +169,7 @@ msgid "MyAlice Settings"
 msgstr ""
 
 #: includes/myalice-hooks.php:27
-#: includes/myaliceai-dashboard.php:46
+#: includes/myaliceai-dashboard.php:53
 msgid "Settings"
 msgstr ""
 
@@ -193,190 +193,198 @@ msgstr ""
 msgid "MyAlice Dashboard"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:40
+#: includes/myaliceai-dashboard.php:47
 msgid "MyAlice Logo"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:45
+#: includes/myaliceai-dashboard.php:52
 msgid "Dashboard"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:48
+#: includes/myaliceai-dashboard.php:55
 msgid "Review MyAlice"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:50
+#: includes/myaliceai-dashboard.php:57
 msgid "Help & Support"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:53
+#: includes/myaliceai-dashboard.php:60
 msgid "Read Documentation"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:56
+#: includes/myaliceai-dashboard.php:63
 msgid "Watch Tutorials"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:58
+#: includes/myaliceai-dashboard.php:65
 msgid "Contact Support"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:70
+#: includes/myaliceai-dashboard.php:73
+msgid "Operational"
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:76
+msgid "Disconnected"
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:91
 msgid "Connect with MyAlice"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:71
+#: includes/myaliceai-dashboard.php:92
 msgid "Already have an account?"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:72
+#: includes/myaliceai-dashboard.php:93
 msgid "login here"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:73
+#: includes/myaliceai-dashboard.php:94
 msgid "Don’t have an account?"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:74
+#: includes/myaliceai-dashboard.php:95
 msgid "signup here"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:82
+#: includes/myaliceai-dashboard.php:103
 msgid "Full Name"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:86
+#: includes/myaliceai-dashboard.php:107
 msgid "Email Address"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:90
+#: includes/myaliceai-dashboard.php:111
 msgid "Password"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:96
+#: includes/myaliceai-dashboard.php:117
 msgid "Signup & Connect"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:97
+#: includes/myaliceai-dashboard.php:118
 msgid "Login & Connect"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:100
+#: includes/myaliceai-dashboard.php:121
 msgid "By proceeding, you agree to the"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:101
+#: includes/myaliceai-dashboard.php:122
 msgid "Terms & Conditions"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:102
+#: includes/myaliceai-dashboard.php:123
 msgid "Forgot your credentials?"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:103
+#: includes/myaliceai-dashboard.php:124
 msgid "Reset Password"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:111
+#: includes/myaliceai-dashboard.php:132
 msgid "Select the team to connect your store with"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:112
+#: includes/myaliceai-dashboard.php:133
 msgid "You can connect one store with one team only."
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:126
+#: includes/myaliceai-dashboard.php:147
 msgid "team avatar"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:134
+#: includes/myaliceai-dashboard.php:155
 msgid "Continue"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:135
+#: includes/myaliceai-dashboard.php:156
 msgid "If you see any missing teams, it might be because it's already connected. If that isn't the case,"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:136
+#: includes/myaliceai-dashboard.php:157
 msgid "contact support."
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:144
+#: includes/myaliceai-dashboard.php:165
 msgid "MyAlice needs your permission to work"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:145
+#: includes/myaliceai-dashboard.php:166
 msgid "Once you grant permission, your website visitors will be able to communicate with you."
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:161
+#: includes/myaliceai-dashboard.php:182
 msgid "Grant Permission"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:166
+#: includes/myaliceai-dashboard.php:187
 msgid "Your store doesn’t appear to be using a secure connection. We highly recommend serving your entire website over an HTTPS connection to help keep customer data secure."
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:174
+#: includes/myaliceai-dashboard.php:195
 msgid "MyAlice Explore Map"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:178
+#: includes/myaliceai-dashboard.php:199
 msgid "Explore MyAlice"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:179
+#: includes/myaliceai-dashboard.php:200
 msgid "Check your inbox for pending conversations, customise the livechat to update brand or automate responses with chatbot."
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:183
-msgid "Open MyAlice"
-msgstr ""
-
-#: includes/myaliceai-dashboard.php:185
+#: includes/myaliceai-dashboard.php:205
 msgid "Open Inbox"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:194
-msgid "Plugin Settings"
-msgstr ""
-
-#: includes/myaliceai-dashboard.php:199
-msgid "Allow chat for logged-in user only"
-msgstr ""
-
-#: includes/myaliceai-dashboard.php:200
-msgid "This will show the livechat in your WooCommerce Store for logged in users only."
-msgstr ""
-
-#: includes/myaliceai-dashboard.php:205
-msgid "Send product view data"
-msgstr ""
-
-#: includes/myaliceai-dashboard.php:206
-msgid "If anyone views a product in your store, this will send the data to MyAlice for your team to view."
-msgstr ""
-
-#: includes/myaliceai-dashboard.php:211
-msgid "Send cart data"
-msgstr ""
-
-#: includes/myaliceai-dashboard.php:212
-msgid "If anyone adds a product in their cart from your store, this will send the data to MyAlice for your team to view."
-msgstr ""
-
-#: includes/myaliceai-dashboard.php:217
-msgid "Hide chat widget"
-msgstr ""
-
-#: includes/myaliceai-dashboard.php:218
-msgid "This will hide the live chat widget from your store. Your visitors will not see the live chat option."
+#: includes/myaliceai-dashboard.php:213
+msgid "Sync Changes"
 msgstr ""
 
 #: includes/myaliceai-dashboard.php:223
+msgid "Plugin Settings"
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:228
+msgid "Allow chat for logged-in user only"
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:229
+msgid "This will show the livechat in your WooCommerce Store for logged in users only."
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:234
+msgid "Send product view data"
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:235
+msgid "If anyone views a product in your store, this will send the data to MyAlice for your team to view."
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:240
+msgid "Send cart data"
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:241
+msgid "If anyone adds a product in their cart from your store, this will send the data to MyAlice for your team to view."
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:246
+msgid "Hide chat widget"
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:247
+msgid "This will hide the live chat widget from your store. Your visitors will not see the live chat option."
+msgstr ""
+
+#: includes/myaliceai-dashboard.php:252
 msgid "Save Changes"
 msgstr ""
 
-#: includes/myaliceai-dashboard.php:224
+#: includes/myaliceai-dashboard.php:253
 msgid "Back"
 msgstr ""
