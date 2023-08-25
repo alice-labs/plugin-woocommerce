@@ -691,12 +691,38 @@ add_action( 'admin_head', function () { ?>
             background-position: center center;
         }
 
+        #alice-dashboard .alice-plugin-settings form label input[type="radio"] + span.custom-checkbox {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: calc(100% + 12px);
+            top: 3px;
+            border: 1px solid #D1D5DB;
+            border-radius: 50%;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label input[type="radio"]:checked + span.custom-checkbox {
+            border: 5px solid #04B25F;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
         #alice-dashboard .alice-plugin-settings form label + label {
             margin-top: 20px;
             margin-left: 28px;
         }
 
-        #alice-dashboard .alice-plugin-settings form label input[type="checkbox"] {
+        #alice-dashboard .alice-plugin-settings form .--display-chat-widget label {
+            display: inline-block;
+            margin-top: 0;
+        }
+
+        #alice-dashboard .alice-plugin-settings form .--display-chat-widget label + label {
+            margin-left: 50px;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label input[type="checkbox"],
+        #alice-dashboard .alice-plugin-settings form label input[type="radio"] {
             display: none;
         }
 

@@ -39,7 +39,7 @@ function myalice_dashboard_callback() {
 	global $myalice_settings;
 	?>
     <div class="alice-dashboard-wrap">
-        <div id="alice-dashboard" class="<?php echo myalice_get_dashboard_class(); ?>">
+        <div id="alice-dashboard" class="--plugin-settings">
 
             <section class="alice-dashboard-header">
                 <div class="alice-container">
@@ -242,12 +242,18 @@ function myalice_dashboard_callback() {
                         </label>
                         <h3><?php esc_html_e( 'Display Chat Widget', 'myaliceai' ); ?></h3>
                         <hr>
+                        <div class="--display-chat-widget">
                         <label>
-                            <input type="checkbox" name="hide_chatbox" value="true" <?php checked( 1, $myalice_settings['hide_chatbox'] ); ?>>
+                            <input type="radio" name="hide_chatbox" value="true" <?php checked( 1, $myalice_settings['hide_chatbox'] ); ?>>
                             <span class="custom-checkbox"></span>
-                            <span class="checkbox-title"><?php esc_html_e( 'Hide chat widget', 'myaliceai' ); ?></span>
-                            <span><?php esc_html_e( 'This will hide the live chat widget from your store. Your visitors will not see the live chat option.', 'myaliceai' ); ?></span>
+                            <span class="checkbox-title"><?php esc_html_e( 'On all pages', 'myaliceai' ); ?></span>
                         </label>
+                        <label>
+                            <input type="radio" name="hide_chatbox" value="true" <?php checked( 1, $myalice_settings['hide_chatbox'] ); ?>>
+                            <span class="custom-checkbox"></span>
+                            <span class="checkbox-title"><?php esc_html_e( 'On selected pages', 'myaliceai' ); ?></span>
+                        </label>
+                        </div>
                         <hr>
                         <div class="submit-btn-section">
                             <span class="spinner"></span>
