@@ -240,6 +240,8 @@ function myalice_dashboard_callback() {
                             <span class="checkbox-title"><?php esc_html_e( 'Send cart data', 'myaliceai' ); ?></span>
                             <span><?php esc_html_e( 'If anyone adds a product in their cart from your store, this will send the data to MyAlice for your team to view.', 'myaliceai' ); ?></span>
                         </label>
+                        <h3><?php esc_html_e( 'Display Chat Widget', 'myaliceai' ); ?></h3>
+                        <hr>
                         <label>
                             <input type="checkbox" name="hide_chatbox" value="true" <?php checked( 1, $myalice_settings['hide_chatbox'] ); ?>>
                             <span class="custom-checkbox"></span>

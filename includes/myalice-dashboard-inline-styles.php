@@ -660,6 +660,10 @@ add_action( 'admin_head', function () { ?>
             padding: 24px;
         }
 
+        #alice-dashboard .alice-plugin-settings form h3 ~ h3 {
+            margin-top: 20px;
+        }
+
         #alice-dashboard .alice-plugin-settings form hr {
             margin: 20px 0;
         }
