@@ -244,12 +244,12 @@ function myalice_dashboard_callback() {
                         <hr>
                         <div class="--display-chat-widget">
                         <label>
-                            <input type="radio" name="hide_chatbox" value="true" <?php checked( 1, $myalice_settings['hide_chatbox'] ); ?>>
+                            <input type="radio" name="show_chatbox" value="all" <?php checked( 'all', $myalice_settings['show_chatbox'] ); ?>>
                             <span class="custom-checkbox"></span>
                             <span class="checkbox-title"><?php esc_html_e( 'On all pages', 'myaliceai' ); ?></span>
                         </label>
                         <label>
-                            <input type="radio" name="hide_chatbox" value="true" <?php checked( 1, $myalice_settings['hide_chatbox'] ); ?>>
+                            <input type="radio" name="show_chatbox" value="specific" <?php checked( 'specific', $myalice_settings['show_chatbox'] ); ?>>
                             <span class="custom-checkbox"></span>
                             <span class="checkbox-title"><?php esc_html_e( 'On selected pages', 'myaliceai' ); ?></span>
                         </label>

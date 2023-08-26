@@ -10,14 +10,14 @@ function alice_settings_form_process() {
 			'allow_chat_user_only'   => false,
 			'allow_product_view_api' => false,
 			'allow_cart_api'         => false,
-			'hide_chatbox'           => false
+			'show_chatbox'           => 'all'
 		] );
 
 		$settings = [
 			'allow_chat_user_only'   => $args['allow_chat_user_only'] === false ? 0 : 1,
 			'allow_product_view_api' => $args['allow_product_view_api'] === false ? 0 : 1,
 			'allow_cart_api'         => $args['allow_cart_api'] === false ? 0 : 1,
-			'hide_chatbox'           => $args['hide_chatbox'] === false ? 0 : 1
+			'show_chatbox'           => $args['show_chatbox'] === 'all' ? 'all' : 'specific'
 		];
 
 		if ( update_option( 'myaliceai_settings', $settings, false ) ) {
@@ -414,7 +414,7 @@ function myalice_migration_livechat() {
 			$alice_api_data = json_decode( $response['body'], true );
 
 			if ( ! empty( $alice_api_data ) && $alice_api_data['success'] === true ) {
-                update_option( 'myaliceai_is_needed_migration', false );
+				update_option( 'myaliceai_is_needed_migration', false );
 
 				wp_send_json_success( $alice_api_data );
 			} else {
@@ -475,7 +475,7 @@ function myalice_chat_customization_admin_notice() {
 	<?php
 }
 
-function myalice_remove_admin_notice(){
+function myalice_remove_admin_notice() {
 	$current_screen = get_current_screen();
 	if ( $current_screen->id == 'toplevel_page_myalice_dashboard' ) {
 

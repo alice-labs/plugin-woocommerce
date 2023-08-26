@@ -66,7 +66,7 @@ $myalice_settings = wp_parse_args( $myalice_settings, [
 	'allow_chat_user_only'   => 0,
 	'allow_product_view_api' => 1,
 	'allow_cart_api'         => 1,
-	'hide_chatbox'           => 0
+	'show_chatbox'           => 'all'
 ] );
 
 if ( ! defined( 'MYALICE_API_TOKEN' ) ) {
