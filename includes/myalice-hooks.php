@@ -107,4 +107,8 @@ add_action( 'init', function () {
 	if ( isset( $_GET['myalice_search_by_title'] ) ) {
 		add_filter( 'posts_search', 'myalice_search_by_title_only', 500, 2 );
 	}
+
+	if ( isset( $_GET['myalice_search_by_phone'] ) ) {
+		add_filter( 'woocommerce_rest_customer_query', 'myalice_search_by_phone', 500 );
+	}
 } );

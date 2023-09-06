@@ -532,3 +532,23 @@ function myalice_search_by_title_only( $search, $wp_query ) {
 
 	return $search;
 }
+
+function myalice_search_by_phone( $prepared_args ) {
+	$phone_number = sanitize_text_field( $_GET['myalice_search_by_phone'] );
+
+	$prepared_args['meta_query'] = array(
+		'relation' => 'OR',
+		array(
+			'key'     => 'billing_phone',
+			'value'   => $phone_number,
+			'compare' => '='
+		),
+		array(
+			'key'     => 'shipping_phone',
+			'value'   => $phone_number,
+			'compare' => '='
+		)
+	);
+
+	return $prepared_args;
+}
