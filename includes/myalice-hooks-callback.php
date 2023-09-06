@@ -414,7 +414,7 @@ function myalice_migration_livechat() {
 			$alice_api_data = json_decode( $response['body'], true );
 
 			if ( ! empty( $alice_api_data ) && $alice_api_data['success'] === true ) {
-                update_option( 'myaliceai_is_needed_migration', false );
+				update_option( 'myaliceai_is_needed_migration', false );
 
 				wp_send_json_success( $alice_api_data );
 			} else {
@@ -475,7 +475,7 @@ function myalice_chat_customization_admin_notice() {
 	<?php
 }
 
-function myalice_remove_admin_notice(){
+function myalice_remove_admin_notice() {
 	$current_screen = get_current_screen();
 	if ( $current_screen->id == 'toplevel_page_myalice_dashboard' ) {
 
@@ -497,4 +497,38 @@ function myalice_check_wc_api_status() {
 	if ( check_ajax_referer( 'myaliceai', 'nonce' ) ) {
 		wp_send_json_success( myalice_is_working_wcapi( true ) );
 	}
+}
+
+function myalice_search_by_title_only( $search, $wp_query ) {
+	global $wpdb;
+
+	$not_allowed_post_types = apply_filters( 'wc_filter_search_not_allowed_array', array(
+		'product', //Default WooCommerce products post type
+	) );
+
+	if ( empty( $search ) || ! in_array( $wp_query->query_vars['post_type'], $not_allowed_post_types ) ) {
+		return $search; // skip processing - no search term in query
+	}
+
+	$q = $wp_query->query_vars;
+	$n = ! empty( $q['exact'] ) ? '' : '%';
+
+	$search    = '';
+	$searchand = '';
+
+	foreach ( (array) $q['search_terms'] as $term ) {
+		$term      = esc_sql( $wpdb->esc_like( $term ) );
+		$search    .= "{$searchand}($wpdb->posts.post_title LIKE '{$n}{$term}{$n}')";
+		$searchand = ' AND ';
+	}
+
+	if ( ! empty( $search ) ) {
+		$search = " AND ({$search}) ";
+
+		if ( ! is_user_logged_in() ) {
+			$search .= " AND ($wpdb->posts.post_password = '') ";
+		}
+	}
+
+	return $search;
 }
