@@ -39,7 +39,7 @@ function myalice_dashboard_callback() {
 	global $myalice_settings;
 	?>
     <div class="alice-dashboard-wrap">
-        <div id="alice-dashboard" class="--plugin-settings">
+        <div id="alice-dashboard" class="<?php echo myalice_get_dashboard_class(); ?>">
 
             <section class="alice-dashboard-header">
                 <div class="alice-container">

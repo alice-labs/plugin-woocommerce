@@ -8,7 +8,7 @@ global $myalice_settings;
 function alice_chatbot_script_callback() {
 	global $myalice_settings;
 
-	if ( $myalice_settings['show_chatbox'] === 'specific' && is_page() && ! in_array( get_the_ID(), $myalice_settings['shows_on'] ) ) {
+	if ( $myalice_settings['show_chatbox'] === 'specific' && ! in_array( get_the_ID(), $myalice_settings['shows_on'] ) ) {
 		return;
 	}
 
