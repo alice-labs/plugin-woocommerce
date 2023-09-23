@@ -505,3 +505,57 @@ function myalice_check_wc_api_status() {
 		wp_send_json_success( myalice_is_working_wcapi( true ) );
 	}
 }
+
+function myalice_search_by_title_only( $search, $wp_query ) {
+	global $wpdb;
+
+	$not_allowed_post_types = apply_filters( 'wc_filter_search_not_allowed_array', array(
+		'product', //Default WooCommerce products post type
+	) );
+
+	if ( empty( $search ) || ! in_array( $wp_query->query_vars['post_type'], $not_allowed_post_types ) ) {
+		return $search; // skip processing - no search term in query
+	}
+
+	$q = $wp_query->query_vars;
+	$n = ! empty( $q['exact'] ) ? '' : '%';
+
+	$search    = '';
+	$searchand = '';
+
+	foreach ( (array) $q['search_terms'] as $term ) {
+		$term      = esc_sql( $wpdb->esc_like( $term ) );
+		$search    .= "{$searchand}($wpdb->posts.post_title LIKE '{$n}{$term}{$n}')";
+		$searchand = ' AND ';
+	}
+
+	if ( ! empty( $search ) ) {
+		$search = " AND ({$search}) ";
+
+		if ( ! is_user_logged_in() ) {
+			$search .= " AND ($wpdb->posts.post_password = '') ";
+		}
+	}
+
+	return $search;
+}
+
+function myalice_search_by_phone( $prepared_args ) {
+	$phone_number = sanitize_text_field( $_GET['myalice_search_by_phone'] );
+
+	$prepared_args['meta_query'] = array(
+		'relation' => 'OR',
+		array(
+			'key'     => 'billing_phone',
+			'value'   => $phone_number,
+			'compare' => '='
+		),
+		array(
+			'key'     => 'shipping_phone',
+			'value'   => $phone_number,
+			'compare' => '='
+		)
+	);
+
+	return $prepared_args;
+}
