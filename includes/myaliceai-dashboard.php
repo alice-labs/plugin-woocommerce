@@ -258,12 +258,13 @@ function myalice_dashboard_callback() {
                                 <span class="checkbox-title"><?php esc_html_e( 'On selected pages', 'myaliceai' ); ?></span>
                             </label>
                             <select name="shows_on[]" multiple>
-		                        <?php
-                                $pages = get_pages();
-		                        foreach ( $pages as $page ) {
-			                        echo "<option value='{$page->ID}'>{$page->post_name}</option>";
-		                        }
-		                        ?>
+								<?php
+								$pages = get_pages();
+								foreach ( $pages as $page ) {
+									$is_selected = in_array( $page->ID, $myalice_settings['shows_on'] ) ? 'selected' : '';
+									echo "<option value='{$page->ID}' $is_selected>{$page->post_name}</option>";
+								}
+								?>
                             </select>
                         </div>
                         <hr>
