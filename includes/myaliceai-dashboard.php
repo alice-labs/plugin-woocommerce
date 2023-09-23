@@ -257,19 +257,13 @@ function myalice_dashboard_callback() {
                                 <span class="custom-checkbox"></span>
                                 <span class="checkbox-title"><?php esc_html_e( 'On selected pages', 'myaliceai' ); ?></span>
                             </label>
-                            <select name="langOpt[]" multiple id="langOpt">
-                                <option value="C++">C++</option>
-                                <option value="C#" selected>C#</option>
-                                <option value="Java">Java</option>
-                                <option value="Objective-C" selected>Objective-C</option>
-                                <option value="JavaScript">JavaScript</option>
-                                <option value="Perl">Perl</option>
-                                <option value="PHP" selected>PHP</option>
-                                <option value="Ruby on Rails">Ruby on Rails</option>
-                                <option value="Android">Android</option>
-                                <option value="iOS">iOS</option>
-                                <option value="HTML">HTML</option>
-                                <option value="XML">XML</option>
+                            <select name="shows_on[]" multiple>
+		                        <?php
+                                $pages = get_pages();
+		                        foreach ( $pages as $page ) {
+			                        echo "<option value='{$page->ID}'>{$page->post_name}</option>";
+		                        }
+		                        ?>
                             </select>
                         </div>
                         <hr>

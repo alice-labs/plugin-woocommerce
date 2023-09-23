@@ -6,18 +6,25 @@ defined( 'ABSPATH' ) || die;
 function alice_settings_form_process() {
 	if ( check_ajax_referer( 'alice-settings-form', 'alice-settings-form' ) ) {
 		$POST = array_map( 'sanitize_text_field', $_POST );
+
+		if ( isset( $_POST['shows_on'] ) && is_array( $_POST['shows_on'] ) ) {
+			$POST['shows_on'] = array_map( 'sanitize_text_field', $_POST['shows_on'] );
+		}
+
 		$args = wp_parse_args( $POST, [
 			'allow_chat_user_only'   => false,
 			'allow_product_view_api' => false,
 			'allow_cart_api'         => false,
-			'show_chatbox'           => 'all'
+			'show_chatbox'           => 'all',
+			'shows_on'               => []
 		] );
 
 		$settings = [
 			'allow_chat_user_only'   => $args['allow_chat_user_only'] === false ? 0 : 1,
 			'allow_product_view_api' => $args['allow_product_view_api'] === false ? 0 : 1,
 			'allow_cart_api'         => $args['allow_cart_api'] === false ? 0 : 1,
-			'show_chatbox'           => $args['show_chatbox'] === 'all' ? 'all' : 'specific'
+			'show_chatbox'           => $args['show_chatbox'] === 'all' ? 'all' : 'specific',
+			'shows_on'               => $args['shows_on']
 		];
 
 		if ( update_option( 'myaliceai_settings', $settings, false ) ) {
