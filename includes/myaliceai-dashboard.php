@@ -246,7 +246,7 @@ function myalice_dashboard_callback() {
                         </label>
                         <h3><?php esc_html_e( 'Display Chat Widget', 'myaliceai' ); ?></h3>
                         <hr>
-                        <div class="--display-chat-widget">
+                        <div class="--display-chat-widget <?php echo $myalice_settings['show_chatbox'] === 'specific' ? '--page-specific' : ''; ?>">
                             <label>
                                 <input type="radio" name="show_chatbox" value="all" <?php checked( 'all', $myalice_settings['show_chatbox'] ); ?>>
                                 <span class="custom-checkbox"></span>

@@ -1230,6 +1230,13 @@ add_action( 'admin_footer', function () { ?>
                         $label.text('Changes failed');
                     }
                 });
+            }).on('change', '[name="show_chatbox"]', function () {
+                let $this = $(this)
+                if ($this.val() === 'specific') {
+                    $('.--display-chat-widget').addClass('--page-specific');
+                } else {
+                    $('.--display-chat-widget').removeClass('--page-specific');
+                }
             });
 
             $('.--display-chat-widget > select').multiselect({

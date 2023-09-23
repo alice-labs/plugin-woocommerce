@@ -90,6 +90,7 @@ add_action( 'admin_head', function () { ?>
             text-transform: lowercase;
             text-decoration: none;
         }
+
         .ms-options-wrap > .ms-options .ms-selectall:hover {
             text-decoration: underline;
         }
@@ -112,6 +113,7 @@ add_action( 'admin_head', function () { ?>
         .ms-options-wrap > .ms-options > ul > li.optgroup {
             padding: 5px;
         }
+
         .ms-options-wrap > .ms-options > ul > li.optgroup + li.optgroup {
             border-top: 1px solid #aaa;
         }
@@ -130,6 +132,7 @@ add_action( 'admin_head', function () { ?>
             margin: 1px 0;
             border: 1px dotted transparent;
         }
+
         .ms-options-wrap > .ms-options.checkbox-autofit > ul label,
         .ms-options-wrap > .ms-options.hide-checkbox > ul label {
             padding: 4px;
@@ -870,7 +873,12 @@ add_action( 'admin_head', function () { ?>
         }
 
         #alice-dashboard .alice-plugin-settings form .--display-chat-widget .ms-options-wrap {
+            display: none;
+        }
+
+        #alice-dashboard .alice-plugin-settings form .--display-chat-widget.--page-specific .ms-options-wrap {
             margin-top: 15px;
+            display: block;
         }
 
         #alice-dashboard .alice-plugin-settings form .--display-chat-widget label {
