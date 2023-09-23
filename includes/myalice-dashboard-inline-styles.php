@@ -5,6 +5,8 @@ defined( 'ABSPATH' ) || die;
 // Admin Internal Style
 add_action( 'admin_head', function () { ?>
     <style>
+        .ms-options-wrap{position:relative}.ms-options-wrap,.ms-options-wrap *{box-sizing:border-box}.ms-options-wrap>button,.ms-options-wrap>button:focus{position:relative;width:100%;text-align:left;border:1px solid #aaa;border-radius:4px;background-color:#fff;padding:5px 20px 5px 5px!important;margin-top:1px;font-size:13px;color:#aaa;outline-offset:-2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ms-options-wrap>button[disabled]{background-color:#e5e9ed;color:grey;opacity:.6}.ms-options-wrap>button:after{content:' ';height:0;position:absolute;top:50%;right:5px;width:0;border:6px solid transparent;border-top-color:#999;margin-top:-3px}.ms-options-wrap.ms-has-selections>button{color:#333}.ms-options-wrap>.ms-options{position:absolute;left:0;width:100%;margin-top:1px;margin-bottom:20px;background:#fff;z-index:2000;border:1px solid #aaa;border-radius:4px;overflow:auto;visibility:hidden}.ms-options-wrap.ms-active>.ms-options{visibility:visible;max-height:200px!important}.ms-options-wrap>.ms-options>.ms-search input{width:100%;padding:4px 5px;border:none;border-bottom:1px groove;outline:0}.ms-options-wrap>.ms-options>.no-result-message{padding:4px 5px;display:none}.ms-options-wrap>.ms-options .ms-selectall{display:inline-block;font-size:.9em;text-transform:lowercase;text-decoration:none}.ms-options-wrap>.ms-options .ms-selectall:hover{text-decoration:underline}.ms-options-wrap>.ms-options>.ms-selectall.global{margin:4px 5px!important}.ms-options-wrap>.ms-options>ul,.ms-options-wrap>.ms-options>ul>li.optgroup ul{list-style-type:none;padding:0;margin:0}.ms-options-wrap>.ms-options>ul li.ms-hidden{display:none}.ms-options-wrap>.ms-options>ul>li.optgroup{padding:5px}.ms-options-wrap>.ms-options>ul>li.optgroup+li.optgroup{border-top:1px solid #aaa}.ms-options-wrap>.ms-options>ul>li.optgroup .label{display:block;padding:5px 0 0;font-weight:700}.ms-options-wrap>.ms-options>ul label{position:relative;display:inline-block;width:100%;padding:4px 4px 4px 20px;margin:1px 0;border:1px dotted transparent}.ms-options-wrap>.ms-options.checkbox-autofit>ul label,.ms-options-wrap>.ms-options.hide-checkbox>ul label{padding:4px}.ms-options-wrap>.ms-options>ul label.focused,.ms-options-wrap>.ms-options>ul label:hover{background-color:#efefef;border-color:#999}.ms-options-wrap>.ms-options>ul li.selected label{background-color:#efefef;border-color:transparent}.ms-options-wrap>.ms-options>ul input[type=checkbox]{margin:0 5px 0 0;position:absolute;left:4px;top:7px}.ms-options-wrap>.ms-options.hide-checkbox>ul input[type=checkbox]{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px)}
+
         @keyframes alice-rotate {
             from {
                 transform: rotate(0deg);
@@ -660,6 +662,10 @@ add_action( 'admin_head', function () { ?>
             padding: 24px;
         }
 
+        #alice-dashboard .alice-plugin-settings form h3 ~ h3 {
+            margin-top: 20px;
+        }
+
         #alice-dashboard .alice-plugin-settings form hr {
             margin: 20px 0;
         }
@@ -687,12 +693,53 @@ add_action( 'admin_head', function () { ?>
             background-position: center center;
         }
 
+        #alice-dashboard .alice-plugin-settings form label input[type="radio"] + span.custom-checkbox {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: calc(100% + 12px);
+            top: 3px;
+            border: 1px solid #D1D5DB;
+            border-radius: 50%;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label input[type="radio"]:checked + span.custom-checkbox {
+            border: 5px solid #04B25F;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
         #alice-dashboard .alice-plugin-settings form label + label {
             margin-top: 20px;
             margin-left: 28px;
         }
 
-        #alice-dashboard .alice-plugin-settings form label input[type="checkbox"] {
+        #alice-dashboard .alice-plugin-settings form .--display-chat-widget .ms-options-wrap {
+            display: none;
+        }
+
+        #alice-dashboard .alice-plugin-settings form .--display-chat-widget.--page-specific .ms-options-wrap {
+            margin-top: 15px;
+            display: block;
+        }
+
+        #alice-dashboard .alice-plugin-settings form .--display-chat-widget label {
+            display: inline-block;
+            margin-top: 0;
+        }
+
+        #alice-dashboard .alice-plugin-settings form .--display-chat-widget ul li label {
+            display: block;
+            width: auto;
+            padding-left: 0;
+        }
+
+        #alice-dashboard .alice-plugin-settings form .--display-chat-widget label + label {
+            margin-left: 50px;
+        }
+
+        #alice-dashboard .alice-plugin-settings form label input[type="checkbox"],
+        #alice-dashboard .alice-plugin-settings form label input[type="radio"] {
             display: none;
         }
 

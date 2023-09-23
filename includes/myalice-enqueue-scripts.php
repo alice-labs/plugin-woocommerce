@@ -6,6 +6,12 @@ global $myalice_settings;
 
 // Insert JS code in Footer
 function alice_chatbot_script_callback() {
+	global $myalice_settings;
+
+	if ( $myalice_settings['show_chatbox'] === 'specific' && ! in_array( get_the_ID(), $myalice_settings['shows_on'] ) ) {
+		return;
+	}
+
 	if ( get_option( 'myaliceai_is_needed_migration' ) ) {
 		?>
         <script type="text/javascript">
@@ -49,7 +55,7 @@ if ( MYALICE_API_OK ) {
 		wp_localize_script( 'alice-script', 'myaliceai', $inline_js );
 	} );
 
-	if ( $myalice_settings['hide_chatbox'] === 0 && ( $myalice_settings['allow_chat_user_only'] === 0 || ( $myalice_settings['allow_chat_user_only'] === 1 && is_user_logged_in() ) ) ) {
+	if ( $myalice_settings['allow_chat_user_only'] === 0 || ( $myalice_settings['allow_chat_user_only'] === 1 && is_user_logged_in() ) ) {
 		add_action( 'wp_footer', 'alice_chatbot_script_callback' );
 	}
 }
