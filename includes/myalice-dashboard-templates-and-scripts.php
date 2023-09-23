@@ -1231,7 +1231,7 @@ add_action( 'admin_footer', function () { ?>
                     }
                 });
             }).on('change', '[name="show_chatbox"]', function () {
-                let $this = $(this)
+                let $this = $(this);
                 if ($this.val() === 'specific') {
                     $('.--display-chat-widget').addClass('--page-specific');
                 } else {
