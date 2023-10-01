@@ -681,7 +681,7 @@ add_action( 'admin_head', function () { ?>
             position: absolute;
             width: 16px;
             height: 16px;
-            right: calc(100% + 12px);
+            right: calc(100% + 7px);
             top: 5px;
             border: 1px solid #D1D5DB;
             border-radius: 4px;
