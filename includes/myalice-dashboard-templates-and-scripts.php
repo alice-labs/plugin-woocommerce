@@ -1240,10 +1240,10 @@ add_action( 'admin_footer', function () { ?>
             });
 
             $('.--display-chat-widget > select').multiselect({
-                placeholder: 'Select Pages',
+                placeholder: 'Select pages',
                 search: true,
                 searchOptions: {
-                    'default': 'Search Pages'
+                    'default': 'Search pages'
                 },
                 selectAll: true
             });
