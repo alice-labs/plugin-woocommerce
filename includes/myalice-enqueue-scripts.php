@@ -8,13 +8,14 @@ global $myalice_settings;
 function alice_chatbot_script_callback() {
 	global $myalice_settings;
 
-	if ( $myalice_settings['show_chatbox'] === 'specific' && ! in_array( get_the_ID(), $myalice_settings['shows_on'] ) ) {
+	$page_id = is_shop() ? get_option( 'woocommerce_shop_page_id' ) : get_the_ID();
+	if ( $myalice_settings['show_chatbox'] === 'specific' && ! in_array( $page_id, $myalice_settings['shows_on'] ) ) {
 		return;
 	}
 
 	if ( get_option( 'myaliceai_is_needed_migration' ) ) {
 		?>
-        <script type="text/javascript">
+		<script type="text/javascript">
             (function () {
                 var div = document.createElement('div');
                 div.id = 'icWebChat';
@@ -35,7 +36,7 @@ function alice_chatbot_script_callback() {
                     });
                 });
             })();
-        </script>
+		</script>
 		<?php
 	} else {
 		?>
