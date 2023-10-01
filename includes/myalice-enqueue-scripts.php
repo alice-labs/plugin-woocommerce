@@ -8,6 +8,10 @@ global $myalice_settings;
 function alice_chatbot_script_callback() {
 	global $myalice_settings;
 
+	if ( ! ALICE_WC_OK ) {
+		return;
+	}
+
 	$page_id = is_shop() ? get_option( 'woocommerce_shop_page_id' ) : get_the_ID();
 	if ( $myalice_settings['show_chatbox'] === 'specific' && ! in_array( $page_id, $myalice_settings['shows_on'] ) ) {
 		return;
