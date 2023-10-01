@@ -262,7 +262,7 @@ function myalice_dashboard_callback() {
 								$pages = get_pages();
 								foreach ( $pages as $page ) {
 									$is_selected = in_array( $page->ID, $myalice_settings['shows_on'] ) ? 'selected' : '';
-									echo "<option value='{$page->ID}' $is_selected>{$page->post_name}</option>";
+									echo "<option value='{$page->ID}' $is_selected>{$page->post_title}</option>";
 								}
 								?>
                             </select>
