@@ -3,8 +3,8 @@
 Contributors: shuvorahmanalice, rudlinkon
 Tags: WhatsApp, Live Chat, Telegram, Line, Viber, Messenger, Instagram, WhatsApp Chat, Live Chat Helpdesk, Chatbot, WordPress Live Chat, WooCommerce Live Chat
 Requires at least: 5.0
-Tested up to: 6.2
-Stable tag: 2.3.0
+Tested up to: 6.4
+Stable tag: 2.4.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
@@ -126,6 +126,12 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 
 
 == Changelog ==
+
+
+= 2.4.0 – 07/11/2023 =
+* Added: New settings options to select the pages where the chat widget wants to show
+* Improved: WooCommerce API improved to get exact results
+* Few minor bug fixes & improvements
 
 
 = 2.3.0 – 07/06/2023 =
