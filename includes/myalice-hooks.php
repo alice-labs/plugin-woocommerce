@@ -103,6 +103,9 @@ add_action( 'upgrader_process_complete', function ( $upgrader_object, $options )
 	}
 }, 10, 2 );
 
+add_action( 'woocommerce_order_status_changed', 'myalice_save_order_previous_status', 10, 4 );
+add_filter( 'woocommerce_webhook_payload', 'myalice_add_previous_status_to_webhook_payload', 10, 3 );
+
 add_action( 'init', function () {
 	if ( isset( $_GET['myalice_search_by_title'] ) ) {
 		add_filter( 'posts_search', 'myalice_search_by_title_only', 500, 2 );

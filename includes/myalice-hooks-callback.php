@@ -559,3 +559,21 @@ function myalice_search_by_phone( $prepared_args ) {
 
 	return $prepared_args;
 }
+
+function myalice_save_order_previous_status( $order_id, $previous_status, $new_status, $order ) {
+	$order->update_meta_data( '_myaliceai_previous_status', $previous_status );
+	$order->save();
+}
+
+function myalice_add_previous_status_to_webhook_payload( $payload, $resource, $resource_id ) {
+	if ( $resource === 'order' && $resource_id ) {
+		$order = wc_get_order( $resource_id );
+
+		if ( $order ) {
+			$previous_status            = $order->get_meta( '_myaliceai_previous_status' );
+			$payload['previous_status'] = $previous_status ? $previous_status : $order->get_status();
+		}
+	}
+
+	return $payload;
+}
