@@ -8,22 +8,22 @@
     │   │    ├── .              # Github action files
     │   │    └── ...
     │   ├── .wordpress-org      # WordPress.org assets directory
-    │   │    ├── .              
+    │   │    ├── .              # WordPress.org asset files
     │   │    └── ...
     │   ├── images              # plugin images directory
-    │   │    ├── .              
+    │   │    ├── .              # plugin image files
     │   │    └── ...
     │   ├── includes            # plugin includes directory
     │   │    ├── .
     │   │    └── ...
     │   ├── js                  # plugin js directory
-    │   │    ├── .
+    │   │    ├── .              # plugin js files
     │   │    └── ...
     │   ├── languages           # plugin languages directory
     │   │    ├── .
     │   │    └── ...
     │   ├── svg                 # plugin svg directory
-    │   │    ├── .
+    │   │    ├── .              # plugin svg files
     │   │    └── ...
     │   ├── .distignore         # distignore file for WPCLI
     │   ├── .gitattributes      # gitattributes file for github
