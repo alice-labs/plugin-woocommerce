@@ -178,16 +178,16 @@ function alice_user_cart_api_handler( $updated ) {
 }
 
 function alice_review_admin_notice() { ?>
-    <div class="notice notice-info">
-        <p><?php esc_html_e( "We hope you're enjoying MyAlice! Could you please do us a BIG favor and give it a 5-star rating on WordPress to help us spread the word and boost our motivation?", 'myaliceai' ); ?></p>
-        <p>
-            <a href="https://wordpress.org/support/plugin/myaliceai/reviews/?filter=5#new-post" target="_blank"><?php esc_html_e( 'Ok, you deserve it', 'myaliceai' ); ?></a>
-            <br>
-            <a href="#" class="myalice-notice-dismiss"><?php esc_html_e( 'Nope, maybe later', 'myaliceai' ); ?></a>
-            <br>
-            <a href="#" class="myalice-notice-dismiss"><?php esc_html_e( 'I already did', 'myaliceai' ); ?></a>
-        </p>
-    </div>
+	<div class="notice notice-info">
+		<p><?php esc_html_e( "We hope you're enjoying MyAlice! Could you please do us a BIG favor and give it a 5-star rating on WordPress to help us spread the word and boost our motivation?", 'myaliceai' ); ?></p>
+		<p>
+			<a href="https://wordpress.org/support/plugin/myaliceai/reviews/?filter=5#new-post" target="_blank"><?php esc_html_e( 'Ok, you deserve it', 'myaliceai' ); ?></a>
+			<br>
+			<a href="#" class="myalice-notice-dismiss"><?php esc_html_e( 'Nope, maybe later', 'myaliceai' ); ?></a>
+			<br>
+			<a href="#" class="myalice-notice-dismiss"><?php esc_html_e( 'I already did', 'myaliceai' ); ?></a>
+		</p>
+	</div>
 	<?php
 }
 
@@ -437,25 +437,25 @@ function myalice_migration_admin_notice() {
 		return;
 	}
 	?>
-    <div class="wpnotice-wrapper notice is-dismissible myalice-migration-admin-notice">
-        <div class="wpnotice-content-wrapper">
-            <div class="alice-migration-warning">
-                <div class="alice-migration-warning-content">
-                    <h3><?php esc_html_e( 'Switch to New Live Chat for a better way to communicate with your customers.', 'myaliceai' ) ?></h3>
-                    <p><?php esc_html_e( 'Your Webchat will be automatically transitioned over to the New Live Chat. Switch your existing Webchat now and get early access to new features. We will automatically transition your account roughly after 30 days.', 'myaliceai' ); ?>
-                        <a href="https://docs.myalice.ai/connect-social-channels/connect-web-app/connect-live-chat"><?php esc_html_e( 'Learn More', 'myaliceai' ); ?></a>
-                    </p>
-                    <button class="alice-btn" type="button"><?php esc_html_e( 'Switch to New Live Chat', 'myaliceai' ); ?></button>
-                    <span class="spinner"></span>
-                    <div class="myalice-notice-area"><?php esc_html_e( 'Something went wrong,', 'myaliceai' ); ?> <a
-                                href="https://www.myalice.ai/support"><?php esc_html_e( 'contact support', 'myaliceai' ); ?></a></div>
-                </div>
-                <div class="alice-migration-warning-thumb">
-                    <img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg.jpg' ); ?>" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="wpnotice-wrapper notice is-dismissible myalice-migration-admin-notice">
+		<div class="wpnotice-content-wrapper">
+			<div class="alice-migration-warning">
+				<div class="alice-migration-warning-content">
+					<h3><?php esc_html_e( 'Switch to New Live Chat for a better way to communicate with your customers.', 'myaliceai' ) ?></h3>
+					<p><?php esc_html_e( 'Your Webchat will be automatically transitioned over to the New Live Chat. Switch your existing Webchat now and get early access to new features. We will automatically transition your account roughly after 30 days.', 'myaliceai' ); ?>
+						<a href="https://docs.myalice.ai/connect-social-channels/connect-web-app/connect-live-chat"><?php esc_html_e( 'Learn More', 'myaliceai' ); ?></a>
+					</p>
+					<button class="alice-btn" type="button"><?php esc_html_e( 'Switch to New Live Chat', 'myaliceai' ); ?></button>
+					<span class="spinner"></span>
+					<div class="myalice-notice-area"><?php esc_html_e( 'Something went wrong,', 'myaliceai' ); ?> <a
+								href="https://www.myalice.ai/support"><?php esc_html_e( 'contact support', 'myaliceai' ); ?></a></div>
+				</div>
+				<div class="alice-migration-warning-thumb">
+					<img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg.jpg' ); ?>" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
 	<?php
 }
 
@@ -464,21 +464,21 @@ function myalice_chat_customization_admin_notice() {
 		return;
 	}
 	?>
-    <div class="wpnotice-wrapper notice is-dismissible myalice-migration-admin-notice myalice-customization-admin-notice">
-        <div class="wpnotice-content-wrapper">
-            <div class="alice-migration-warning">
-                <div class="alice-migration-warning-content">
-                    <h3><?php esc_html_e( 'Livechat has been migrated. Time to customize!', 'myaliceai' ) ?></h3>
-                    <p><?php esc_html_e( 'Your livechat has been migrated to the latest one. Now you can customize the livechat the way you want! Set up how you want to greet your customers, set up livechat styles, add pre-chat survey and many more.', 'myaliceai' ); ?></p>
-                    <a class="alice-btn"
-                       href="<?php echo esc_url( 'https://app.myalice.ai/integrations/integrated' ); ?>"><?php esc_html_e( 'Customize Livechat', 'myaliceai' ); ?></a>
-                </div>
-                <div class="alice-migration-warning-thumb">
-                    <img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg-2.png' ); ?>" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="wpnotice-wrapper notice is-dismissible myalice-migration-admin-notice myalice-customization-admin-notice">
+		<div class="wpnotice-content-wrapper">
+			<div class="alice-migration-warning">
+				<div class="alice-migration-warning-content">
+					<h3><?php esc_html_e( 'Livechat has been migrated. Time to customize!', 'myaliceai' ) ?></h3>
+					<p><?php esc_html_e( 'Your livechat has been migrated to the latest one. Now you can customize the livechat the way you want! Set up how you want to greet your customers, set up livechat styles, add pre-chat survey and many more.', 'myaliceai' ); ?></p>
+					<a class="alice-btn"
+					   href="<?php echo esc_url( 'https://app.myalice.ai/integrations/integrated' ); ?>"><?php esc_html_e( 'Customize Livechat', 'myaliceai' ); ?></a>
+				</div>
+				<div class="alice-migration-warning-thumb">
+					<img src="<?php echo esc_url( ALICE_IMG_PATH . 'migration-notice-bg-2.png' ); ?>" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
 	<?php
 }
 
@@ -565,8 +565,11 @@ function myalice_save_order_previous_status( $order_id, $previous_status, $new_s
 	$order->save();
 }
 
-function myalice_add_previous_status_to_webhook_payload( $payload, $resource, $resource_id ) {
-	if ( $resource === 'order' && $resource_id ) {
+function myalice_add_previous_status_to_webhook_payload( $payload, $resource, $resource_id, $webhook_id ) {
+	$webhook = new WC_Webhook( $webhook_id );
+	$topic   = $webhook->get_topic();
+
+	if ( $topic === 'order.status_updated' && $resource_id ) {
 		$order = wc_get_order( $resource_id );
 
 		if ( $order ) {
@@ -576,4 +579,22 @@ function myalice_add_previous_status_to_webhook_payload( $payload, $resource, $r
 	}
 
 	return $payload;
+}
+
+function myalice_add_status_update_webhook_topic( $topics ) {
+	$topics['order.status_updated'] = __( 'Order Status Updated', 'myaliceai' );
+
+	return $topics;
+}
+
+function myalice_add_status_update_webhook_topic_hooks( $topic_hooks ) {
+	$topic_hooks['order.status_updated'] = array( 'woocommerce_order_status_changed' );
+
+	return $topic_hooks;
+}
+
+function myalice_add_new_valid_webhook_events( $valid_events ) {
+	$valid_events[] = 'status_updated';
+
+	return $valid_events;
 }
