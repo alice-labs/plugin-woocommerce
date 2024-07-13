@@ -14,7 +14,15 @@
     │   │    ├── .              # plugin image files
     │   │    └── ...
     │   ├── includes            # plugin includes directory
-    │   │    ├── .
+    │   │    ├── index.php                                      # index file \\ Silence is golden.
+    │   │    ├── myalice-activation-deactivation-register.php   # plugin activation and deactivation hook
+    │   │    ├── myalice-dashboard-inline-styles.php            # all the CSS is written in this file
+    │   │    ├── myalice-dashboard-templates-and-scripts.php    # admin template components like modal
+    │   │    ├── myalice-enqueue-scripts.php                    # enque front-end script
+    │   │    ├── myalice-helper-functions.php                   # all the helper function is written here
+    │   │    ├── myalice-hooks.php                              # all hooks in one file
+    │   │    ├── myalice-hooks-callback.php                     # all hooks callback in one file
+    │   │    ├── myaliceai-dashboard.php                        # myalice dashboard page template and functionality
     │   │    └── ...
     │   ├── js                  # plugin js directory
     │   │    ├── .              # plugin js files
