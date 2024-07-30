@@ -4,7 +4,7 @@ Contributors: shuvorahmanalice, rudlinkon
 Tags: WhatsApp, Live Chat, Telegram, Line, Viber, Messenger, Instagram, WhatsApp Chat, Live Chat Helpdesk, Chatbot, WordPress Live Chat, WooCommerce Live Chat
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 2.5.0
+Stable tag: 2.5.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
@@ -126,6 +126,11 @@ Of course, you can! Expand your business offer by adding MyAlice to projects you
 
 
 == Changelog ==
+
+
+= 2.5.1 – 30/07/2024 =
+* Added: WooCommerce HPOS Support
+* Few minor bug fixes & improvements
 
 
 = 2.5.0 – 10/07/2024 =
