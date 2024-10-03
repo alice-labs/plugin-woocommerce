@@ -217,7 +217,7 @@ function alice_login_form_process() {
 
 		}
 
-		$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/login-and-connect-woocommerce';
+		$alice_api_url = 'https://api.myalice.ai/edge/ecommerce/login-and-connect-woocommerce';
 		$body          = wp_json_encode( array(
 			'store_url'       => site_url( '/' ),
 			'consumer_key'    => $wc_data['consumer_key'],
@@ -282,7 +282,7 @@ function alice_signup_form_process() {
 
 		}
 
-		$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/register-and-connect-woocommerce';
+		$alice_api_url = 'https://api.myalice.ai/edge/ecommerce/register-and-connect-woocommerce';
 		$body          = wp_json_encode( array(
 			'store_url'       => site_url( '/' ),
 			'consumer_key'    => $wc_data['consumer_key'],
@@ -350,7 +350,7 @@ function myalice_select_team_form_process() {
 			wp_send_json_error( [ 'message' => __( 'Email Address Missing, Please login again.', 'myaliceai' ) ] );
 		}
 
-		$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/connect-woocommerce-with-project';
+		$alice_api_url = 'https://api.myalice.ai/edge/ecommerce/connect-woocommerce-with-project';
 		$body          = wp_json_encode( array(
 			'store_url'       => site_url( '/' ),
 			'consumer_key'    => $wc_data['consumer_key'],
@@ -400,7 +400,7 @@ function myalice_select_team_form_process() {
 
 function myalice_migration_livechat() {
 	if ( check_ajax_referer( 'myaliceai', 'nonce' ) ) {
-		$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/migrate-to-new-live-chat';
+		$alice_api_url = 'https://api.myalice.ai/edge/ecommerce/migrate-to-new-live-chat';
 		$body          = wp_json_encode( array(
 			'store_url' => site_url( '/' )
 		) );

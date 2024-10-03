@@ -87,7 +87,7 @@ if ( ! defined( 'MYALICE_PROJECT_ID' ) ) {
 }
 
 if ( ! defined( 'MYALICE_API_URL' ) ) {
-	define( 'MYALICE_API_URL', 'https://api.myalice.ai/stable/ecommerce/plugins/' );
+	define( 'MYALICE_API_URL', 'https://api.myalice.ai/edge/ecommerce/plugins/' );
 }
 
 if ( ! defined( 'MYALICE_API_OK' ) ) {

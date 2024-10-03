@@ -18,7 +18,7 @@ delete_option( 'myaliceai_is_needed_migration' );
 delete_option( 'myaliceai_customization_notice_dismiss' );
 
 // Plugin remove API
-$alice_api_url = 'https://api.myalice.ai/stable/ecommerce/remove-woocommerce-integration?api_token=' . $api_data['api_token'];
+$alice_api_url = 'https://api.myalice.ai/edge/ecommerce/remove-woocommerce-integration?api_token=' . $api_data['api_token'];
 wp_remote_post( $alice_api_url, array(
 		'method'  => 'POST',
 		'timeout' => 45,
