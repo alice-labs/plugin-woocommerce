@@ -165,3 +165,13 @@ function myalice_is_working_wcapi( $force = false ) {
 		return $result;
 	}
 }
+
+function myalice_get_cart_hash_for_exist_product( $product_id ) {
+	foreach ( WC()->cart->get_cart() as $cart_item ) {
+		if ( $cart_item['product_id'] == $product_id ) {
+			return $cart_item['key'];
+		}
+	}
+
+	return false;
+}
