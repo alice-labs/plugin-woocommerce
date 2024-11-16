@@ -610,10 +610,13 @@ function myalice_add_multiple_products_to_cart() {
 		foreach ( $product_entries as $entry ) {
 			list( $product_id, $quantity ) = array_map( 'intval', explode( ':', $entry ) );
 
-			// Validate the product ID and quantity
 			if ( $product_id > 0 && $quantity > 0 ) {
-				// Add the product to the WooCommerce cart
-				WC()->cart->add_to_cart( $product_id, $quantity );
+				$cart_hash = myalice_get_cart_hash_for_exist_product( $product_id );
+				if ( $cart_hash ) {
+					WC()->cart->set_quantity( $cart_hash, $quantity );
+				} else {
+					WC()->cart->add_to_cart( $product_id, $quantity );
+				}
 			}
 		}
 
