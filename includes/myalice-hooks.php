@@ -108,6 +108,7 @@ add_filter( 'woocommerce_valid_webhook_events', 'myalice_add_new_valid_webhook_e
 add_filter( 'woocommerce_webhook_topics', 'myalice_add_status_update_webhook_topic', 0 );
 add_filter( 'woocommerce_webhook_topic_hooks', 'myalice_add_status_update_webhook_topic_hooks' );
 add_filter( 'woocommerce_webhook_payload', 'myalice_add_previous_status_to_webhook_payload', 10, 4 );
+add_action( 'template_redirect', 'myalice_add_multiple_products_to_cart' );
 
 add_action( 'init', function () {
 	if ( isset( $_GET['myalice_search_by_title'] ) ) {

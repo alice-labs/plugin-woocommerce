@@ -598,3 +598,27 @@ function myalice_add_new_valid_webhook_events( $valid_events ) {
 
 	return $valid_events;
 }
+
+/**
+ * Add multiple products to the WooCommerce cart with quantities using a custom query string.
+ */
+function myalice_add_multiple_products_to_cart() {
+	if ( isset( $_GET['alice-add-to-cart'] ) ) {
+		$products        = sanitize_text_field( $_GET['alice-add-to-cart'] );
+		$product_entries = explode( ',', $products );
+
+		foreach ( $product_entries as $entry ) {
+			list( $product_id, $quantity ) = array_map( 'intval', explode( ':', $entry ) );
+
+			// Validate the product ID and quantity
+			if ( $product_id > 0 && $quantity > 0 ) {
+				// Add the product to the WooCommerce cart
+				WC()->cart->add_to_cart( $product_id, $quantity );
+			}
+		}
+
+		// Redirect to the cart page after adding the products
+		wp_safe_redirect( wc_get_cart_url() );
+		exit;
+	}
+}
