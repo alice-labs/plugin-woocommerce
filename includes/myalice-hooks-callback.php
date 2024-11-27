@@ -620,8 +620,10 @@ function myalice_add_multiple_products_to_cart() {
 			}
 		}
 
-		// Redirect to the cart page after adding the products
-		wp_safe_redirect( wc_get_cart_url() );
-		exit;
+		if ( ! is_cart() ) {
+			// Redirect to the cart page after adding the products
+			wp_safe_redirect( wc_get_cart_url() );
+			exit;
+		}
 	}
 }
